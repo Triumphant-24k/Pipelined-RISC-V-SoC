@@ -1,0 +1,6 @@
+[submodule "baseline"]
+	path = baseline
+	url = https://github.com/Triumphant-24k/RV32I-Based-SoC-with-an-INT8-AI-Accelerator-on-FPGA.git
+[submodule "verification/riscv-tests"]
+	path = verification/riscv-tests
+	url = https://github.com/riscv-software-src/riscv-tests.git

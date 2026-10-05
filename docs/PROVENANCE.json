@@ -1,0 +1,16 @@
+{
+  "baseline": {
+    "url": "https://github.com/Triumphant-24k/RV32I-Based-SoC-with-an-INT8-AI-Accelerator-on-FPGA",
+    "commit": "810b92c9a69f451ce9961f773abb726f25609b66",
+    "directory": "baseline",
+    "license": "MIT; retained in baseline/LICENSE"
+  },
+  "architectural_tests": {
+    "url": "https://github.com/riscv-software-src/riscv-tests",
+    "commit": "bcffa2b3188b040c611f90dc0b6e422f54775a09",
+    "directory": "verification/riscv-tests",
+    "license": "Upstream LICENSE retained",
+    "environment": "Project-specific bare-metal header in verification/env",
+    "certification": false
+  }
+}

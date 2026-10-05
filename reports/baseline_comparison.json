@@ -1,7 +1,7 @@
 {
   "workload": "7x9x13 signed INT8 GEMM with INT32 outputs",
   "compiler": "-O2, identical source; RV32I uses shift/add helper, RV32IM uses iterative MUL",
-  "scope": "CPU/ISA combined comparison; not isolated pipeline speedup; not the original eight-element dot-product benchmark",
+  "scope": "reference/new RV32I run identical binaries; RV32IM comparison additionally changes ISA; not the original eight-element dot-product benchmark",
   "results": [
     {
       "cpu": "reference RV32I multicycle",
@@ -20,20 +20,36 @@
       "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_0.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=0 delay=5 clocks=1227600 kernel_cycles=830632 hash=2e60bc73\n"
     },
     {
+      "cpu": "new pipeline running RV32I",
+      "cache": "none",
+      "delay": 0,
+      "kernel_cycles": 540035,
+      "hash": "2e60bc73",
+      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_1.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=0 clocks=804940 kernel_cycles=540035 hash=2e60bc73\n"
+    },
+    {
+      "cpu": "new pipeline running RV32I",
+      "cache": "none",
+      "delay": 5,
+      "kernel_cycles": 938953,
+      "hash": "2e60bc73",
+      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_1.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=5 clocks=1397387 kernel_cycles=938953 hash=2e60bc73\n"
+    },
+    {
       "cpu": "new RV32IM pipeline",
       "cache": "none",
       "delay": 0,
-      "kernel_cycles": 63356,
+      "kernel_cycles": 72029,
       "hash": "2e60bc73",
-      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_1.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=0 clocks=78147 kernel_cycles=63356 hash=2e60bc73\n"
+      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_2.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=0 clocks=88682 kernel_cycles=72029 hash=2e60bc73\n"
     },
     {
       "cpu": "new RV32IM pipeline",
       "cache": "none",
       "delay": 5,
-      "kernel_cycles": 96832,
+      "kernel_cycles": 105566,
       "hash": "2e60bc73",
-      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_1.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=5 clocks=119172 kernel_cycles=96832 hash=2e60bc73\n"
+      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_2.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=5 clocks=129748 kernel_cycles=105566 hash=2e60bc73\n"
     }
   ]
 }

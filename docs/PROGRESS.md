@@ -1,17 +1,32 @@
-# Implementation progress
+# Completion matrix
 
-Reference snapshot: 810b92c9a69f451ce9961f773abb726f25609b66.
-
-The baseline directory preserves the reference implementation and its license.
-Original baseline regressions are being reproduced locally under Ubuntu-22.04 WSL.
-
-| Milestone | State |
+| Requirement | Implementation and evidence |
 |---|---|
-| Baseline reproduction | Running |
-| RV32IM pipeline and machine traps | In implementation |
-| DMA and tiled matrix accelerator | Pending |
-| Caches and complete SoC | Pending |
-| Firmware, inference, exploration | Pending |
-| Physical implementation | Requires tool/library availability audit |
+| Preserve baseline | Pinned snapshot; original CPU/accelerator/firmware regression reproduced |
+| RV32IM pipeline | Elastic stages, forwarding/interlocks, flushes, iterative M; instruction reference comparison |
+| Machine traps/interrupts | Limited machine CSRs, precise exceptions, MRET, external/timer IRQ; directed and firmware tests |
+| Retirement/counters | Retire PC/instruction/rd/value, cycle/instret, cache and DMA counters |
+| Interconnect/errors | Round-robin arbitration, strobes, completion/errors; bounded safety checks |
+| AXI adapter | Single-outstanding AXI4-Lite, independent AW/W; directed tests |
+| DMA | Autonomous descriptor loads/stores and completion IRQ; integrated contention |
+| Matrix array | 4×4 and 8×8 output-stationary RTL, INT8/INT32, edge tiles |
+| Scratchpad/overlap | Logical banked ping-pong arrays; panel depth sweeps; load/compute overlap |
+| Alternate dataflow | Executable weight-stationary functional/traffic model, not alternate RTL |
+| Quantized inference | Firmware bias/requantization/saturation/ReLU, convolution/dense; Python output check |
+| Caches | Parameterized direct-mapped lines, write-through/no-allocate, uncached DMA, FENCE.I |
+| Reset/error checks | DMA error, descriptor rejection, busy writes, reset during load/compute/store, recovery |
+| Software/baselines | Cross-build, startup/linker/drivers, polling/IRQ, same GEMM on reference CPU |
+| Architectural tests | Exact riscv-tests result list; misaligned-success case excluded; no certification |
+| Formal | 25-cycle bounded arbiter safety proof; no whole-CPU or unbounded proof |
+| Exploration | RTL tile/panel/cache/latency sweeps; separate dataflow models |
+| Synthesis | Fatal local lint and generic Yosys structural synthesis checks |
+| ASIC preparation | Genus/Innovus/SDC/MMMC scripts requiring actual PDK inputs; unexecuted |
+| Routed PPA/SRAM macros | Externally blocked: college SSH timeout; tools/libraries/macros unavailable locally |
+| Reproducibility/CI | make all, PowerShell WSL wrapper, CI workflow; remote CI not run |
 
-No architectural compliance, formal proof, physical timing, or power results are claimed by this document.
+Read reports/VERIFICATION.md, BENCHMARKS.md, PHYSICAL_DESIGN.md and their JSON
+artifacts for evidence and limits. Flow scripts are not physical implementation.
+No GitHub push is authorized or performed.
+
+Next external steps: restore SSH, audit installed tools and authorized PDK files,
+integrate actual SRAM wrappers, run Genus/Innovus, and record measured PPA.

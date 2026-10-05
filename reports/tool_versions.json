@@ -1,0 +1,7 @@
+{
+  "iverilog": "Icarus Verilog version 11.0 (stable) ()",
+  "verilator": "Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad",
+  "yosys": "Yosys 0.9 (git sha1 1979e0b)",
+  "compiler": "riscv64-unknown-elf-gcc () 10.2.0",
+  "python": "Python 3.10.12"
+}

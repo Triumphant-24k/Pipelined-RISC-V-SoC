@@ -33,7 +33,7 @@ module soc_tb;
   if(exit_valid)begin
    if(exit_code!=1)$fatal(1,"SoC firmware failure %0d mcause=%h pc=%h",exit_code,dut.cpu.mcause,dut.cpu.mepc);
    $display("PASS SOC tile=%0d delay=%0d cache_lines=%0d cycles=%0d instret=%0d transactions=%0d ihit=%0d imiss=%0d dhit=%0d dmiss=%0d",TILE,DELAY,CACHE_LINES,cpu_cycles,cpu_instret,transactions,ic_hits,ic_misses,dc_hits,dc_misses);
-   if(metrics_addr!=0)for(i=0;i<12;i=i+1)$display("METRIC %0d %0d",i,mem[(metrics_addr>>2)+i]);
+   if(metrics_addr!=0)for(i=0;i<20;i=i+1)$display("METRIC %0d %0d",i,mem[(metrics_addr>>2)+i]);
    $finish;
   end
   if(cpu_cycles>2000000)$fatal(1,"SoC timeout pc=%h mcause=%h pendingirq=%b",dut.ia,dut.cpu.mcause,dut.cpu.irq_pending);

@@ -1,6 +1,6 @@
 typedef unsigned int u32;typedef signed char i8;typedef int i32;
 volatile u32 irq_count,timer_count;
-volatile u32 metrics[12];
+volatile u32 metrics[20];
 #define REG(off) (*(volatile u32*)(0x40000000u+(off)))
 static volatile i8 *const A=(volatile i8*)0x10000;
 static volatile i8 *const B=(volatile i8*)0x14000;
@@ -32,6 +32,7 @@ int main(void) {
   i32 v=0;for(u32 z=0;z<k;z++)v+=(i32)A[i*k+z]*(i32)B[z*n+j];reference[i*n+j]=v;
  }
  metrics[0]=tick()-start;start=tick();gemm(m,n,k,0);metrics[1]=tick()-start;
+ metrics[12]=REG(0x40);metrics[13]=REG(0x44);metrics[14]=REG(0x48);metrics[15]=REG(0x4c);
  for(u32 i=0;i<m*n;i++)if(C[i]!=reference[i])return 2+i;
  REG(0)=4;
  start=tick();gemm(m,n,k,1);metrics[2]=tick()-start;
@@ -62,5 +63,9 @@ int main(void) {
  }
  metrics[6]=irq_count;metrics[7]=timer_count;
  metrics[8]=REG(0x40);metrics[9]=REG(0x44);metrics[10]=REG(0x48);metrics[11]=REG(0x4c);
+ __asm__ volatile("csrr %0,0xfc0":"=r"(metrics[16]));
+ __asm__ volatile("csrr %0,0xfc1":"=r"(metrics[17]));
+ __asm__ volatile("csrr %0,0xfc2":"=r"(metrics[18]));
+ __asm__ volatile("csrr %0,0xfc3":"=r"(metrics[19]));
  return irq_count==3&&timer_count==1?1:240;
 }

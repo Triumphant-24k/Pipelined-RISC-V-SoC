@@ -5,7 +5,13 @@ import subprocess,random,json,time,sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'models'))
 from isa_reference import check_trace
+def isa_flag():
+ probe=subprocess.run(['riscv64-unknown-elf-gcc','-march=rv32im_zicsr_zifencei','-mabi=ilp32','-E','-x','c','-'],input='',text=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+ return '-march=rv32im_zicsr_zifencei'if probe.returncode==0 else '-march=rv32im'
+ISA_FLAG=isa_flag()
 def run(args):
+ if args[0]=='iverilog':args=[args[0],'-DSIM_ASSERT',*args[1:]]
+ if args[0]=='riscv64-unknown-elf-gcc':args=[ISA_FLAG if arg=='-march=rv32im'else arg for arg in args]
  p=subprocess.run(args,cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
  print(p.stdout,end='')
  if p.returncode:raise RuntimeError(f'failed: {args}')

@@ -13,7 +13,7 @@ module rv32_pipeline(
 );
  reg [31:0] regs[0:31];
  reg [31:0] fetch_pc,fetch_addr;
- reg fetch_pending,fetch_killed;
+ reg fetch_pending,fetch_queued,fetch_killed;
  reg id_valid,ex_valid,mem_valid,wb_valid;
  reg [31:0] id_pc,id_insn,ex_pc,ex_insn,ex_a,ex_b;
  reg id_error,ex_error;
@@ -27,6 +27,7 @@ module rv32_pipeline(
  reg [11:0] mem_csraddr;
  reg [31:0] mem_csrvalue;
  reg [31:0] mstatus,mie,mtvec,mscratch,mepc,mcause,mtval;
+ reg [63:0] fetch_wait_cycles,data_wait_cycles,execute_wait_cycles,redirects;
  wire [31:0] mip={20'd0,external_irq,3'd0,timer_irq,7'd0};
  wire irq_pending=mstatus[3] && ((mie&mip)!=0);
  wire [31:0] irq_cause=(mie[11]&&external_irq)?32'h8000000b:32'h80000007;
@@ -70,6 +71,8 @@ module rv32_pipeline(
     12'hb00,12'hc00:csr_old=cycles[31:0];12'hb80,12'hc80:csr_old=cycles[63:32];
     12'hb02,12'hc02:csr_old=instret[31:0];12'hb82,12'hc82:csr_old=instret[63:32];
     12'hf11,12'hf12,12'hf13,12'hf14:csr_old=0;
+    12'hfc0:csr_old=fetch_wait_cycles[31:0];12'hfc1:csr_old=data_wait_cycles[31:0];
+    12'hfc2:csr_old=execute_wait_cycles[31:0];12'hfc3:csr_old=redirects[31:0];
     default:csr_ok=0;
    endcase
    result=0;address=0;store_data=0;next_pc=ex_pc+4;tval=ex_insn;cause=2;
@@ -146,8 +149,8 @@ module rv32_pipeline(
   (ex_insn[11:7]==id_insn[19:15]||ex_insn[11:7]==id_insn[24:20]);
  wire id_go=id_valid&&(!ex_valid||ex_go)&&!ex_load_hazard&&!ex_redirect&&!(mem_done&&mem_fault);
  wire fetch_accept=iv&&ir;
- assign iv=!rst&&!fetch_pending&&!id_valid&&!irq_pending&&!ex_redirect&&!(mem_done&&mem_fault);
- assign ia=fetch_pc;
+ assign iv=!rst&&fetch_queued;
+ assign ia=fetch_addr;
  assign dv=mem_valid&&(mem_load||mem_write)&&!mem_sent&&!mem_trap;
  assign da=mem_addr;assign dw=mem_write;assign wd=mem_store;assign ws=mem_write?mem_strobe:0;
  integer n;
@@ -156,23 +159,31 @@ module rv32_pipeline(
   mepc<=pc_value;mcause<=cause_value;mtval<=tval_value;
   mstatus[7]<=mstatus[3];mstatus[3]<=0;mstatus[12:11]<=3;
   fetch_pc<={mtvec[31:2],2'b00}+((mtvec[1:0]==1&&cause_value[31])?4*{1'b0,cause_value[30:0]}:0);
-  id_valid<=0;ex_valid<=0;mem_valid<=0;fetch_killed<=fetch_pending&&!ip;
+  id_valid<=0;ex_valid<=0;mem_valid<=0;fetch_killed<=(fetch_pending||fetch_queued)&&!ip;
   trap_valid<=1;trap_cause<=cause_value;
  end endtask
  always @(posedge clk) begin
   if(rst)begin
-   fetch_pc<=0;fetch_pending<=0;fetch_killed<=0;fetch_addr<=0;
+   fetch_pc<=0;fetch_pending<=0;fetch_queued<=0;fetch_killed<=0;fetch_addr<=0;
    id_valid<=0;ex_valid<=0;mem_valid<=0;wb_valid<=0;mem_sent<=0;
    retire_valid<=0;trap_valid<=0;fence_i<=0;cycles<=0;instret<=0;
+   fetch_wait_cycles<=0;data_wait_cycles<=0;execute_wait_cycles<=0;redirects<=0;
    mstatus<=32'h1800;mie<=0;mtvec<=0;mscratch<=0;mepc<=0;mcause<=0;mtval<=0;
    for(n=0;n<32;n=n+1)regs[n]<=0;
   end else begin
    cycles<=cycles+1;retire_valid<=0;trap_valid<=0;fence_i<=0;wb_valid<=0;regs[0]<=0;
-   if(fetch_accept)begin fetch_pending<=1;fetch_addr<=fetch_pc;fetch_pc<=fetch_pc+4;end
+   if((fetch_queued&&!ir)||(fetch_pending&&!ip))fetch_wait_cycles<=fetch_wait_cycles+1;
+   if(mem_valid&&(mem_load||mem_write)&&!mem_done)data_wait_cycles<=data_wait_cycles+1;
+   if(ex_valid&&!ex_go)execute_wait_cycles<=execute_wait_cycles+1;
+   if(ex_redirect)redirects<=redirects+1;
+   if(!fetch_pending&&!fetch_queued&&!id_valid&&!irq_pending&&!ex_redirect&&!(mem_done&&mem_fault))begin
+    fetch_queued<=1;fetch_addr<=fetch_pc;fetch_pc<=fetch_pc+4;fetch_killed<=0;
+   end
+   if(fetch_accept)begin fetch_pending<=1;fetch_queued<=0;end
    if(ip&&(fetch_pending||fetch_accept))begin
     fetch_pending<=0;fetch_killed<=0;
     if(!fetch_killed&&!ex_redirect&&!(mem_done&&mem_fault))begin
-     id_valid<=1;id_pc<=fetch_pending?fetch_addr:fetch_pc;id_insn<=insn;id_error<=ierr;
+     id_valid<=1;id_pc<=fetch_addr;id_insn<=insn;id_error<=ierr;
     end
    end
    if(id_go)begin
@@ -215,14 +226,31 @@ module rv32_pipeline(
     mem_csrwrite<=csrwrite;mem_csraddr<=ex_insn[31:20];mem_csrvalue<=csr_new;
     mem_mret<=is_mret;mem_fencei<=is_fencei;
     if(taken||exception)begin
-     id_valid<=0;ex_valid<=0;fetch_killed<=fetch_pending&&!ip;
+     id_valid<=0;ex_valid<=0;fetch_killed<=(fetch_pending||fetch_queued)&&!ip;
      fetch_pc<=exception?ex_pc:next_pc;
     end
    end
-   if(irq_pending&&!id_valid&&!ex_valid&&!mem_valid&&!fetch_pending)
+   if(irq_pending&&!id_valid&&!ex_valid&&!mem_valid&&!fetch_pending&&!fetch_queued)
      enter_trap(fetch_pc,irq_cause,0);
   end
  end
+`ifdef SIM_ASSERT
+ reg monitor_valid=0,previous_iv,previous_ir,previous_dv,previous_dr;
+ reg [31:0] previous_ia,previous_da,previous_wd;reg [3:0] previous_ws;reg previous_dw;
+ always @(posedge clk)begin
+  if(rst)monitor_valid<=0;
+  else begin
+   if(monitor_valid)begin
+    if(previous_iv&&!previous_ir)assert(iv&&ia==previous_ia)else $fatal(1,"unstable fetch request");
+    if(previous_dv&&!previous_dr)assert(dv&&da==previous_da&&wd==previous_wd&&ws==previous_ws&&dw==previous_dw)else $fatal(1,"unstable data request");
+    assert(regs[0]==0)else $fatal(1,"x0 modified");
+    if(mem_valid&&mem_trap)assert(!dv)else $fatal(1,"trapping instruction issued memory request");
+   end
+   monitor_valid<=1;previous_iv<=iv;previous_ir<=ir;previous_ia<=ia;
+   previous_dv<=dv;previous_dr<=dr;previous_da<=da;previous_wd<=wd;previous_ws<=ws;previous_dw<=dw;
+  end
+ end
+`endif
 endmodule
 
 

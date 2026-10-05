@@ -40,6 +40,11 @@ module cache_tb;
   transact(0,'h3000,0,0,0,1);transact(1,'h3000,123,15,0,1);
   @(negedge clk);invalidate=1;@(negedge clk);invalidate=0;
   transact(0,'h104,0,0,'h00bb00dd,0);if(transactions!=13)$fatal(1,"invalidate failed");
+  @(negedge clk);wait(ready);req=1;write=0;addr='h200;
+  @(negedge clk);req=0;wait(mreq&&mready);
+  @(negedge clk);invalidate=1;@(negedge clk);invalidate=0;
+  wait(response);@(negedge clk);if(rdata!='h80)$fatal(1,"invalidated refill response");
+  transact(0,'h200,0,0,'h80,0);if(transactions!=21)$fatal(1,"invalidated refill installed a line");
   $display("PASS CACHE refill/hit/strobes/bypass/errors/invalidation traffic=%0d",traffic);$finish;
  end
  initial begin #100000;$fatal(1,"cache timeout");end

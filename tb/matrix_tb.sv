@@ -4,7 +4,7 @@ module matrix_tb;
  reg clk=0,rst=1;always #5 clk=~clk;
  reg cfg_write=0;reg [7:0] cfg_addr=0;reg [31:0] cfg_data=0;wire [31:0] cfg_read;
  wire req,write,busy,done,fault,irq;wire [31:0] addr,wdata;wire [3:0] strobe;
- reg ready,response=0,error=0;reg [31:0] rdata;
+ reg ready,response=0,error=0,inject_error=0;reg [31:0] rdata;
  reg pending=0;integer wait_cycles;reg [31:0] pending_addr,pending_data;
  reg pending_write;reg [31:0] rng=32'h671abc23;
  reg [7:0] mem[0:262143];
@@ -14,6 +14,8 @@ module matrix_tb;
  always @*ready=!rst&&!pending&&(!DELAY||rng[0]);
  always @(posedge clk)begin
   clocks<=clocks+1;response<=0;rng<={rng[30:0],rng[31]^rng[21]^rng[1]^rng[0]};
+  if(rst)begin pending<=0;response<=0;error<=0;end
+  else begin
   if(req&&ready)begin
    pending<=1;pending_addr<=addr;pending_data<=wdata;pending_write<=write;
    wait_cycles<=DELAY?1+rng[5:2]%DELAY:0;
@@ -21,12 +23,13 @@ module matrix_tb;
   end
   if(pending)begin
    if(wait_cycles==0)begin
-    pending<=0;response<=1;rdata<={mem[pending_addr+3],mem[pending_addr+2],mem[pending_addr+1],mem[pending_addr]};
-    if(pending_write)begin
+    pending<=0;response<=1;error<=inject_error;rdata<={mem[pending_addr+3],mem[pending_addr+2],mem[pending_addr+1],mem[pending_addr]};
+    if(pending_write&&!inject_error)begin
      if(strobe!=15)$fatal(1,"bad store strobes");
      for(t=0;t<4;t=t+1)mem[pending_addr+t]<=pending_data[t*8+:8];
     end
    end else wait_cycles<=wait_cycles-1;
+  end
   end
   if(clocks>1000000)$fatal(1,"matrix timeout");
  end
@@ -55,6 +58,25 @@ module matrix_tb;
    cases=cases+1;cfg(0,4);if(done||irq)$fatal(1,"ack failed");
   end
   cfg('h24,0);cfg(0,1);if(!done||!fault||busy)$fatal(1,"zero dimension not rejected");
-  $display("PASS MATRIX %0d cases and invalid descriptor",cases);$finish;
+  cfg('h1c,1);cfg('h20,1);cfg('h24,1);cfg('h28,1);cfg('h2c,1);cfg('h30,4);
+  inject_error=1;cfg(0,1);wait(done);@(negedge clk);
+  if(!fault||busy||write_bytes!=0)$fatal(1,"DMA error not contained");
+  inject_error=0;
+  // Reset during operand loading, array computation, and output transfer.
+  for(q=0;q<3;q=q+1)begin
+   mem[65536]=8'h80;mem[81920]=8'h80;
+   cfg('h10,65536);cfg('h14,81920);cfg('h18,98304);
+   cfg('h1c,1);cfg('h20,1);cfg('h24,1);cfg('h28,1);cfg('h2c,1);cfg('h30,4);cfg(0,1);
+   if(q==0)wait(req&&!write);else if(q==1)wait(dut.compute_active);else wait(req&&write);
+   @(negedge clk);rst=1;repeat(2)@(negedge clk);rst=0;
+   if(busy||done||fault||irq)$fatal(1,"reset did not abort operation");
+  end
+  cfg('h10,65536);cfg('h14,81920);cfg('h18,98304);
+  cfg('h1c,1);cfg('h20,1);cfg('h24,1);cfg('h28,1);cfg('h2c,1);cfg('h30,4);cfg(0,1);
+  cfg('h10,0);cfg_addr='h10;if(cfg_read!=65536)$fatal(1,"busy config write accepted");
+  wait(done);@(negedge clk);
+  actual={mem[98307],mem[98306],mem[98305],mem[98304]};
+  if(fault||actual!=16384)$fatal(1,"post-reset recovery failed");
+  $display("PASS MATRIX %0d cases, invalid descriptor, DMA error, busy writes, three reset phases and recovery",cases);$finish;
  end
 endmodule

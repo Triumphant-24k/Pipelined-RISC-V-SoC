@@ -1,5 +1,5 @@
 {
-  "timestamp": 1791217164.9395187,
+  "timestamp": 1791217422.6793694,
   "m_vectors": 520,
   "cpu": [
     {
@@ -38,6 +38,32 @@
       "tile": 8,
       "delay": 7,
       "output": "PASS MATRIX tile=8 delay=7 shape=1x1x1 cycles=226 mac_cycles=8 reads=8 writes=4\nPASS MATRIX tile=8 delay=7 shape=4x3x8 cycles=444 mac_cycles=8 reads=76 writes=48\nPASS MATRIX tile=8 delay=7 shape=5x5x15 cycles=897 mac_cycles=16 reads=216 writes=100\nPASS MATRIX tile=8 delay=7 shape=6x7x22 cycles=1459 mac_cycles=24 reads=356 writes=168\nPASS MATRIX tile=8 delay=7 shape=7x9x29 cycles=3247 mac_cycles=64 reads=852 writes=252\nPASS MATRIX tile=8 delay=7 shape=8x11x36 cycles=4430 mac_cycles=80 reads=1248 writes=352\nPASS MATRIX 6 cases and invalid descriptor\n"
+    }
+  ],
+  "soc": [
+    {
+      "tile": 4,
+      "delay": 0,
+      "cache_lines": 16,
+      "output": "WARNING: tb/soc_tb.sv:15: $readmemh(build/soc.hex): Not enough words in the file for the requested range [0:65535].\nPASS SOC tile=4 delay=0 cache_lines=16 cycles=94092 instret=15988 transactions=3783 ihit=16104 imiss=159 dhit=503 dmiss=31\nMETRIC 0 58139\nMETRIC 1 2776\nMETRIC 2 2592\nMETRIC 3 4294967295\nMETRIC 4 4294967295\nMETRIC 5 0\nMETRIC 6 3\nMETRIC 7 1\nMETRIC 8 130\nMETRIC 9 8\nMETRIC 10 32\nMETRIC 11 12\n"
+    },
+    {
+      "tile": 4,
+      "delay": 5,
+      "cache_lines": 16,
+      "output": "WARNING: tb/soc_tb.sv:15: $readmemh(build/soc.hex): Not enough words in the file for the requested range [0:65535].\nPASS SOC tile=4 delay=5 cache_lines=16 cycles=108673 instret=16576 transactions=3783 ihit=16692 imiss=159 dhit=629 dmiss=31\nMETRIC 0 64826\nMETRIC 1 4063\nMETRIC 2 4078\nMETRIC 3 4294967295\nMETRIC 4 4294967295\nMETRIC 5 0\nMETRIC 6 3\nMETRIC 7 1\nMETRIC 8 189\nMETRIC 9 8\nMETRIC 10 32\nMETRIC 11 12\n"
+    },
+    {
+      "tile": 8,
+      "delay": 5,
+      "cache_lines": 16,
+      "output": "WARNING: tb/soc_tb.sv:15: $readmemh(build/soc.hex): Not enough words in the file for the requested range [0:65535].\nPASS SOC tile=8 delay=5 cache_lines=16 cycles=106173 instret=15865 transactions=3508 ihit=15981 imiss=159 dhit=525 dmiss=31\nMETRIC 0 64826\nMETRIC 1 2559\nMETRIC 2 2800\nMETRIC 3 4294967295\nMETRIC 4 4294967295\nMETRIC 5 0\nMETRIC 6 3\nMETRIC 7 1\nMETRIC 8 298\nMETRIC 9 8\nMETRIC 10 32\nMETRIC 11 12\n"
+    },
+    {
+      "tile": 8,
+      "delay": 5,
+      "cache_lines": 32,
+      "output": "WARNING: tb/soc_tb.sv:15: $readmemh(build/soc.hex): Not enough words in the file for the requested range [0:65535].\nPASS SOC tile=8 delay=5 cache_lines=32 cycles=105483 instret=15874 transactions=3428 ihit=16007 imiss=142 dhit=531 dmiss=28\nMETRIC 0 64886\nMETRIC 1 2524\nMETRIC 2 2715\nMETRIC 3 4294967295\nMETRIC 4 4294967295\nMETRIC 5 0\nMETRIC 6 3\nMETRIC 7 1\nMETRIC 8 280\nMETRIC 9 8\nMETRIC 10 32\nMETRIC 11 12\n"
     }
   ]
 }

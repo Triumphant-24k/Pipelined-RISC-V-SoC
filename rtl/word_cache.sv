@@ -46,7 +46,7 @@ module word_cache #(parameter integer LINES=16,WORDS=4,UNCACHED_BASE=65536)(
     end else begin
      data[sline][refill]<=mrdata;
      if(refill==sword)requested_word<=mrdata;
-     if(refill==WORDS-1)begin
+     if(refill==WB'(WORDS-1))begin
       tags[sline]<=stag;valid[sline]<=!fill_killed&&!invalidate;state<=0;response<=1;
       rdata<=refill==sword?mrdata:requested_word;
      end else begin refill<=refill+1'b1;state<=3;end

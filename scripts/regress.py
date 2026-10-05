@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Reproducible local regressions; run from the repository under Linux/WSL."""
 from pathlib import Path
-import subprocess,random,json,time
+import subprocess,random,json,time,sys
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'models'))
+from isa_reference import check_trace
 def run(args):
  p=subprocess.run(args,cwd=ROOT,text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
  print(p.stdout,end='')
@@ -36,10 +38,22 @@ def main():
  for delay,seed in [(0,1),(3,123),(7,20261005)]:
   run(['iverilog','-g2012','-s','cpu_tb',f'-Pcpu_tb.DELAY={delay}',f'-Pcpu_tb.SEED={seed}','-o','build/cpu_tb','rtl/rv32_muldiv.sv','rtl/rv32_pipeline.sv','tb/cpu_tb.sv'])
   output=run(['vvp','build/cpu_tb',f'+TRACE=build/cpu_trace_{delay}.txt'])
-  results.append({'delay':delay,'seed':seed,'output':output})
+  compared=check_trace(ROOT/'build/cpu.bin',ROOT/f'build/cpu_trace_{delay}.txt')
+  print('PASS independent retirement comparison:',compared,'instructions')
+  results.append({'delay':delay,'seed':seed,'output':output,'differential_instructions':compared})
  matrix=[]
  for tile,delay in [(4,0),(4,5),(8,0),(8,7)]:
   run(['iverilog','-g2012','-s','matrix_tb',f'-Pmatrix_tb.TILE={tile}',f'-Pmatrix_tb.DELAY={delay}','-o','build/matrix_tb','rtl/matrix_dma.sv','tb/matrix_tb.sv'])
   matrix.append({'tile':tile,'delay':delay,'output':run(['vvp','build/matrix_tb'])})
- (ROOT/'reports/regression.json').write_text(json.dumps({'timestamp':time.time(),'m_vectors':cases,'cpu':results,'matrix':matrix},indent=2))
+ run(['riscv64-unknown-elf-gcc','-march=rv32im','-mabi=ilp32','-O2','-nostdlib','-ffreestanding','-fno-builtin','-msmall-data-limit=0','-Wl,-T,firmware/link.ld','firmware/soc_start.S','firmware/soc_demo.c','-o','build/soc.elf'])
+ run(['riscv64-unknown-elf-objcopy','-O','binary','build/soc.elf','build/soc.bin'])
+ data=(ROOT/'build/soc.bin').read_bytes();data+=bytes((-len(data))%4)
+ (ROOT/'build/soc.hex').write_text(''.join(f'{int.from_bytes(data[i:i+4],"little"):08x}\n'for i in range(0,len(data),4)))
+ symbols=run(['riscv64-unknown-elf-nm','build/soc.elf'])
+ metrics_addr=next(line.split()[0]for line in symbols.splitlines()if line.endswith(' metrics'))
+ soc=[]
+ for tile,delay,lines in [(4,0,16),(4,5,16),(8,5,16),(8,5,32)]:
+  run(['iverilog','-g2012','-s','soc_tb',f'-Psoc_tb.TILE={tile}',f'-Psoc_tb.DELAY={delay}',f'-Psoc_tb.CACHE_LINES={lines}','-o','build/soc_tb',*[str(p.relative_to(ROOT))for p in (ROOT/'rtl').glob('*.sv')],'tb/soc_tb.sv'])
+  soc.append({'tile':tile,'delay':delay,'cache_lines':lines,'output':run(['vvp','build/soc_tb',f'+METRICS={metrics_addr}'])})
+ (ROOT/'reports/regression.json').write_text(json.dumps({'timestamp':time.time(),'m_vectors':cases,'cpu':results,'matrix':matrix,'soc':soc},indent=2))
 if __name__=='__main__':main()

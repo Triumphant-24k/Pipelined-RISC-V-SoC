@@ -60,9 +60,6 @@ module rv32_pipeline(
  wire [31:0] si={{20{ex_insn[31]}},ex_insn[31:25],ex_insn[11:7]};
  wire [31:0] bi={{19{ex_insn[31]}},ex_insn[31],ex_insn[7],ex_insn[30:25],ex_insn[11:8],1'b0};
  wire [31:0] ji={{11{ex_insn[31]}},ex_insn[31],ex_insn[19:12],ex_insn[20],ex_insn[30:21],1'b0};
- wire signed [63:0] product_ss=$signed(a)*$signed(b);
- wire [63:0] product_uu=a*b;
- wire signed [65:0] product_su=$signed({a[31],a})*$signed({1'b0,b});
  reg [31:0] operand,csr_operand;
  always @* begin
    csr_ok=1; csr_old=0;

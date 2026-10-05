@@ -1,21 +1,24 @@
 {
-  "timestamp": 1791217422.6793694,
+  "timestamp": 1791217796.8499253,
   "m_vectors": 520,
   "cpu": [
     {
       "delay": 0,
       "seed": 1,
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=1 delay=0 cycles=49845 retired=8176 stores=19\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=1 delay=0 cycles=49845 retired=8176 stores=19\n",
+      "differential_instructions": 8176
     },
     {
       "delay": 3,
       "seed": 123,
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=123 delay=3 cycles=71317 retired=8176 stores=19\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=123 delay=3 cycles=71317 retired=8176 stores=19\n",
+      "differential_instructions": 8176
     },
     {
       "delay": 7,
       "seed": 20261005,
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=20261005 delay=7 cycles=84997 retired=8176 stores=19\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=20261005 delay=7 cycles=84997 retired=8176 stores=19\n",
+      "differential_instructions": 8176
     }
   ],
   "matrix": [

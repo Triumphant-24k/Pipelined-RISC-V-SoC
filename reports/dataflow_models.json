@@ -1,0 +1,117 @@
+{
+  "kind": "functional and idealized traffic models, not RTL timing",
+  "experiments": [
+    {
+      "shape": [
+        7,
+        9,
+        13
+      ],
+      "tile": 4,
+      "output_stationary_operand_bytes": 507,
+      "weight_stationary_operand_bytes": 390,
+      "weight_stationary_partial_sum_bytes": 1764,
+      "timing": "not modeled"
+    },
+    {
+      "shape": [
+        7,
+        9,
+        13
+      ],
+      "tile": 8,
+      "output_stationary_operand_bytes": 299,
+      "weight_stationary_operand_bytes": 299,
+      "weight_stationary_partial_sum_bytes": 756,
+      "timing": "not modeled"
+    },
+    {
+      "shape": [
+        32,
+        32,
+        64
+      ],
+      "tile": 4,
+      "output_stationary_operand_bytes": 32768,
+      "weight_stationary_operand_bytes": 18432,
+      "weight_stationary_partial_sum_bytes": 126976,
+      "timing": "not modeled"
+    },
+    {
+      "shape": [
+        32,
+        32,
+        64
+      ],
+      "tile": 8,
+      "output_stationary_operand_bytes": 16384,
+      "weight_stationary_operand_bytes": 10240,
+      "weight_stationary_partial_sum_bytes": 61440,
+      "timing": "not modeled"
+    },
+    {
+      "shape": [
+        64,
+        8,
+        128
+      ],
+      "tile": 4,
+      "output_stationary_operand_bytes": 32768,
+      "weight_stationary_operand_bytes": 17408,
+      "weight_stationary_partial_sum_bytes": 129024,
+      "timing": "not modeled"
+    },
+    {
+      "shape": [
+        64,
+        8,
+        128
+      ],
+      "tile": 8,
+      "output_stationary_operand_bytes": 16384,
+      "weight_stationary_operand_bytes": 9216,
+      "weight_stationary_partial_sum_bytes": 63488,
+      "timing": "not modeled"
+    }
+  ],
+  "inference_reference": {
+    "conv": [
+      [
+        -40,
+        63
+      ],
+      [
+        65,
+        -39
+      ],
+      [
+        -80,
+        51
+      ],
+      [
+        -51,
+        -27
+      ]
+    ],
+    "features": [
+      0,
+      1,
+      3,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "dense": [
+      13,
+      -5,
+      -1
+    ],
+    "output": [
+      -1,
+      -1,
+      0
+    ]
+  }
+}

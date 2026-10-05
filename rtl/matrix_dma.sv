@@ -85,9 +85,9 @@ module matrix_dma #(parameter integer TILE=4)(
       if(dim_m==0||dim_n==0||dim_k==0||dim_m>256||dim_n>256||dim_k>256||
         stride_a<dim_k||stride_b<dim_n||stride_c<4*dim_n||stride_a>4096||stride_b>4096||stride_c>4096||
         base_c[1:0]!=0||stride_c[1:0]!=0||base_a<32'h10000||base_b<32'h10000||base_c<32'h10000||
-        {32'd0,base_a}+dim_m*64'(stride_a)>64'h40000||
-        {32'd0,base_b}+dim_k*64'(stride_b)>64'h40000||
-        {32'd0,base_c}+dim_m*64'(stride_c)>64'h40000||
+        {32'd0,base_a}+dim_m*{32'd0,stride_a}>64'h40000||
+        {32'd0,base_b}+dim_k*{32'd0,stride_b}>64'h40000||
+        {32'd0,base_c}+dim_m*{32'd0,stride_c}>64'h40000||
         (base_c<base_a+dim_m*stride_a&&base_a<base_c+dim_m*stride_c)||
         (base_c<base_b+dim_k*stride_b&&base_b<base_c+dim_m*stride_c))begin done<=1;fault<=1;end
       else begin
@@ -161,3 +161,4 @@ module matrix_dma #(parameter integer TILE=4)(
   end
  end
 endmodule
+

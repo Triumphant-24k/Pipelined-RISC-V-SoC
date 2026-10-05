@@ -31,7 +31,7 @@ module rv32_pipeline(
  wire irq_pending=mstatus[3] && ((mie&mip)!=0);
  wire [31:0] irq_cause=(mie[11]&&external_irq)?32'h8000000b:32'h80000007;
  wire mem_done=mem_valid && (!(mem_load||mem_write) || (dp&&(mem_sent||(dv&&dr))));
- wire mem_fault=mem_trap || ((mem_load||mem_write)&&derr&&dp);
+ wire mem_fault=mem_valid&&(mem_trap || ((mem_load||mem_write)&&derr&&dp));
  wire [31:0] load_shift=rd >> (8*mem_addr[1:0]);
  wire [31:0] load_value=mem_size==0?{{24{load_shift[7]}},load_shift[7:0]}:
    mem_size==1?{{16{load_shift[15]}},load_shift[15:0]}:

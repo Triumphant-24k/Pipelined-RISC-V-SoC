@@ -9,6 +9,8 @@ module word_cache #(parameter integer LINES=16,WORDS=4,UNCACHED_BASE=65536)(
  output reg [63:0] hits,misses,traffic
 );
  localparam LB=$clog2(LINES),WB=$clog2(WORDS),TAG=32-2-WB-LB;
+ localparam integer LAST_WORD_INT=WORDS-1;
+ localparam [WB-1:0] LAST_WORD=LAST_WORD_INT[WB-1:0];
  reg valid[0:LINES-1];reg [TAG-1:0] tags[0:LINES-1];reg [31:0] data[0:LINES-1][0:WORDS-1];
  reg [31:0] saved_addr,saved_wdata;reg [3:0] saved_strobe;reg saved_write,bypass;
  reg [2:0] state;reg [WB-1:0] refill;
@@ -46,7 +48,7 @@ module word_cache #(parameter integer LINES=16,WORDS=4,UNCACHED_BASE=65536)(
     end else begin
      data[sline][refill]<=mrdata;
      if(refill==sword)requested_word<=mrdata;
-     if(refill==WB'(WORDS-1))begin
+     if(refill==LAST_WORD)begin
       tags[sline]<=stag;valid[sline]<=!fill_killed&&!invalidate;state<=0;response<=1;
       rdata<=refill==sword?mrdata:requested_word;
      end else begin refill<=refill+1'b1;state<=3;end

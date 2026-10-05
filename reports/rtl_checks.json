@@ -1,0 +1,12 @@
+{
+  "timestamp": 1791217940.4950552,
+  "lint": "pass",
+  "generic_synthesis": "pass",
+  "formal": {
+    "component": "bus_arbiter",
+    "depth": 25,
+    "status": "pass",
+    "scope": "bounded safety under stable stalled master requests; no liveness or CPU proof"
+  },
+  "physical_implementation": "not run"
+}

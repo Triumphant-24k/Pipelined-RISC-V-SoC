@@ -14,6 +14,11 @@ def main():
  passes=[r['test']for r in arch['results']if r['status']=='pass']
  text=f'''# Verification report
 
+![Terminal evidence of successful bounded SAT proof and passing kernel comparisons](../docs/images/regression-passed.png)
+
+See [screenshot context and reproduction command](../docs/VERIFICATION.md).
+The screenshot captures part of the passing run, before the final command exit.
+
 The project regression passed {regression['m_vectors']} independently generated
 multiply/divide vectors under three memory-delay configurations. Each CPU run
 also passed an independent retirement-model comparison of

@@ -5,6 +5,19 @@ tiled INT8 GEMM accelerator. Bare-metal firmware demonstrates software/DMA
 GEMM, interrupts, and a complete small convolution/dense inference workload.
 No routed PPA or SRAM macro implementation is claimed.
 
+## Regression status: passed
+
+The local regression passed: 520 multiply/divide vectors, independent CPU
+retirement comparisons, 49 architectural programs, component and SoC tests,
+lint, generic synthesis, and a 25-cycle bounded arbiter safety proof.
+See [verification evidence](docs/VERIFICATION.md) and the
+[generated verification report](reports/VERIFICATION.md) for scope and results.
+
+![Local regression terminal showing SAT proof success and passing kernel comparisons](docs/images/regression-passed.png)
+
+The screenshot captures the successful bounded SAT proof and passing baseline
+kernel comparisons during `make all`; it does not show the final command exit.
+
 See `docs/PROGRESS.md` for the completion matrix and `docs/ARCHITECTURE.md` for
 ISA limitations, protocol contracts, arithmetic, memory map, and registers.
 
@@ -13,7 +26,7 @@ ISA limitations, protocol contracts, arithmetic, memory map, and registers.
 From PowerShell in this directory, using Ubuntu-22.04 WSL:
 
 ```powershell
-.\scripts\run.ps1 -Target all
+wsl -d Ubuntu-22.04 --cd "C:\Users\Trium\OneDrive\Desktop\IMP\Pipelined RISC-V SoC" -- make all
 ```
 
 This cross-compiles firmware and runs CPU differential tests, directed traps,

@@ -1,5 +1,10 @@
 # Verification report
 
+![Terminal evidence of successful bounded SAT proof and passing kernel comparisons](../docs/images/regression-passed.png)
+
+See [screenshot context and reproduction command](../docs/VERIFICATION.md).
+The screenshot captures part of the passing run, before the final command exit.
+
 The project regression passed 520 independently generated
 multiply/divide vectors under three memory-delay configurations. Each CPU run
 also passed an independent retirement-model comparison of

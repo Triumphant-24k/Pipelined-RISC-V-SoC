@@ -1,0 +1,5 @@
+build/
+baseline/build/
+baseline/work/
+__pycache__/
+*.vcd

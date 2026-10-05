@@ -1,0 +1,43 @@
+{
+  "timestamp": 1791217164.9395187,
+  "m_vectors": 520,
+  "cpu": [
+    {
+      "delay": 0,
+      "seed": 1,
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=1 delay=0 cycles=49845 retired=8176 stores=19\n"
+    },
+    {
+      "delay": 3,
+      "seed": 123,
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=123 delay=3 cycles=71317 retired=8176 stores=19\n"
+    },
+    {
+      "delay": 7,
+      "seed": 20261005,
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/cpu.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=20261005 delay=7 cycles=84997 retired=8176 stores=19\n"
+    }
+  ],
+  "matrix": [
+    {
+      "tile": 4,
+      "delay": 0,
+      "output": "PASS MATRIX tile=4 delay=0 shape=1x1x1 cycles=62 mac_cycles=4 reads=8 writes=4\nPASS MATRIX tile=4 delay=0 shape=4x3x8 cycles=188 mac_cycles=8 reads=88 writes=48\nPASS MATRIX tile=4 delay=0 shape=5x5x15 cycles=1073 mac_cycles=64 reads=520 writes=100\nPASS MATRIX tile=4 delay=0 shape=6x7x22 cycles=1604 mac_cycles=96 reads=808 writes=168\nPASS MATRIX tile=4 delay=0 shape=7x9x29 cycles=3087 mac_cycles=192 reads=1592 writes=252\nPASS MATRIX tile=4 delay=0 shape=8x11x36 cycles=3948 mac_cycles=216 reads=2376 writes=352\nPASS MATRIX 6 cases and invalid descriptor\n"
+    },
+    {
+      "tile": 4,
+      "delay": 5,
+      "output": "PASS MATRIX tile=4 delay=5 shape=1x1x1 cycles=75 mac_cycles=4 reads=8 writes=4\nPASS MATRIX tile=4 delay=5 shape=4x3x8 cycles=329 mac_cycles=8 reads=88 writes=48\nPASS MATRIX tile=4 delay=5 shape=5x5x15 cycles=1709 mac_cycles=64 reads=520 writes=100\nPASS MATRIX tile=4 delay=5 shape=6x7x22 cycles=2508 mac_cycles=96 reads=808 writes=168\nPASS MATRIX tile=4 delay=5 shape=7x9x29 cycles=4764 mac_cycles=192 reads=1592 writes=252\nPASS MATRIX tile=4 delay=5 shape=8x11x36 cycles=6509 mac_cycles=216 reads=2376 writes=352\nPASS MATRIX 6 cases and invalid descriptor\n"
+    },
+    {
+      "tile": 8,
+      "delay": 0,
+      "output": "PASS MATRIX tile=8 delay=0 shape=1x1x1 cycles=210 mac_cycles=8 reads=8 writes=4\nPASS MATRIX tile=8 delay=0 shape=4x3x8 cycles=294 mac_cycles=8 reads=76 writes=48\nPASS MATRIX tile=8 delay=0 shape=5x5x15 cycles=567 mac_cycles=16 reads=216 writes=100\nPASS MATRIX tile=8 delay=0 shape=6x7x22 cycles=852 mac_cycles=24 reads=356 writes=168\nPASS MATRIX tile=8 delay=0 shape=7x9x29 cycles=2004 mac_cycles=64 reads=852 writes=252\nPASS MATRIX tile=8 delay=0 shape=8x11x36 cycles=2634 mac_cycles=80 reads=1248 writes=352\nPASS MATRIX 6 cases and invalid descriptor\n"
+    },
+    {
+      "tile": 8,
+      "delay": 7,
+      "output": "PASS MATRIX tile=8 delay=7 shape=1x1x1 cycles=226 mac_cycles=8 reads=8 writes=4\nPASS MATRIX tile=8 delay=7 shape=4x3x8 cycles=444 mac_cycles=8 reads=76 writes=48\nPASS MATRIX tile=8 delay=7 shape=5x5x15 cycles=897 mac_cycles=16 reads=216 writes=100\nPASS MATRIX tile=8 delay=7 shape=6x7x22 cycles=1459 mac_cycles=24 reads=356 writes=168\nPASS MATRIX tile=8 delay=7 shape=7x9x29 cycles=3247 mac_cycles=64 reads=852 writes=252\nPASS MATRIX tile=8 delay=7 shape=8x11x36 cycles=4430 mac_cycles=80 reads=1248 writes=352\nPASS MATRIX 6 cases and invalid descriptor\n"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // External memory port allows an SRAM wrapper or a latency/bandwidth simulation model.
-module pipelined_soc #(parameter integer TILE=4,CACHE_LINES=16,CACHE_WORDS=4)(
+module pipelined_soc #(parameter integer TILE=4,PANEL_K=TILE,CACHE_LINES=16,CACHE_WORDS=4)(
  input wire clk,rst,output wire req,input wire ready,output wire write,
  output wire [31:0] addr,wdata,output wire [3:0] strobe,
  input wire response,input wire [31:0] rdata,input wire error,
@@ -39,7 +39,7 @@ module pipelined_soc #(parameter integer TILE=4,CACHE_LINES=16,CACHE_WORDS=4)(
   .req(dv),.ready(dr),.write(dw),.addr(da),.wdata(wd),.strobe(ws),.response(dp),.rdata(rd),.error(de),
   .mreq(br[1]),.mready(bready[1]),.mwrite(bwrite[1]),.maddr(ba[63:32]),.mwdata(bwd[63:32]),.mstrobe(bws[7:4]),
   .mresponse(bresponse[1]),.mrdata(brd[63:32]),.merror(berror[1]),.hits(dc_hits),.misses(dc_misses),.traffic());
- matrix_dma #(.TILE(TILE)) accelerator(.clk(clk),.rst(rst),.cfg_write(io_accept&&is_acc&&xwrite&&io_legal),
+ matrix_dma #(.TILE(TILE),.PANEL_K(PANEL_K)) accelerator(.clk(clk),.rst(rst),.cfg_write(io_accept&&is_acc&&xwrite&&io_legal),
   .cfg_addr(xaddr[7:0]),.cfg_data(xwdata),.cfg_read(cfg_read),
   .req(br[2]),.ready(bready[2]),.write(bwrite[2]),.addr(ba[95:64]),.wdata(bwd[95:64]),.strobe(bws[11:8]),
   .response(bresponse[2]),.rdata(brd[95:64]),.error(berror[2]),.busy(acc_busy),.done(acc_done),.fault(acc_fault),
@@ -65,3 +65,4 @@ module pipelined_soc #(parameter integer TILE=4,CACHE_LINES=16,CACHE_WORDS=4)(
   end
  end
 endmodule
+

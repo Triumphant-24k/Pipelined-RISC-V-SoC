@@ -11,6 +11,10 @@ def run(args):
  if p.returncode:raise RuntimeError(f'failed: {args}')
  return p.stdout
 def signed(x):return x-(1<<32) if x&(1<<31) else x
+def hex_image(name):
+ run(['riscv64-unknown-elf-objcopy','-O','binary',f'build/{name}.elf',f'build/{name}.bin'])
+ data=(ROOT/f'build/{name}.bin').read_bytes();data+=bytes((-len(data))%4)
+ (ROOT/f'build/{name}.hex').write_text(''.join(f'{int.from_bytes(data[i:i+4],"little"):08x}\n'for i in range(0,len(data),4)))
 def mref(a,b,op):
  sa,sb=signed(a),signed(b)
  if op<4:
@@ -35,6 +39,14 @@ def build_cpu():
 def main():
  (ROOT/'build').mkdir(exist_ok=True)
  cases=build_cpu();results=[]
+ unit=[]
+ for name,rtl in [('cache','word_cache'),('axi','axi_lite_adapter')]:
+  run(['iverilog','-g2012','-s',f'{name}_tb','-o',f'build/{name}_tb',f'rtl/{rtl}.sv',f'tb/{name}_tb.sv'])
+  unit.append({'unit':name,'output':run(['vvp',f'build/{name}_tb'])})
+ run(['riscv64-unknown-elf-gcc','-march=rv32im','-mabi=ilp32','-nostdlib','-Wl,-T,firmware/link.ld','firmware/trap_test.S','-o','build/traps.elf'])
+ hex_image('traps')
+ run(['iverilog','-g2012','-s','cpu_tb','-Pcpu_tb.DELAY=5','-Pcpu_tb.FAULTS=1','-o','build/traps_tb','rtl/rv32_pipeline.sv','rtl/rv32_muldiv.sv','tb/cpu_tb.sv'])
+ unit.append({'unit':'precise_traps','output':run(['vvp','build/traps_tb','+IMAGE=build/traps.hex','+TRACE=build/traps.trace'])})
  for delay,seed in [(0,1),(3,123),(7,20261005)]:
   run(['iverilog','-g2012','-s','cpu_tb',f'-Pcpu_tb.DELAY={delay}',f'-Pcpu_tb.SEED={seed}','-o','build/cpu_tb','rtl/rv32_muldiv.sv','rtl/rv32_pipeline.sv','tb/cpu_tb.sv'])
   output=run(['vvp','build/cpu_tb',f'+TRACE=build/cpu_trace_{delay}.txt'])
@@ -52,8 +64,15 @@ def main():
  symbols=run(['riscv64-unknown-elf-nm','build/soc.elf'])
  metrics_addr=next(line.split()[0]for line in symbols.splitlines()if line.endswith(' metrics'))
  soc=[]
- for tile,delay,lines in [(4,0,16),(4,5,16),(8,5,16),(8,5,32)]:
-  run(['iverilog','-g2012','-s','soc_tb',f'-Psoc_tb.TILE={tile}',f'-Psoc_tb.DELAY={delay}',f'-Psoc_tb.CACHE_LINES={lines}','-o','build/soc_tb',*[str(p.relative_to(ROOT))for p in (ROOT/'rtl').glob('*.sv')],'tb/soc_tb.sv'])
-  soc.append({'tile':tile,'delay':delay,'cache_lines':lines,'output':run(['vvp','build/soc_tb',f'+METRICS={metrics_addr}'])})
- (ROOT/'reports/regression.json').write_text(json.dumps({'timestamp':time.time(),'m_vectors':cases,'cpu':results,'matrix':matrix,'soc':soc},indent=2))
+ for tile,delay,lines,panel in [(4,0,16,4),(4,5,16,4),(8,5,16,8),(8,5,32,8),(8,5,16,16),(4,9,16,8)]:
+  run(['iverilog','-g2012','-s','soc_tb',f'-Psoc_tb.TILE={tile}',f'-Psoc_tb.DELAY={delay}',f'-Psoc_tb.CACHE_LINES={lines}',f'-Psoc_tb.PANEL_K={panel}','-o','build/soc_tb',*[str(p.relative_to(ROOT))for p in (ROOT/'rtl').glob('*.sv')],'tb/soc_tb.sv'])
+  output=run(['vvp','build/soc_tb',f'+METRICS={metrics_addr}'])
+  from dataflows import inference
+  metrics={int(row.split()[1]):int(row.split()[2])for row in output.splitlines()if row.startswith('METRIC ')}
+  assert [signed(metrics[i])for i in (3,4,5)]==inference()['output']
+  soc.append({'tile':tile,'panel_k':panel,'scratchpad_bytes':4*tile*panel,'accumulator_bytes':4*tile*tile,'delay':delay,'cache_lines':lines,'metrics':metrics,'output':output})
+ run(['riscv64-unknown-elf-gcc','-march=rv32im','-mabi=ilp32','-nostdlib','-Wl,-T,firmware/link.ld','-DEXIT_ADDR=0x40000200','-Iverification/env','-Iverification/riscv-tests/isa/macros/scalar','verification/riscv-tests/isa/rv32ui/fence_i.S','-o','build/fence.elf'])
+ hex_image('fence')
+ unit.append({'unit':'cached_self_modifying_code','output':run(['vvp','build/soc_tb','+IMAGE=build/fence.hex','+METRICS=0'])})
+ (ROOT/'reports/regression.json').write_text(json.dumps({'timestamp':time.time(),'m_vectors':cases,'unit':unit,'cpu':results,'matrix':matrix,'soc':soc},indent=2))
 if __name__=='__main__':main()

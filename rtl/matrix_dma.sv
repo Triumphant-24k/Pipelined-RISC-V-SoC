@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Output-stationary TILE x TILE MAC array, ping-pong A/B panels, autonomous DMA.
-module matrix_dma #(parameter integer TILE=4)(
+module matrix_dma #(parameter integer TILE=4,PANEL_K=TILE)(
  input wire clk,rst,input wire cfg_write,input wire [7:0] cfg_addr,
  input wire [31:0] cfg_data,output reg [31:0] cfg_read,
  output wire req,input wire ready,output wire write,
@@ -11,8 +11,8 @@ module matrix_dma #(parameter integer TILE=4)(
 );
  reg [31:0] base_a,base_b,base_c,dim_m,dim_n,dim_k,stride_a,stride_b,stride_c;
  reg irq_enable;
- reg signed [7:0] bank_a[0:1][0:TILE-1][0:TILE-1];
- reg signed [7:0] bank_b[0:1][0:TILE-1][0:TILE-1];
+ reg signed [7:0] bank_a[0:1][0:TILE-1][0:PANEL_K-1];
+ reg signed [7:0] bank_b[0:1][0:PANEL_K-1][0:TILE-1];
  reg signed [31:0] accum[0:TILE-1][0:TILE-1];
  reg [1:0] panel_ready;
  reg active_bank,load_bank,compute_active;
@@ -50,9 +50,9 @@ module matrix_dma #(parameter integer TILE=4)(
  end
  task advance_load;
  begin
-  if(load_j==TILE-1)begin
+  if(load_j==(loader==1?PANEL_K:TILE)-1)begin
    load_j<=0;
-   if(load_i==TILE-1)begin
+   if(load_i==(loader==1?TILE:PANEL_K)-1)begin
     load_i<=0;
     if(loader==1)loader<=2;
     else begin loader<=0;panel_ready[load_bank]<=1;end
@@ -143,22 +143,23 @@ module matrix_dma #(parameter integer TILE=4)(
     if(!storing&&!compute_active&&panel_ready[active_bank])begin
      compute_active<=1;compute_step<=0;panel_ready[active_bank]<=0;
      // Start loading the next K panel into the other bank while the array computes.
-     if(compute_k+TILE<dim_k)begin
-      load_bank<=!active_bank;load_k<=compute_k+TILE;load_i<=0;load_j<=0;loader<=1;
+     if(compute_k+PANEL_K<dim_k)begin
+      load_bank<=!active_bank;load_k<=compute_k+PANEL_K;load_i<=0;load_j<=0;loader<=1;
      end
     end
     if(compute_active)begin
      mac_cycles<=mac_cycles+1;
      for(i=0;i<TILE;i=i+1)for(j=0;j<TILE;j=j+1)
       accum[i][j]<=accum[i][j]+$signed(bank_a[active_bank][i][compute_step])*$signed(bank_b[active_bank][compute_step][j]);
-     if(compute_step==TILE-1)begin
+     if(compute_step==PANEL_K-1)begin
       compute_active<=0;
-      if(compute_k+TILE>=dim_k)begin storing<=1;store_i<=0;store_j<=0;end
-      else begin compute_k<=compute_k+TILE;active_bank<=!active_bank;end
+      if(compute_k+PANEL_K>=dim_k)begin storing<=1;store_i<=0;store_j<=0;end
+      else begin compute_k<=compute_k+PANEL_K;active_bank<=!active_bank;end
      end else compute_step<=compute_step+1;
     end
    end
   end
  end
 endmodule
+
 

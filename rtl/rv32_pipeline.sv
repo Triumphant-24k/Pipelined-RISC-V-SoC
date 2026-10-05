@@ -20,6 +20,9 @@ module rv32_pipeline(
  reg [31:0] mem_pc,mem_insn,mem_result,mem_addr,mem_store,mem_cause,mem_tval;
  reg [4:0] mem_rd,wb_rd;
  reg [31:0] wb_value;
+ reg [31:0] wb_pc,wb_insn,wb_csrvalue;
+ reg wb_regwrite,wb_csrwrite,wb_mret,wb_fencei;
+ reg [11:0] wb_csraddr;
  reg mem_write,mem_load,mem_regwrite,mem_trap,mem_sent;
  reg [2:0] mem_size;
  reg [3:0] mem_strobe;
@@ -42,15 +45,16 @@ module rv32_pipeline(
  wire is_m=ex_insn[6:0]==7'h33&&ex_insn[31:25]==1;
  wire md_busy,md_done;
  wire [31:0] md_result;
- wire ex_go=ex_valid && (!mem_valid||mem_done) && !(mem_done&&mem_fault) && !(serial_ex&&mem_valid) && (!is_m||md_done);
+ wire wb_serial=wb_valid&&(wb_csrwrite||wb_mret||wb_fencei);
+ wire ex_go=ex_valid && (!mem_valid||mem_done) && !(mem_done&&mem_fault) && !(serial_ex&&(mem_valid||wb_valid)) && !wb_serial && (!is_m||md_done);
  rv32_muldiv md(.clk(clk),.rst(rst||(mem_done&&mem_fault)),
   .start(ex_valid&&is_m&&!md_busy&&!md_done&&(!mem_valid||mem_done)&&!mem_fault),.consume(ex_go&&is_m),
   .op(ex_insn[14:12]),.a(a),.b(b),.busy(md_busy),.done(md_done),.result(md_result));
  wire [4:0] ex_rs1=ex_insn[19:15],ex_rs2=ex_insn[24:20];
  wire [31:0] a=(mem_valid&&mem_regwrite&&!mem_fault&&mem_rd!=0&&mem_rd==ex_rs1&&(!mem_load||mem_done))?mem_value:
-   (wb_valid&&wb_rd!=0&&wb_rd==ex_rs1)?wb_value:ex_a;
+   (wb_valid&&wb_regwrite&&wb_rd!=0&&wb_rd==ex_rs1)?wb_value:ex_a;
  wire [31:0] b=(mem_valid&&mem_regwrite&&!mem_fault&&mem_rd!=0&&mem_rd==ex_rs2&&(!mem_load||mem_done))?mem_value:
-   (wb_valid&&wb_rd!=0&&wb_rd==ex_rs2)?wb_value:ex_b;
+   (wb_valid&&wb_regwrite&&wb_rd!=0&&wb_rd==ex_rs2)?wb_value:ex_b;
  reg [31:0] result,address,store_data,next_pc,tval,csr_old,csr_new;
  reg [31:0] cause;
  reg regwrite,isload,isstore,illegal,taken,exception,csrwrite,is_mret,is_fencei,csr_ok;
@@ -176,7 +180,11 @@ module rv32_pipeline(
    if(mem_valid&&(mem_load||mem_write)&&!mem_done)data_wait_cycles<=data_wait_cycles+1;
    if(ex_valid&&!ex_go)execute_wait_cycles<=execute_wait_cycles+1;
    if(ex_redirect)redirects<=redirects+1;
-   if(!fetch_pending&&!fetch_queued&&!id_valid&&!irq_pending&&!ex_redirect&&!(mem_done&&mem_fault))begin
+   // Refill the request slot as a response is consumed, only when EX will
+   // leave ID free for the following response. This retains one reserved slot.
+   if(!fetch_queued&&(!fetch_pending||(ip&&fetch_pending))&&
+      ((!ip&&(!id_valid||id_go))||(ip&&!id_valid&&(!ex_valid||ex_go)))&&
+      !irq_pending&&!ex_redirect&&!(mem_done&&mem_fault)&&!(mem_valid&&mem_fencei)&&!(wb_valid&&wb_fencei)&&!fence_i)begin
     fetch_queued<=1;fetch_addr<=fetch_pc;fetch_pc<=fetch_pc+4;fetch_killed<=0;
    end
    if(fetch_accept)begin fetch_pending<=1;fetch_queued<=0;end
@@ -190,31 +198,37 @@ module rv32_pipeline(
     id_valid<=0;ex_valid<=1;ex_pc<=id_pc;ex_insn<=id_insn;ex_error<=id_error;
     ex_a<=id_insn[19:15]==0?0:
       (ex_go&&regwrite&&ex_insn[11:7]==id_insn[19:15])?result:
-      (mem_valid&&mem_regwrite&&!mem_fault&&mem_rd==id_insn[19:15]&&(!mem_load||mem_done))?mem_value:regs[id_insn[19:15]];
+      (mem_valid&&mem_regwrite&&!mem_fault&&mem_rd==id_insn[19:15]&&(!mem_load||mem_done))?mem_value:
+      (wb_valid&&wb_regwrite&&wb_rd==id_insn[19:15])?wb_value:regs[id_insn[19:15]];
     ex_b<=id_insn[24:20]==0?0:
       (ex_go&&regwrite&&ex_insn[11:7]==id_insn[24:20])?result:
-      (mem_valid&&mem_regwrite&&!mem_fault&&mem_rd==id_insn[24:20]&&(!mem_load||mem_done))?mem_value:regs[id_insn[24:20]];
+      (mem_valid&&mem_regwrite&&!mem_fault&&mem_rd==id_insn[24:20]&&(!mem_load||mem_done))?mem_value:
+      (wb_valid&&wb_regwrite&&wb_rd==id_insn[24:20])?wb_value:regs[id_insn[24:20]];
    end
    if(dv&&dr)mem_sent<=1;
+   if(wb_valid)begin
+    retire_valid<=1;retire_pc<=wb_pc;retire_insn<=wb_insn;
+    retire_rd<=wb_regwrite?wb_rd:0;retire_value<=wb_value;instret<=instret+1;
+    if(wb_regwrite&&wb_rd!=0)regs[wb_rd]<=wb_value;
+    if(wb_csrwrite)case(wb_csraddr)
+     12'h300:mstatus<=(wb_csrvalue&32'h88)|32'h1800;
+     12'h304:mie<=wb_csrvalue&32'h880;
+     12'h305:mtvec<={wb_csrvalue[31:2],1'b0,wb_csrvalue[0]};12'h340:mscratch<=wb_csrvalue;
+     12'h341:mepc<={wb_csrvalue[31:2],2'd0};12'h342:mcause<=wb_csrvalue;12'h343:mtval<=wb_csrvalue;
+     12'hb00:cycles[31:0]<=wb_csrvalue;12'hb80:cycles[63:32]<=wb_csrvalue;
+     12'hb02:instret[31:0]<=wb_csrvalue;12'hb82:instret[63:32]<=wb_csrvalue;
+     default:begin end
+    endcase
+    if(wb_mret)begin mstatus[3]<=mstatus[7];mstatus[7]<=1;mstatus[12:11]<=3;end
+    if(wb_fencei)fence_i<=1;
+   end
    if(mem_done)begin
     mem_valid<=0;mem_sent<=0;
     if(mem_fault)enter_trap(mem_pc,mem_trap?mem_cause:mem_write?7:5,mem_trap?mem_tval:mem_addr);
     else begin
-     retire_valid<=1;retire_pc<=mem_pc;retire_insn<=mem_insn;
-     retire_rd<=mem_regwrite?mem_rd:0;retire_value<=mem_value;instret<=instret+1;
-     wb_valid<=mem_regwrite;wb_rd<=mem_rd;wb_value<=mem_value;
-     if(mem_regwrite&&mem_rd!=0)regs[mem_rd]<=mem_value;
-     if(mem_csrwrite)case(mem_csraddr)
-      12'h300:mstatus<=(mem_csrvalue&32'h88)|32'h1800;
-      12'h304:mie<=mem_csrvalue&32'h880;
-      12'h305:mtvec<={mem_csrvalue[31:2],1'b0,mem_csrvalue[0]};12'h340:mscratch<=mem_csrvalue;
-      12'h341:mepc<={mem_csrvalue[31:2],2'd0};12'h342:mcause<=mem_csrvalue;12'h343:mtval<=mem_csrvalue;
-      12'hb00:cycles[31:0]<=mem_csrvalue;12'hb80:cycles[63:32]<=mem_csrvalue;
-      12'hb02:instret[31:0]<=mem_csrvalue;12'hb82:instret[63:32]<=mem_csrvalue;
-      default:begin end
-     endcase
-     if(mem_mret)begin mstatus[3]<=mstatus[7];mstatus[7]<=1;mstatus[12:11]<=3;end
-     if(mem_fencei)fence_i<=1;
+     wb_valid<=1;wb_regwrite<=mem_regwrite;wb_rd<=mem_rd;wb_value<=mem_value;
+     wb_pc<=mem_pc;wb_insn<=mem_insn;wb_csrwrite<=mem_csrwrite;wb_csraddr<=mem_csraddr;wb_csrvalue<=mem_csrvalue;
+     wb_mret<=mem_mret;wb_fencei<=mem_fencei;
     end
    end
    if(ex_go)begin
@@ -230,7 +244,7 @@ module rv32_pipeline(
      fetch_pc<=exception?ex_pc:next_pc;
     end
    end
-   if(irq_pending&&!id_valid&&!ex_valid&&!mem_valid&&!fetch_pending&&!fetch_queued)
+   if(irq_pending&&!id_valid&&!ex_valid&&!mem_valid&&!wb_valid&&!fetch_pending&&!fetch_queued)
      enter_trap(fetch_pc,irq_cause,0);
   end
  end

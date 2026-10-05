@@ -23,33 +23,33 @@
       "cpu": "new pipeline running RV32I",
       "cache": "none",
       "delay": 0,
-      "kernel_cycles": 540035,
+      "kernel_cycles": 371361,
       "hash": "2e60bc73",
-      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_1.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=0 clocks=804940 kernel_cycles=540035 hash=2e60bc73\n"
+      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_1.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=0 clocks=562536 kernel_cycles=371361 hash=2e60bc73\n"
     },
     {
       "cpu": "new pipeline running RV32I",
       "cache": "none",
       "delay": 5,
-      "kernel_cycles": 938953,
+      "kernel_cycles": 850609,
       "hash": "2e60bc73",
-      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_1.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=5 clocks=1397387 kernel_cycles=938953 hash=2e60bc73\n"
+      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_1.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=5 clocks=1289779 kernel_cycles=850609 hash=2e60bc73\n"
     },
     {
       "cpu": "new RV32IM pipeline",
       "cache": "none",
       "delay": 0,
-      "kernel_cycles": 72029,
+      "kernel_cycles": 57138,
       "hash": "2e60bc73",
-      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_2.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=0 clocks=88682 kernel_cycles=72029 hash=2e60bc73\n"
+      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_2.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=0 clocks=70817 kernel_cycles=57138 hash=2e60bc73\n"
     },
     {
       "cpu": "new RV32IM pipeline",
       "cache": "none",
       "delay": 5,
-      "kernel_cycles": 105566,
+      "kernel_cycles": 94397,
       "hash": "2e60bc73",
-      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_2.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=5 clocks=129748 kernel_cycles=105566 hash=2e60bc73\n"
+      "output": "WARNING: tb/kernel_tb.sv:26: $readmemh(build/kernel_2.hex): Not enough words in the file for the requested range [0:65535].\nPASS KERNEL pipeline=1 delay=5 clocks=116487 kernel_cycles=94397 hash=2e60bc73\n"
     }
   ]
 }

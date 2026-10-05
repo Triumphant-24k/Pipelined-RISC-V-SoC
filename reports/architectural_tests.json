@@ -1,112 +1,112 @@
 {
   "suite": "riscv-tests; adapted bare-metal environment, not certification",
   "source_commit": "bcffa2b3188b040c611f90dc0b6e422f54775a09",
-  "timestamp": 1791219467.0207448,
+  "timestamp": 1791220274.7570179,
   "results": [
     {
       "test": "rv32ui-add",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3626 retired=427 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2868 retired=427 stores=0\n"
     },
     {
       "test": "rv32ui-addi",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1740 retired=204 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1348 retired=204 stores=0\n"
     },
     {
       "test": "rv32ui-and",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3787 retired=447 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2992 retired=447 stores=0\n"
     },
     {
       "test": "rv32ui-andi",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1377 retired=160 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1067 retired=160 stores=0\n"
     },
     {
       "test": "rv32ui-auipc",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=193 retired=20 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=148 retired=20 stores=0\n"
     },
     {
       "test": "rv32ui-beq",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2203 retired=253 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1810 retired=253 stores=0\n"
     },
     {
       "test": "rv32ui-bge",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2375 retired=271 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1987 retired=271 stores=0\n"
     },
     {
       "test": "rv32ui-bgeu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2571 retired=296 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2163 retired=296 stores=0\n"
     },
     {
       "test": "rv32ui-blt",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2203 retired=253 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1810 retired=253 stores=0\n"
     },
     {
       "test": "rv32ui-bltu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2396 retired=278 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1972 retired=278 stores=0\n"
     },
     {
       "test": "rv32ui-bne",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2203 retired=253 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1818 retired=253 stores=0\n"
     },
     {
       "test": "rv32ui-fence_i",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2200 retired=243 stores=4\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2285 retired=243 stores=4\n"
     },
     {
       "test": "rv32ui-jal",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=179 retired=17 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=134 retired=17 stores=0\n"
     },
     {
       "test": "rv32ui-jalr",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=686 retired=77 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=577 retired=77 stores=0\n"
     },
     {
       "test": "rv32ui-lb",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1612 retired=191 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1269 retired=191 stores=0\n"
     },
     {
       "test": "rv32ui-lbu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1612 retired=191 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1269 retired=191 stores=0\n"
     },
     {
       "test": "rv32ui-ld_st",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=7914 retired=925 stores=193\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=6070 retired=925 stores=193\n"
     },
     {
       "test": "rv32ui-lh",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1776 retired=207 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1373 retired=207 stores=0\n"
     },
     {
       "test": "rv32ui-lhu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1830 retired=216 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1437 retired=216 stores=0\n"
     },
     {
       "test": "rv32ui-lui",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=263 retired=27 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=179 retired=27 stores=0\n"
     },
     {
       "test": "rv32ui-lw",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1872 retired=221 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1476 retired=221 stores=0\n"
     },
     {
       "test": "rv32ui-ma_data",
@@ -116,142 +116,142 @@
     {
       "test": "rv32ui-or",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3822 retired=450 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3011 retired=450 stores=0\n"
     },
     {
       "test": "rv32ui-ori",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1445 retired=167 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1118 retired=167 stores=0\n"
     },
     {
       "test": "rv32ui-sb",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3236 retired=380 stores=35\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2610 retired=380 stores=35\n"
     },
     {
       "test": "rv32ui-sh",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3708 retired=433 stores=35\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2958 retired=433 stores=35\n"
     },
     {
       "test": "rv32ui-simple",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=41 retired=3 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=31 retired=3 stores=0\n"
     },
     {
       "test": "rv32ui-sll",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3855 retired=455 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3054 retired=455 stores=0\n"
     },
     {
       "test": "rv32ui-slli",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1727 retired=203 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1341 retired=203 stores=0\n"
     },
     {
       "test": "rv32ui-slt",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3596 retired=421 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2827 retired=421 stores=0\n"
     },
     {
       "test": "rv32ui-slti",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1706 retired=199 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1321 retired=199 stores=0\n"
     },
     {
       "test": "rv32ui-sltiu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1706 retired=199 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1321 retired=199 stores=0\n"
     },
     {
       "test": "rv32ui-sltu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3596 retired=421 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2827 retired=421 stores=0\n"
     },
     {
       "test": "rv32ui-sra",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4035 retired=474 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3177 retired=474 stores=0\n"
     },
     {
       "test": "rv32ui-srai",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1862 retired=218 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1452 retired=218 stores=0\n"
     },
     {
       "test": "rv32ui-srl",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3983 retired=468 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3138 retired=468 stores=0\n"
     },
     {
       "test": "rv32ui-srli",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1804 retired=212 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1411 retired=212 stores=0\n"
     },
     {
       "test": "rv32ui-st_ld",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3373 retired=396 stores=49\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2595 retired=396 stores=49\n"
     },
     {
       "test": "rv32ui-sub",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3586 retired=419 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=2820 retired=419 stores=0\n"
     },
     {
       "test": "rv32ui-sw",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3750 retired=441 stores=34\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3000 retired=441 stores=34\n"
     },
     {
       "test": "rv32ui-xor",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3813 retired=449 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=3004 retired=449 stores=0\n"
     },
     {
       "test": "rv32ui-xori",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1445 retired=169 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=1133 retired=169 stores=0\n"
     },
     {
       "test": "rv32um-div",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=737 retired=58 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=645 retired=58 stores=0\n"
     },
     {
       "test": "rv32um-divu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=753 retired=59 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=645 retired=59 stores=0\n"
     },
     {
       "test": "rv32um-mul",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4888 retired=421 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4313 retired=421 stores=0\n"
     },
     {
       "test": "rv32um-mulh",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4863 retired=421 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4210 retired=421 stores=0\n"
     },
     {
       "test": "rv32um-mulhsu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4863 retired=421 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4210 retired=421 stores=0\n"
     },
     {
       "test": "rv32um-mulhu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4863 retired=421 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=4210 retired=421 stores=0\n"
     },
     {
       "test": "rv32um-rem",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=737 retired=58 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=645 retired=58 stores=0\n"
     },
     {
       "test": "rv32um-remu",
       "status": "pass",
-      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=737 retired=58 stores=0\n"
+      "output": "WARNING: tb/cpu_tb.sv:23: $readmemh(build/arch.hex): Not enough words in the file for the requested range [0:65535].\nPASS CPU seed=371 delay=5 cycles=645 retired=58 stores=0\n"
     }
   ]
 }

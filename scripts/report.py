@@ -70,6 +70,9 @@ and share reset with the interconnect. SRAM macro integration remains external.
  table='| Tile | K panel | Cache lines | Delay | Software cycles | Poll cycles | IRQ cycles | Poll speedup |\n|---|---|---|---|---|---|---|---|\n'
  table+=''.join(f"| {r['tile']} | {r['panel_k']} | {r['cache_lines']} | {r['delay']} | {r['software_cycles']} | {r['polling_cycles']} | {r['interrupt_cycles']} | {r['polling_speedup']:.2f}× |\n"for r in rows)
  bt='| CPU | Delay | GEMM cycles |\n|---|---|---|\n'+''.join(f"| {r['cpu']} | {r['delay']} | {r['kernel_cycles']} |\n"for r in baseline['results'])
+ utilization='\n## Traffic and utilization\n\n| Tile | K panel | Cache lines | Delay | DMA read bytes | DMA write bytes | Array active fraction | Useful MAC fraction while active |\n|---|---|---|---|---|---|---|---|\n'
+ utilization+=''.join(f"| {r['tile']} | {r['panel_k']} | {r['cache_lines']} | {r['delay']} | {r['gemm_dma_read_bytes']} | {r['gemm_dma_write_bytes']} | {100*r['array_active_fraction']:.2f}% | {100*r['useful_mac_fraction_when_active']:.2f}% |\n"for r in rows)
+ utilization+='\nArray active fraction is MAC cycles divided by accelerator elapsed cycles. Useful MAC fraction excludes padded rows/columns/K. Whole-demo fetch/data/execute stall counters and CPI are recorded separately in design_space.json; the stall counters overlap and must not be added together. These results identify remaining memory/control bottlenecks rather than assuming more MACs are always faster.\n'
  (ROOT/'reports/BENCHMARKS.md').write_text('# Simulation benchmarks\n\n'+table+'\nTimes include descriptor programming and completion waiting; outputs are checked afterward. The software baseline uses compiler-generated RV32IM multiplication on the same SoC. UART is absent. Frequency is not measured, so these cycle counts are not converted to seconds or claimed GOPS. Random memory acceptance/delays vary with configuration timing.\n\n## Original CPU comparison\n\n'+bt+'\nIdentical GEMM source and inputs; both uncached standalone configurations. The reference and new pipeline RV32I runs use byte-identical binaries with a shift/add multiplication helper; they isolate the microarchitecture change under the stated memory model. RV32IM additionally changes multiplication to iterative hardware MUL. It is a separate experiment from the cached SoC table.\n\n## Dataflow models\n\nOutput-stationary and weight-stationary models are bit-exactly compared on three workloads and two tile sizes. Traffic assumptions and results are in dataflow_models.json. Model byte counts exclude bus alignment/refill overhead and predict no RTL performance.\n')
  (ROOT/'reports/PHYSICAL_DESIGN.md').write_text('''# Physical implementation status
 
@@ -92,6 +95,7 @@ The 10 ns SDC clock is a design target only. No maximum frequency, routed area,
 power, or tapeout readiness is asserted. Power reporting requires representative
 VCD activity and the actual library/operating corner; no power estimate is saved.
 ''')
+ with (ROOT/'reports/BENCHMARKS.md').open('a')as handle:handle.write(utilization)
  print('PASS generated reports from measured regression artifacts')
 if __name__=='__main__':main()
 

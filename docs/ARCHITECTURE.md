@@ -120,3 +120,7 @@ are not implemented as dedicated accelerator hardware. Weight-stationary
 comparison is an executable functional/idealized traffic model, not additional
 RTL. The model counts operand and spilled partial-sum bytes but predicts no
 clock frequency or RTL timing.
+The demonstration network uses fixed synthetic weights and inputs. It verifies
+bit-exact arithmetic and control; it is not a trained-model accuracy benchmark.
+Custom read-only machine CSRs 0xfc0–0xfc3 expose low halves of fetch wait,
+data wait, execution wait, and redirect counters. Stall categories can overlap.

@@ -5,6 +5,13 @@ tiled INT8 GEMM accelerator. Bare-metal firmware demonstrates software/DMA
 GEMM, interrupts, and a complete small convolution/dense inference workload.
 No routed PPA or SRAM macro implementation is claimed.
 
+## Processor and memory block diagram
+
+![Whole SoC: five-stage CPU, caches, memory fabric and INT8 accelerator](docs/images/soc-block-diagram.svg)
+
+See [diagram walkthrough](docs/BLOCK_DIAGRAM.md) for instruction execution,
+accelerator operation, and memory capacities.
+
 ## Regression status: passed
 
 The local regression passed: 520 multiply/divide vectors, independent CPU

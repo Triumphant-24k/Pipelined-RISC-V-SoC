@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1120" viewBox="0 0 1440 1120">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 Z" fill="#475569"/></marker>
+<style>text{font-family:Arial,sans-serif;fill:#172554;font-size:18px}.title{font-size:30px;font-weight:bold}.head{font-size:21px;font-weight:bold}.small{font-size:16px}.box{fill:#fff;stroke:#64748b;stroke-width:2;rx:12}.cpu{fill:#eff6ff;stroke:#2563eb;stroke-width:2;rx:18}.acc{fill:#f0fdf4;stroke:#16a34a;stroke-width:2;rx:18}.mem{fill:#fff7ed;stroke:#ea580c;stroke-width:2;rx:12}.wire{fill:none;stroke:#475569;stroke-width:2.5;marker-end:url(#arrow)}.control{fill:none;stroke:#9333ea;stroke-width:2;stroke-dasharray:7 5;marker-end:url(#arrow)}</style></defs>
+<rect width="1440" height="1120" fill="#f8fafc"/>
+<text x="40" y="48" class="title">Pipelined RV32IM SoC — processor, memory and AI processing</text>
+<text x="40" y="79">Implemented RTL • default TILE=4, PANEL_K=4, 256-byte instruction and data caches</text>
+<rect x="40" y="105" width="1360" height="345" class="cpu"/>
+<text x="65" y="141" class="head">RV32IM CPU · five-stage, in-order pipeline</text>
+<rect x="65" y="172" width="200" height="97" class="box"/><text x="83" y="203" class="head">1. IF — Fetch</text><text x="83" y="231">PC + response buffer</text><text x="83" y="253" class="small">One outstanding fetch</text>
+<rect x="295" y="172" width="225" height="97" class="box"/><text x="313" y="203" class="head">2. ID — Decode</text><text x="313" y="231">Instruction + immediate</text><text x="313" y="253" class="small">Read source registers</text>
+<rect x="550" y="172" width="265" height="97" class="box"/><text x="568" y="203" class="head">3. EX — Execute</text><text x="568" y="231">ALU · branch/jump logic</text><text x="568" y="253" class="small">Address generation · exceptions</text>
+<rect x="845" y="172" width="225" height="97" class="box"/><text x="863" y="203" class="head">4. MEM — Memory</text><text x="863" y="231">Load/store transaction</text><text x="863" y="253" class="small">Byte/halfword selection</text>
+<rect x="1100" y="172" width="270" height="97" class="box"/><text x="1118" y="203" class="head">5. WB — Writeback</text><text x="1118" y="231">Commit register result</text><text x="1118" y="253" class="small">Instruction retirement</text>
+<path d="M265 219 H295 M520 219 H550 M815 219 H845 M1070 219 H1100" class="wire"/>
+<rect x="295" y="304" width="225" height="105" class="box"/><text x="313" y="335" class="head">Register file</text><text x="313" y="365">32 × 32-bit registers</text><text x="313" y="392" class="small">x0 is always zero</text><path d="M407 304 V269" class="wire"/><path d="M1235 269 V286 H500 V304" class="wire"/>
+<rect x="550" y="304" width="265" height="105" class="box"/><text x="568" y="335" class="head">Iterative M unit</text><text x="568" y="365">Multiply / divide / remainder</text><text x="568" y="392" class="small">32 steps · EX waits for result</text><path d="M682 304 V269" class="wire"/>
+<rect x="845" y="304" width="525" height="105" class="box"/><text x="863" y="335" class="head">Pipeline control + machine CSRs</text><text x="863" y="365">Forwarding · load-use stalls · redirects / flushes</text><text x="863" y="392" class="small">Precise traps · MRET · IRQ handling · cycle / retirement counters</text>
+<text x="65" y="432" class="small">Control applies across all stages; FENCE.I invalidates the instruction cache. Conservative fetch limits sustained IPC.</text>
+<rect x="65" y="490" width="320" height="110" class="mem"/><text x="85" y="524" class="head">Instruction cache</text><text x="85" y="552">Direct mapped · 256 B default</text><text x="85" y="579" class="small">16 lines × 4 words · refill / bypass</text>
+<rect x="430" y="490" width="370" height="110" class="mem"/><text x="450" y="524" class="head">Data cache</text><text x="450" y="552">Direct mapped · 256 B default</text><text x="450" y="579" class="small">Write-through · no write allocate</text>
+<path d="M165 269 V470 H225 V490" class="wire"/><path d="M958 269 V462 H615 V490" class="wire"/>
+<rect x="850" y="485" width="550" height="310" class="acc"/><text x="872" y="521" class="head">Autonomous INT8 matrix accelerator</text>
+<rect x="872" y="540" width="235" height="98" class="box"/><text x="889" y="568" class="head">DMA + tile controller</text><text x="889" y="595" class="small">Read A/B · store INT32 C</text><text x="889" y="620" class="small">Dimensions, strides, edges</text>
+<rect x="1130" y="540" width="245" height="98" class="mem"/><text x="1147" y="568" class="head">Ping-pong A/B panels</text><text x="1147" y="595" class="small">64 B at TILE=4, K-panel=4</text><text x="1147" y="620" class="small">Load next while computing</text>
+<rect x="1130" y="660" width="245" height="105" class="box"/><text x="1147" y="690" class="head">Parallel MAC array</text><text x="1147" y="716" class="small">4 × 4 = 16 INT8 MACs</text><text x="1147" y="743" class="small">16 INT32 accumulators: 64 B</text>
+<rect x="872" y="660" width="235" height="105" class="box"/><text x="889" y="690" class="head">Control / status</text><text x="889" y="716" class="small">MMIO descriptor + start</text><text x="889" y="743" class="small">Busy / done / fault / IRQ</text>
+<path d="M1107 588 H1130 M1252 638 V660 M1130 735 H1118 V646 H990 V638" class="wire"/>
+<rect x="65" y="655" width="735" height="93" class="box"/><text x="85" y="690" class="head">Round-robin shared bus arbiter</text><text x="85" y="721">3 masters: I-cache, D-cache, accelerator DMA · one shared transaction</text>
+<path d="M225 600 V655 M615 600 V655 M872 590 H823 V702 H800" class="wire"/>
+<rect x="65" y="810" width="735" height="76" class="box"/><text x="85" y="842" class="head">Address decoder + request / response routing</text><text x="85" y="868" class="small">32-bit data · write byte strobes · ready / response / error</text><path d="M430 748 V810" class="wire"/>
+<rect x="65" y="930" width="600" height="142" class="mem"/><text x="85" y="963" class="head">External memory port → SRAM / testbench memory</text><text x="85" y="992">0x00000000–0x0000FFFF: 64 KiB cached region</text><text x="85" y="1018">0x00010000–0x0003FFFF: 192 KiB uncached DMA RAM</text><text x="85" y="1047" class="small">256 KiB supplied by simulation; SRAM macro integration is pending</text>
+<rect x="700" y="930" width="700" height="142" class="box"/><text x="720" y="963" class="head">MMIO peripherals</text><text x="720" y="992">Accelerator: 0x40000000–0x400000FF</text><text x="720" y="1018">Timer: mtime / mtimecmp at 0x40000100–0x40000114</text><text x="720" y="1047" class="small">Simulation exit/status: 0x40000200 · unmapped addresses report errors</text>
+<path d="M365 886 V930 M735 886 V906 H1050 V930" class="wire"/>
+<path d="M1050 930 V850 H990 V765" class="control"/><path d="M1400 1000 H1418 V350 H1370" class="control"/>
+<text x="868" y="831" class="small">Dashed purple: MMIO control / interrupt paths</text><text x="868" y="858" class="small">Panels and accumulators currently use registers/muxes.</text><text x="868" y="883" class="small">DMA uses uncached RAM; no hardware cache coherence.</text>
+</svg>

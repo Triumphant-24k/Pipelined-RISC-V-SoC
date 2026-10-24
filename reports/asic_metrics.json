@@ -1,0 +1,83 @@
+{
+  "top": "rv32_pipeline",
+  "corner": "Nangate45 typical, nominal 1.1 V / 25 C",
+  "clock_period_ns": 10,
+  "setup_uncertainty_ns": 0.2,
+  "hold_uncertainty_ns": 0.05,
+  "die_um": [
+    0.0,
+    0.0,
+    292.425,
+    292.425
+  ],
+  "core_um": [
+    10.07,
+    11.2,
+    282.34,
+    281.4
+  ],
+  "core_area_um2": 73567.35399999999,
+  "stages": {
+    "1_synth": {
+      "cell_area_um2_rounded": 29686.0,
+      "utilization_percent_rounded": 100,
+      "setup_wns_ns": -5.64,
+      "hold_wns_ns": 0.03
+    },
+    "2_floorplan": {
+      "cell_area_um2_rounded": 29686.0,
+      "utilization_percent_rounded": 40,
+      "setup_wns_ns": -5.64,
+      "hold_wns_ns": 0.03
+    },
+    "3_power": {
+      "cell_area_um2_rounded": 29686.0,
+      "utilization_percent_rounded": 40,
+      "setup_wns_ns": -5.64,
+      "hold_wns_ns": 0.03
+    },
+    "4_placement": {
+      "cell_area_um2_rounded": 35139.0,
+      "utilization_percent_rounded": 48,
+      "setup_wns_ns": 6.32,
+      "hold_wns_ns": 0.03
+    },
+    "5_cts_raw": {
+      "cell_area_um2_rounded": 36027.0,
+      "utilization_percent_rounded": 49,
+      "setup_wns_ns": 6.51,
+      "hold_wns_ns": 0.02
+    },
+    "5_cts": {
+      "cell_area_um2_rounded": 36027.0,
+      "utilization_percent_rounded": 49,
+      "setup_wns_ns": 6.51,
+      "hold_wns_ns": 0.02
+    },
+    "6_global_route": {
+      "cell_area_um2_rounded": 36027.0,
+      "utilization_percent_rounded": 49,
+      "setup_wns_ns": 6.49,
+      "hold_wns_ns": 0.02
+    },
+    "7_final": {
+      "cell_area_um2_rounded": 36027.0,
+      "utilization_percent_rounded": 49,
+      "setup_wns_ns": 6.44,
+      "hold_wns_ns": 0.02
+    }
+  },
+  "versions": {
+    "yosys": "Yosys 0.9 (git sha1 1979e0b)",
+    "iverilog": "Icarus Verilog version 11.0 (stable) ()",
+    "verilator": "Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad",
+    "openroad": "v2.0-17598-ga008522d8 ",
+    "klayout": "KLayout 0.26.2",
+    "gcc": "riscv64-unknown-elf-gcc () 10.2.0",
+    "platform_commit": "6101364b2d7909dd797e1e3e7f80695401cfa4e4"
+  },
+  "router_drvs": [
+    "0"
+  ],
+  "completed": true
+}

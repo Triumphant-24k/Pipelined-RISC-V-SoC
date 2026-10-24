@@ -1,0 +1,14 @@
+{
+  "drc_exit": 0,
+  "drc_report": "build/asic/klayout_drc.lyrdb",
+  "lvs": "not run: selected public platform has no LVS deck",
+  "lvs_deck_exists": false,
+  "drc_markers": 43,
+  "categories": {
+    "METAL4_ANTENNA": 7,
+    "METAL5_ANTENNA": 11,
+    "METAL6_ANTENNA": 15,
+    "METAL7_ANTENNA": 5,
+    "METAL9_ANTENNA": 5
+  }
+}

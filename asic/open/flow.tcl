@@ -68,7 +68,9 @@ detailed_placement
 set_propagated_clock [all_clocks]
 estimate_parasitics -placement
 checkpoint 5_cts_raw
-repair_timing -max_buffer_percent 50
+if {[catch {repair_timing -max_buffer_percent 50} reason]} {
+ puts "TIMING_REPAIR_LIMITATION $reason"
+}
 # Timing repair inserts cells; legalize before routing.
 detailed_placement
 check_placement -verbose

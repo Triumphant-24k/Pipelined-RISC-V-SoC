@@ -1,0 +1,15 @@
+{
+  "openroad_version": "v2.0-17598-ga008522d8",
+  "release_url": "https://github.com/Precision-Innovations/OpenROAD/releases/tag/2024-12-14",
+  "download_url": "https://github.com/Precision-Innovations/OpenROAD/releases/download/2024-12-14/openroad_2.0-17598-ga008522d8_amd64-ubuntu-22.04.deb",
+  "sha256": "40ed178396b0276a5d5dfbbe695c9de9aac9088157a6655be02b39a0cef07207",
+  "platform_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+  "platform_commit": "6101364b2d7909dd797e1e3e7f80695401cfa4e4",
+  "installation": "WSL Ubuntu-22.04; dpkg force-overwrite for legacy opensta file collision, apt dependency repair",
+  "klayout": {
+    "version": "0.30.12",
+    "download_url": "https://www.klayout.org/downloads/Ubuntu-22/klayout_0.30.12-1_amd64.deb",
+    "sha256": "c09637de6d82bfa2a102c2468e285d3d060fa59b86680f10393a0e9f69ab5763",
+    "reason": "Ubuntu archive 0.26.2 crashed during scripting startup; official 0.30.12 replaced it"
+  }
+}

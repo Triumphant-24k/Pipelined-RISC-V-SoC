@@ -9,13 +9,15 @@ module pipeline_evidence_tb;
  reg [31:0] imem[0:63],dmem[0:127],observed[0:31];
  integer i,j,forwarding=0,load_stalls=0,redirects=0,retired=0;
  reg [31:0] instruction;
+ string wave;
  always @* instruction=imem[ia[7:2]];
  rv32_pipeline cpu(.clk(clk),.rst(rst),.iv(iv),.ir(1'b1),.ia(ia),.ip(iv),.insn(instruction),.ierr(1'b0),
  .dv(dv),.dr(!busy),.dw(dw),.da(da),.wd(wd),.ws(ws),.dp(dp),.rd(rd),.derr(1'b0),
  .timer_irq(1'b0),.external_irq(1'b0),.retire_valid(rv),.retire_pc(rpc),.retire_insn(ri),
  .retire_value(value),.retire_rd(rrd),.trap_valid(tv),.trap_cause(cause),.fence_i(),.cycles(cycles),.instret(instret));
  initial begin
-  $dumpfile("build/evidence/pipeline.vcd");$dumpvars(0,pipeline_evidence_tb);
+  if(!$value$plusargs("WAVE=%s",wave))wave="build/evidence/pipeline.vcd";
+  $dumpfile(wave);$dumpvars(0,pipeline_evidence_tb);
   for(i=0;i<64;i=i+1)imem[i]=32'h00000013;
   for(i=0;i<128;i=i+1)dmem[i]=0;
   for(i=0;i<32;i=i+1)observed[i]=0;
@@ -51,7 +53,9 @@ module pipeline_evidence_tb;
        if(forwarding==0||load_stalls==0||redirects<2)$fatal(1,"required hazard coverage missing");
 `endif
        $display("PASS directed architectural scoreboard; wrong-path PCs excluded");
+`ifndef GATE_SIM
        $display("COVER forwarding=%0d load_use_stall_cycles=%0d redirects=%0d",forwarding,load_stalls,redirects);
+`endif
        $display("MEASURE cycles=%0d retired=%0d",cycles,retired);
        $finish;
       end

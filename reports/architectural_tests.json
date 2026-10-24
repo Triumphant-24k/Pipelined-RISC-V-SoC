@@ -1,7 +1,7 @@
 {
   "suite": "riscv-tests; adapted bare-metal environment, not certification",
   "source_commit": "bcffa2b3188b040c611f90dc0b6e422f54775a09",
-  "timestamp": 1791222608.4761968,
+  "timestamp": 1792856918.824752,
   "results": [
     {
       "test": "rv32ui-add",

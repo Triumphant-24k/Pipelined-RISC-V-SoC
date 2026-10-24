@@ -1,0 +1,23 @@
+[
+  {
+    "case": "INV_X1",
+    "exit_code": 0,
+    "comparison": "PASS",
+    "expected": "PASS",
+    "seconds": 2.09
+  },
+  {
+    "case": "DFF_X1",
+    "exit_code": 0,
+    "comparison": "PASS",
+    "expected": "PASS",
+    "seconds": 1.55
+  },
+  {
+    "case": "INV_X1_negative",
+    "exit_code": 0,
+    "comparison": "FAIL",
+    "expected": "FAIL",
+    "seconds": 1.65
+  }
+]

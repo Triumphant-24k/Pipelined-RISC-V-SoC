@@ -1,0 +1,417 @@
+{
+  "scope": "all functional masters instantiated by final routed CDL; fillers have no transistors",
+  "count": 82,
+  "results": [
+    {
+      "cell": "AND2_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AND2_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AND2_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AND3_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AND3_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AND3_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AND4_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AND4_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AND4_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI211_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI211_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI21_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI21_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI21_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI221_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI221_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI222_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI22_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI22_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "AOI22_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "BUF_X16",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "BUF_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "BUF_X32",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "BUF_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "BUF_X8",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "CLKBUF_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "CLKBUF_X3",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "DFF_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "DFF_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "INV_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "INV_X16",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "INV_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "INV_X32",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "INV_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "INV_X8",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "LOGIC0_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "MUX2_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "MUX2_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND2_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND2_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND2_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND3_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND3_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND3_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND4_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND4_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NAND4_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR2_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR2_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR2_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR3_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR3_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR3_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR4_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR4_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "NOR4_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI211_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI211_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI211_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI21_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI21_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI21_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI221_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI221_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI222_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI22_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI22_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI22_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OAI33_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR2_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR2_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR2_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR3_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR3_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR3_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR4_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR4_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "OR4_X4",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "XNOR2_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "XNOR2_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "XOR2_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "XOR2_X2",
+      "comparison": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "passed": 82
+}

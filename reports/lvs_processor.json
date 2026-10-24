@@ -1,0 +1,9 @@
+[
+  {
+    "case": "processor",
+    "exit_code": -9,
+    "comparison": "ERROR",
+    "expected": "PASS",
+    "seconds": 135.03
+  }
+]

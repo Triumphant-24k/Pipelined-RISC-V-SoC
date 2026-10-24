@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/laurentc2/FreePDK45_for_KLayout",
+  "commit": "d15da945559773854ca04aeb9bc2c150d55a1e6c",
+  "upstream_sha256": "dff26bc073de8ad17a455a28f01bb17a252e605348620ba142daf9779f2f28ca",
+  "adaptations": [
+    "Explicit batch inputs and native LVS cross-reference database",
+    "Remove unrelated OpenRAM cheat wrapper; extract every processor/library device",
+    "Correct tolerance class names to match extracted MOS classes: 1 nm absolute + 0.1 percent",
+    "Bind the Nangate pwell body to VSS alongside BULK, matching the library CDL and implicit-well convention",
+    "Explicit machine-readable PASS/FAIL from compare; do not trust exit code alone"
+  ]
+}

@@ -1,0 +1,451 @@
+{
+  "layout": {
+    "name": "rv32_pipeline",
+    "pins": 443,
+    "nets": 21418,
+    "devices": 0,
+    "subcircuits": 18862
+  },
+  "reference": {
+    "name": "RV32_PIPELINE",
+    "pins": 443,
+    "nets": 21646,
+    "devices": 0,
+    "subcircuits": 18862
+  },
+  "port_labels_match": true,
+  "circuit_pairs": [
+    {
+      "layout": "AND2_X1",
+      "reference": "AND2_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "AND2_X2",
+      "reference": "AND2_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "AND2_X4",
+      "reference": "AND2_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "AND3_X1",
+      "reference": "AND3_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "AND3_X2",
+      "reference": "AND3_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "AND3_X4",
+      "reference": "AND3_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "AND4_X1",
+      "reference": "AND4_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "AND4_X2",
+      "reference": "AND4_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "AND4_X4",
+      "reference": "AND4_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI211_X1",
+      "reference": "AOI211_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI211_X2",
+      "reference": "AOI211_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI21_X1",
+      "reference": "AOI21_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI21_X2",
+      "reference": "AOI21_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI21_X4",
+      "reference": "AOI21_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI221_X1",
+      "reference": "AOI221_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI221_X2",
+      "reference": "AOI221_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI222_X2",
+      "reference": "AOI222_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI22_X1",
+      "reference": "AOI22_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI22_X2",
+      "reference": "AOI22_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "AOI22_X4",
+      "reference": "AOI22_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "BUF_X16",
+      "reference": "BUF_X16",
+      "status": "Match"
+    },
+    {
+      "layout": "BUF_X2",
+      "reference": "BUF_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "BUF_X32",
+      "reference": "BUF_X32",
+      "status": "Match"
+    },
+    {
+      "layout": "BUF_X4",
+      "reference": "BUF_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "BUF_X8",
+      "reference": "BUF_X8",
+      "status": "Match"
+    },
+    {
+      "layout": "CLKBUF_X1",
+      "reference": "CLKBUF_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "CLKBUF_X3",
+      "reference": "CLKBUF_X3",
+      "status": "Match"
+    },
+    {
+      "layout": "DFF_X1",
+      "reference": "DFF_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "DFF_X2",
+      "reference": "DFF_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "INV_X1",
+      "reference": "INV_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "INV_X16",
+      "reference": "INV_X16",
+      "status": "Match"
+    },
+    {
+      "layout": "INV_X2",
+      "reference": "INV_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "INV_X32",
+      "reference": "INV_X32",
+      "status": "Match"
+    },
+    {
+      "layout": "INV_X4",
+      "reference": "INV_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "INV_X8",
+      "reference": "INV_X8",
+      "status": "Match"
+    },
+    {
+      "layout": "LOGIC0_X1",
+      "reference": "LOGIC0_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "MUX2_X1",
+      "reference": "MUX2_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "MUX2_X2",
+      "reference": "MUX2_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND2_X1",
+      "reference": "NAND2_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND2_X2",
+      "reference": "NAND2_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND2_X4",
+      "reference": "NAND2_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND3_X1",
+      "reference": "NAND3_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND3_X2",
+      "reference": "NAND3_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND3_X4",
+      "reference": "NAND3_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND4_X1",
+      "reference": "NAND4_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND4_X2",
+      "reference": "NAND4_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "NAND4_X4",
+      "reference": "NAND4_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR2_X1",
+      "reference": "NOR2_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR2_X2",
+      "reference": "NOR2_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR2_X4",
+      "reference": "NOR2_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR3_X1",
+      "reference": "NOR3_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR3_X2",
+      "reference": "NOR3_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR3_X4",
+      "reference": "NOR3_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR4_X1",
+      "reference": "NOR4_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR4_X2",
+      "reference": "NOR4_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "NOR4_X4",
+      "reference": "NOR4_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI211_X1",
+      "reference": "OAI211_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI211_X2",
+      "reference": "OAI211_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI211_X4",
+      "reference": "OAI211_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI21_X1",
+      "reference": "OAI21_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI21_X2",
+      "reference": "OAI21_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI21_X4",
+      "reference": "OAI21_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI221_X1",
+      "reference": "OAI221_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI221_X2",
+      "reference": "OAI221_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI222_X2",
+      "reference": "OAI222_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI22_X1",
+      "reference": "OAI22_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI22_X2",
+      "reference": "OAI22_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI22_X4",
+      "reference": "OAI22_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "OAI33_X1",
+      "reference": "OAI33_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "OR2_X1",
+      "reference": "OR2_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "OR2_X2",
+      "reference": "OR2_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "OR2_X4",
+      "reference": "OR2_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "OR3_X1",
+      "reference": "OR3_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "OR3_X2",
+      "reference": "OR3_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "OR3_X4",
+      "reference": "OR3_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "OR4_X1",
+      "reference": "OR4_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "OR4_X2",
+      "reference": "OR4_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "OR4_X4",
+      "reference": "OR4_X4",
+      "status": "Match"
+    },
+    {
+      "layout": "XNOR2_X1",
+      "reference": "XNOR2_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "XNOR2_X2",
+      "reference": "XNOR2_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "XOR2_X1",
+      "reference": "XOR2_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "XOR2_X2",
+      "reference": "XOR2_X2",
+      "status": "Match"
+    },
+    {
+      "layout": "rv32_pipeline",
+      "reference": "RV32_PIPELINE",
+      "status": "Match"
+    }
+  ],
+  "top_relations": {
+    "nets": {
+      "Match": 21418
+    },
+    "pins": {
+      "Match": 443
+    },
+    "subcircuits": {
+      "Match": 18862
+    }
+  },
+  "sha256": {
+    "gds": "5958c0aebea0863e18a881c7e3e668aad1fb99c5b900d8e536c837d9deed3671",
+    "reference": "21071c5200519e889f88091e4686ccf495b3b25ab113edfd3ad0fce2c590c3af",
+    "library": "457f0e3836b369f56d2cb04aab2a16d0e40b56d32bf2c62f19475b0abca2f6b3"
+  },
+  "pass": true
+}

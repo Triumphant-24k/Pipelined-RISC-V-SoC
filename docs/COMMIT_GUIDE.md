@@ -14,3 +14,15 @@ No commits or staging are performed by the assistant. Review diffs before stagin
    - reports, screenshots, updated README and completion matrix.
 
 Stages may share files. Use `git add -p` to split changes if desired; do not add local tool installations or entire build directories.
+
+
+## LVS continuation
+
+6. `verify: add FreePDK45 LVS deck and standard-cell validation`
+   - asic/open/lvs vendor source/license, adaptation/provenance, fixtures, negative controls and reports/lvs_cells.json, lvs_library.json.
+7. `verify: run routed processor LVS and record comparison evidence`
+   - final reference export, reproducible comparison, port identity check, measured summary and actual GUI/terminal evidence.
+8. `docs: update assignment reports with validated LVS results`
+   - revised IX/X PDFs, corrected physical-verification status, reproduction notes and checksums.
+
+A zero KLayout exit code is not sufficient to declare LVS pass: the comparison result and port-label check must pass, with nonempty matched circuits. Negative controls must be rejected. All remaining DRC/electrical limits stay disclosed separately.

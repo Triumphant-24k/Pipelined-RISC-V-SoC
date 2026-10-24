@@ -4,20 +4,27 @@
     "exit_code": 0,
     "comparison": "PASS",
     "expected": "PASS",
-    "seconds": 2.09
+    "seconds": 1.88
   },
   {
     "case": "DFF_X1",
     "exit_code": 0,
     "comparison": "PASS",
     "expected": "PASS",
-    "seconds": 1.55
+    "seconds": 1.91
   },
   {
     "case": "INV_X1_negative",
     "exit_code": 0,
     "comparison": "FAIL",
     "expected": "FAIL",
-    "seconds": 1.65
+    "seconds": 1.83
+  },
+  {
+    "case": "INV_X1_labels_negative",
+    "exit_code": 0,
+    "comparison": "FAIL",
+    "expected": "FAIL",
+    "seconds": 1.63
   }
 ]

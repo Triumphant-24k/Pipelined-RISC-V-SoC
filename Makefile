@@ -28,3 +28,13 @@ evidence:
 	python3 scripts/capture_evidence.py
 submissions:
 	python3 scripts/compile_assignment_reports.py
+
+.PHONY: lvs
+lvs:
+	python3 asic/open/lvs/prepare.py
+	QT_QPA_PLATFORM=offscreen klayout -b -r asic/open/lvs/cell_fixtures.py
+	python3 asic/open/lvs/run.py
+	python3 asic/open/lvs/validate_library.py
+	python3 asic/open/lvs/run.py --processor
+	QT_QPA_PLATFORM=offscreen klayout -b -r asic/open/lvs/audit.py
+	python3 asic/open/lvs/summarize.py

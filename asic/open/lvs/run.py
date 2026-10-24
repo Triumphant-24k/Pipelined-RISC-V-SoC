@@ -3,11 +3,11 @@ from pathlib import Path
 import os,subprocess,json,shutil,sys,time
 root=Path(__file__).resolve().parents[3];os.chdir(root)
 stage=Path.home()/'riscv-lvs-run';out=root/'build/lvs'
-cases=['INV_X1','DFF_X1','INV_X1_negative'] if '--processor' not in sys.argv else ['processor']
+cases=['INV_X1','DFF_X1','INV_X1_negative','INV_X1_labels_negative'] if '--processor' not in sys.argv else ['processor']
 results=[]
 for case in cases:
- cell='INV_X1' if case=='INV_X1_negative' else case
- schematic='INV_X1_bad.cdl' if case=='INV_X1_negative' else ('processor_reference.cdl' if case=='processor' else cell+'.cdl')
+ cell='INV_X1_labels_bad' if case=='INV_X1_labels_negative' else ('INV_X1' if case=='INV_X1_negative' else case)
+ schematic='INV_X1_bad.cdl' if case=='INV_X1_negative' else ('processor_reference.cdl' if case=='processor' else ('INV_X1.cdl' if case=='INV_X1_labels_negative' else cell+'.cdl'))
  for suffix in ['status','lvsdb','cir']:
   target=stage/(case+'.'+suffix)
   if target.exists():target.unlink()

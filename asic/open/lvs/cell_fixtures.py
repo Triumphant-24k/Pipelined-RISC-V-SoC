@@ -17,3 +17,13 @@ for name in names:
  print(name,'bbox',cell.dbbox(),'layer polygons',[(str(lib.get_info(li)),sum(1 for _ in lib.cell(name).begin_shapes_rec(li)))for li in lib.layer_indices()])
  # Negative control: change transistor width; comparison must reject it.
  if name=='INV_X1':(stage/'INV_X1_bad.cdl').write_text(re.sub(r'W=([0-9.]+)U',lambda m:'W='+str(float(m[1])*2)+'U',text))
+
+# Pin-label negative control: preserve geometry and swap the two signal labels.
+mut=pya.Layout();mut.read(str(stage/'INV_X1.gds'));cell=mut.cell('INV_X1')
+for li in mut.layer_indices():
+ for shape in cell.shapes(li).each():
+  if shape.is_text():
+   text=shape.text
+   if text.string in ('A','ZN'):
+    text.string='ZN' if text.string=='A' else 'A';shape.text=text
+mut.write(str(stage/'INV_X1_labels_bad.gds'))

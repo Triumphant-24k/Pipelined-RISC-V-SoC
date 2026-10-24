@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import subprocess,os,json,xml.etree.ElementTree as ET
+import subprocess,os,json,hashlib,xml.etree.ElementTree as ET
 root=Path(__file__).resolve().parents[2];os.chdir(root)
 platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
 env=dict(os.environ,QT_QPA_PLATFORM='offscreen')
@@ -15,5 +15,10 @@ if result.returncode==0 and rpt.exists():
  for item in items:
   key=item.findtext('category');counts[key]=counts.get(key,0)+1
  status.update(drc_markers=len(items),categories=counts)
+if (root/'reports/lvs_summary.json').exists():
+ lvs=json.loads((root/'reports/lvs_summary.json').read_text())
+ same_gds=hashlib.sha256((root/'build/asic/rv32_pipeline.gds').read_bytes()).hexdigest()==lvs['sha256']['gds']
+ same_odb=hashlib.sha256((root/'build/asic/7_final.odb').read_bytes()).hexdigest()==lvs['odb_sha256']
+ status.update(lvs=('PASS: routed core and named ports match'if same_gds and same_odb and lvs['status']=='PASS'else'STALE: rerun LVS on the current generated inputs'),lvs_deck_exists=True,lvs_deck='asic/open/lvs/processor.lvs',lvs_summary='reports/lvs_summary.json')
 (root/'reports/physical_checks.json').write_text(json.dumps(status,indent=2))
 print(json.dumps(status,indent=2));print((root/'build/asic/stream.log').read_text())

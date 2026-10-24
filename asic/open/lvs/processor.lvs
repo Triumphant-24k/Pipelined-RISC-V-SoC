@@ -434,7 +434,16 @@ connect_implicit("XOR2_X2" , "VDD")
 connect_implicit("XOR2_X2" , "VSS")
 
 # Actually performs the extraction
-netlist # ... not really required
+netlist
+# Canonicalize only the aliases introduced by the explicit well/body rules.
+netlist.each_circuit do |c|
+  c.each_net do |n|
+    aliases = n.name.split(',')
+    n.name = 'VDD' if aliases.include?('VDD') && (aliases - ['NWELL','VDD']).empty?
+    n.name = 'VSS' if aliases.include?('VSS') && (aliases - ['BULK','PWELL','VSS']).empty?
+    n.name = n.name.upcase # SPICE uses case-insensitive identifiers
+  end
+end
 
 # Flatten cells which are present in one netlist only
 align
@@ -576,6 +585,9 @@ max_depth(16)
 
 
 result = compare
+if result
+  result = lvs_data.flag_missing_ports(schematic.top_circuit)
+end
 puts(result ? "LVS_RESULT PASS" : "LVS_RESULT FAIL")
 # An exit code alone is insufficient; upstream compare can fail without an exception.
 File.write($status, result ? "PASS\n" : "FAIL\n")

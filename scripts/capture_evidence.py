@@ -19,7 +19,7 @@ def capture(name,args,wait=4):
   if process.poll() is not None:raise RuntimeError(f'GUI {name} exited: see {log.name}')
   ids=subprocess.check_output(['xdotool','search','--onlyvisible','--pid',str(process.pid)],env=env,text=True).split()
   if not ids:raise RuntimeError('no GUI window')
-  if name=='physical_checks_gui':
+  if name in ('physical_checks_gui','lvs_gui','lvs_negative_gui'):
    run(['import','-window','root',str(root/'build/evidence/klayout_preview.png')])
    for win in ids:
     title=subprocess.check_output(['xdotool','getwindowname',win],env=env,text=True).strip()
@@ -28,11 +28,14 @@ def capture(name,args,wait=4):
    time.sleep(3)
    ids=subprocess.check_output(['xdotool','search','--onlyvisible','--pid',str(process.pid)],env=env,text=True).split()
   wid=ids[-1]
-  if name=='physical_checks_gui':
+  if name in ('physical_checks_gui','lvs_gui','lvs_negative_gui'):
    names={win:subprocess.check_output(['xdotool','getwindowname',win],env=env,text=True).strip()for win in ids}
    print('KLAYOUT WINDOWS',names,flush=True)
    main=[win for win,title in names.items()if 'rv32_pipeline' in title]
    if main:wid=main[0]
+  if name=='lvs_gui':
+   browser=[win for win,title in names.items()if title=='Netlist Database Browser']
+   if browser:wid=browser[0]
   subprocess.run(['xdotool','windowmove',wid,'0','0','windowsize',wid,'1440','900'],env=env)
   if name in ('1_synth_gui','timing_gui'):
    run(['xdotool','mousemove','1200','73','click','--repeat','2','--delay','120','1'])
@@ -41,6 +44,9 @@ def capture(name,args,wait=4):
    if floating:
     run(['xdotool','windowmove',floating[-1],'0','0','windowsize',floating[-1],'1440','900'])
     run(['xdotool','mousemove','500','155','click','1'])
+  if name in ('lvs_gui','lvs_negative_gui'):
+   run(['xdotool','mousemove','80','185','click','1'])
+   run(['xdotool','mousemove','285','185','click','1'])
   time.sleep(1)
   run(['import','-window','root',str(out/f'{name}.png')])
   print('CAPTURED',name,flush=True)
@@ -81,6 +87,12 @@ try:
   platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
   script.write_text('import pya\napp=pya.Application.instance()\nwin=app.main_window()\napp.set_config("full-hierarchy-new-cell","true")\ncv=win.load_layout('+repr(str(root/'build/asic/rv32_pipeline.gds'))+',0)\nview=win.current_view()\nview.load_layer_props('+repr(str(platform/'FreePDK45.lyp'))+')\nview.add_missing_layers()\nview.max_hier()\nview.zoom_fit()\nidx=view.create_rdb("FreePDK45 DRC")\nview.rdb(idx).load('+repr(str(root/'build/asic/klayout_drc.lyrdb'))+')\nview.show_rdb(idx,0)\n')
   capture('physical_checks_gui',['klayout','-e','-rr',str(script)],8)
+ if 'lvs' in sys.argv:
+  platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
+  for name,layout,dbfile in [('lvs_gui',root/'build/asic/rv32_pipeline.gds',root/'build/lvs/processor.lvsdb'),('lvs_negative_gui',Path.home()/'riscv-lvs-run/INV_X1.gds',root/'build/lvs/INV_X1_negative.lvsdb')]:
+   script=root/'build/evidence/lvs_view.py'
+   script.write_text('import pya\napp=pya.Application.instance()\napp.set_config("full-hierarchy-new-cell","true")\nwin=app.main_window()\nwin.load_layout('+repr(str(layout))+',0)\nview=win.current_view()\nview.load_layer_props('+repr(str(platform/'FreePDK45.lyp'))+')\nview.add_missing_layers()\nview.max_hier()\nview.zoom_fit()\nidx=view.create_lvsdb("Processor LVS")\nview.lvsdb(idx).read('+repr(str(dbfile))+')\nview.show_lvsdb(idx,0)\n')
+   capture(name,['klayout','-e','-rr',str(script)],20 if name=='lvs_gui'else 5)
  if len(sys.argv)==1 or 'terminal' in sys.argv:
   for review in sorted((root/'build/evidence').glob('*_review.txt')):
    if len(sys.argv)>2 and sys.argv[1]=='terminal' and review.stem!=sys.argv[2]+'_review':continue

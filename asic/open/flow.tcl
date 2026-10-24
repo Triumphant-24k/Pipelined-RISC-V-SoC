@@ -1,5 +1,5 @@
 # Reproducible academic processor flow; OpenROAD 2.0-17598.
-set root [file normalize [file join [file dirname [info script]] ../..]]
+set root [pwd]
 cd $root
 set platform $::env(HOME)/OpenROAD-flow-scripts/flow/platforms/nangate45
 if {[info exists ::env(NANGATE45)]} {set platform $::env(NANGATE45)}
@@ -22,8 +22,8 @@ proc checkpoint {name} {
  report_worst_slack -min
  report_tns
  report_check_types -max_slew -max_capacitance -violators
- report_checks -path_delay max -format full_clock_expanded -group_path_count 3 > $out/${name}_setup.rpt
- report_checks -path_delay min -format full_clock_expanded -group_path_count 3 > $out/${name}_hold.rpt
+ report_checks -path_delay max -format full_clock_expanded -group_count 3 > $out/${name}_setup.rpt
+ report_checks -path_delay min -format full_clock_expanded -group_count 3 > $out/${name}_hold.rpt
  write_db $out/${name}.odb
  write_def $out/${name}.def
  write_sdc $out/${name}.sdc
@@ -67,7 +67,8 @@ repair_clock_nets
 detailed_placement
 set_propagated_clock [all_clocks]
 estimate_parasitics -placement
-repair_timing
+checkpoint 5_cts_raw
+repair_timing -max_buffer_percent 50
 # Timing repair inserts cells; legalize before routing.
 detailed_placement
 check_placement -verbose

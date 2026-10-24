@@ -26,3 +26,12 @@ Stages may share files. Use `git add -p` to split changes if desired; do not add
    - revised IX/X PDFs, corrected physical-verification status, reproduction notes and checksums.
 
 A zero KLayout exit code is not sufficient to declare LVS pass: the comparison result and port-label check must pass, with nonempty matched circuits. Negative controls must be rejected. All remaining DRC/electrical limits stay disclosed separately.
+
+## Antenna and electrical closure
+
+9. `fix: close routed electrical and antenna violations`
+   - input buffering, lower signal/clock routing layers, routed electrical repair with margins and legalization; preserve original diagnostic evidence.
+10. `verify: recheck repaired layout timing DRC and LVS`
+   - fresh extraction, electrical and power checks, independent GDS DRC, routed simulation, cell validation and full processor LVS; final closure audit and new GUI/terminal evidence.
+11. `docs: refresh assignment PDFs after physical closure`
+   - revised measured results, before/after repair discussion, updated submission PDFs/checksums, and .gitattributes binary protection for PDF bytes.

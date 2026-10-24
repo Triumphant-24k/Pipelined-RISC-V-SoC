@@ -1,16 +1,12 @@
 {
+  "gds_sha256": "32556ecb66881c322d7e53f3ff99e6e60b24e449638015a4b9adc961f6f54559",
+  "drc_deck_sha256": "4e35cad6786f21c6e233fb606bea59bb44e1a12713008cf7367d65a1a3de2147",
   "drc_exit": 0,
   "drc_report": "build/asic/klayout_drc.lyrdb",
   "lvs": "PASS: routed processor topology and all 443 named top ports match",
   "lvs_deck_exists": true,
-  "drc_markers": 43,
-  "categories": {
-    "METAL4_ANTENNA": 7,
-    "METAL5_ANTENNA": 11,
-    "METAL6_ANTENNA": 15,
-    "METAL7_ANTENNA": 5,
-    "METAL9_ANTENNA": 5
-  },
+  "drc_markers": 0,
+  "categories": {},
   "lvs_deck": "asic/open/lvs/processor.lvs",
   "lvs_summary": "reports/lvs_summary.json"
 }

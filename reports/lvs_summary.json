@@ -3,44 +3,44 @@
   "scope": "Hierarchical transistor extraction and connectivity comparison of the routed processor core; named top ports checked",
   "top": "rv32_pipeline",
   "port_labels_match": true,
-  "matched_circuits": 83,
+  "matched_circuits": 84,
   "top_relations": {
     "nets": {
-      "Match": 21418
+      "Match": 21593
     },
     "pins": {
       "Match": 443
     },
     "subcircuits": {
-      "Match": 18862
+      "Match": 19030
     }
   },
   "layout": {
     "name": "rv32_pipeline",
     "pins": 443,
-    "nets": 21418,
+    "nets": 21593,
     "devices": 0,
-    "subcircuits": 18862
+    "subcircuits": 19030
   },
   "reference": {
     "name": "RV32_PIPELINE",
     "pins": 443,
-    "nets": 21646,
+    "nets": 21814,
     "devices": 0,
-    "subcircuits": 18862
+    "subcircuits": 19030
   },
-  "validated_cell_masters": 82,
+  "validated_cell_masters": 83,
   "negative_controls_rejected": 2,
   "comparison_warning_count": 108,
   "comparison_error_count": 0,
-  "comparison_seconds": 291.13,
+  "comparison_seconds": 357.65,
   "sha256": {
-    "gds": "5958c0aebea0863e18a881c7e3e668aad1fb99c5b900d8e536c837d9deed3671",
-    "reference": "21071c5200519e889f88091e4686ccf495b3b25ab113edfd3ad0fce2c590c3af",
+    "gds": "32556ecb66881c322d7e53f3ff99e6e60b24e449638015a4b9adc961f6f54559",
+    "reference": "a5848cc86612ffff676f6ccbb6c5c843a9eb02586efd9f68408bde06b74da5e9",
     "library": "457f0e3836b369f56d2cb04aab2a16d0e40b56d32bf2c62f19475b0abca2f6b3"
   },
-  "odb_sha256": "8fdae096d8289b11fdaec0c48edd133ceebf01e1e05f85ed517235dd4126f5dd",
+  "odb_sha256": "14542ddc1e9b80c79bc60beabe0ba13cc6a023cf56c6fc0b6e1419d4d0e8184d",
   "deck_sha256": "20494df9b6023e4013fc54018b96ae639a2e1c317ac9ac627277ebd79bbc8cbf",
   "database": "build/lvs/processor.lvsdb",
-  "remaining_limits": "43 independent antenna markers and 8 maximum-capacitance violations; academic PDK flow, not foundry signoff"
+  "remaining_limits": "0 independent DRC markers and 0 maximum-capacitance violations; academic PDK flow, not foundry signoff"
 }

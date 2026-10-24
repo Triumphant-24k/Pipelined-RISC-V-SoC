@@ -2,16 +2,16 @@
   "layout": {
     "name": "rv32_pipeline",
     "pins": 443,
-    "nets": 21418,
+    "nets": 21593,
     "devices": 0,
-    "subcircuits": 18862
+    "subcircuits": 19030
   },
   "reference": {
     "name": "RV32_PIPELINE",
     "pins": 443,
-    "nets": 21646,
+    "nets": 21814,
     "devices": 0,
-    "subcircuits": 18862
+    "subcircuits": 19030
   },
   "port_labels_match": true,
   "circuit_pairs": [
@@ -116,13 +116,13 @@
       "status": "Match"
     },
     {
-      "layout": "BUF_X16",
-      "reference": "BUF_X16",
+      "layout": "BUF_X1",
+      "reference": "BUF_X1",
       "status": "Match"
     },
     {
-      "layout": "BUF_X2",
-      "reference": "BUF_X2",
+      "layout": "BUF_X16",
+      "reference": "BUF_X16",
       "status": "Match"
     },
     {
@@ -143,6 +143,11 @@
     {
       "layout": "CLKBUF_X1",
       "reference": "CLKBUF_X1",
+      "status": "Match"
+    },
+    {
+      "layout": "CLKBUF_X2",
+      "reference": "CLKBUF_X2",
       "status": "Match"
     },
     {
@@ -433,18 +438,18 @@
   ],
   "top_relations": {
     "nets": {
-      "Match": 21418
+      "Match": 21593
     },
     "pins": {
       "Match": 443
     },
     "subcircuits": {
-      "Match": 18862
+      "Match": 19030
     }
   },
   "sha256": {
-    "gds": "5958c0aebea0863e18a881c7e3e668aad1fb99c5b900d8e536c837d9deed3671",
-    "reference": "21071c5200519e889f88091e4686ccf495b3b25ab113edfd3ad0fce2c590c3af",
+    "gds": "32556ecb66881c322d7e53f3ff99e6e60b24e449638015a4b9adc961f6f54559",
+    "reference": "a5848cc86612ffff676f6ccbb6c5c843a9eb02586efd9f68408bde06b74da5e9",
     "library": "457f0e3836b369f56d2cb04aab2a16d0e40b56d32bf2c62f19475b0abca2f6b3"
   },
   "pass": true,

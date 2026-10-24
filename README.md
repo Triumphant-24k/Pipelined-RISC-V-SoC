@@ -3,7 +3,7 @@
 An RV32IM pipeline, instruction/data caches, shared memory fabric, and autonomous
 tiled INT8 GEMM accelerator. Bare-metal firmware demonstrates software/DMA
 GEMM, interrupts, and a complete small convolution/dense inference workload.
-The processor core has a routed Nangate45 academic GDS. Post-route typical-corner setup/hold slack is +6.44/+0.02 ns at a 10 ns clock. There are 43 independent antenna markers and eight maximum-capacitance violations; Validated public-PDK LVS passes, including all 443 named top ports. No SRAM macro or foundry signoff implementation is claimed.
+The processor core has a routed Nangate45 academic GDS. Post-route typical-corner setup/hold slack is +6.31/+0.02 ns at a 10 ns clock. Independent GDS DRC reports zero markers, including antenna checks, and maximum-capacitance violations are zero. Repeated public-PDK LVS passes, including all 443 named top ports. No SRAM macro or foundry signoff implementation is claimed.
 
 ## Processor and memory block diagram
 
@@ -101,24 +101,26 @@ See `asic/open/README.md` for scope, pinned tools, constraints and reproduction.
 
 ```bash
 make pipeline
-make asic
-make physical-checks
-make lvs
+python3 asic/open/synth.py
+make closure
 make evidence
 make submissions
 ```
 
 A successful physical run exports `build/asic/rv32_pipeline.gds`, final DEF/ODB,
 mapped Verilog and extracted SPEF. The die is 292.425 x 292.425 um; the core is
-272.270 x 270.200 um. Final cell area is 36,027 um2 (tool-rounded), 49% utilization.
+272.270 x 270.200 um. Final cell area is 36,606 um2 (tool-rounded), 50% utilization.
 The typical corner is 1.1 V / 25 C. Setup uncertainty is 0.2 ns; hold uncertainty
 is 0.05 ns, revised from an initial blanket 0.2 ns assumption that exhausted
 hold-repair buffer limits. This is not multi-corner closure.
 
-The detailed router reports zero violations; independent KLayout GDS DRC reports
-43 antenna markers. Eight maximum-capacitance violations remain. The adapted
-FreePDK45 KLayout LVS flow passes: 83 circuit pairs, 443 top pins, 21,418 nets and
-18,862 cell instances match; all 82 instantiated cell masters are validated. Both power grids pass connectivity checks.
+The detailed router and independent KLayout GDS DRC both report zero violations.
+All enabled FEOL, BEOL, manufacturing-grid and antenna checks are clear.
+Maximum-capacitance violations are zero. Repeated FreePDK45 KLayout LVS passes:
+84 circuit pairs, 443 top pins, 21,593 nets and 19,030 cell instances match;
+all 83 instantiated cell masters are validated. Both power grids pass connectivity
+checks, and all 94,104 instance power/ground terminals connect correctly.
+See reports/closure_summary.json for the combined audit and repair history.
 Do not treat zero-delay gate simulation or stream-out completeness as LVS.
 
 Separate proposal, front-end and back-end PDFs are generated in

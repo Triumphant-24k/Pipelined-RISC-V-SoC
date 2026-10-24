@@ -21,11 +21,11 @@
 | Exploration | RTL tile/panel/cache/latency sweeps; separate dataflow models |
 | Synthesis | Fatal local lint and generic Yosys structural synthesis checks |
 | Open-source ASIC implementation | Processor mapped and routed on Nangate45; DEF/ODB/SPEF/GDS and reports generated |
-| Physical checks | Router DRV=0; KLayout antenna markers=43; max-capacitance violations=8; LVS PASS: transistor topology and named top ports match; no SRAM macro implementation |
+| Physical checks | Router DRV=0; KLayout GDS DRC markers=0 (including antenna); max-capacitance violations=0; LVS PASS: transistor topology and named top ports match; no SRAM macro implementation |
 | Reproducibility/CI | make all, PowerShell WSL wrapper, CI workflow; remote CI not run |
 
 Read reports/VERIFICATION.md, BENCHMARKS.md, PHYSICAL_DESIGN.md and their JSON
 artifacts for evidence and limits. The commercial scripts are unexecuted; the public Nangate45 processor flow has measured physical output.
 No GitHub push is authorized or performed.
 
-The public core flow now runs locally. Next signoff steps are antenna/electrical repair, foundry-qualified verification and multi-corner timing. SRAM macros and the commercial lab flow remain outside the completed core run. See reports/asic_metrics.json, physical_checks.json and the separate assignment PDFs.
+The public core flow now runs locally. Antenna/electrical repair is complete in the public core flow. Further signoff work would require foundry-qualified verification and multi-corner timing. SRAM macros and the commercial lab flow remain outside the completed core run. See reports/asic_metrics.json, physical_checks.json and the separate assignment PDFs.

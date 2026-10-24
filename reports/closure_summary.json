@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "scope": "Nangate45 academic processor, same typical corner and enabled public DRC rules",
+  "before": {
+    "antenna_markers": 43,
+    "maximum_capacitance_violations": 8,
+    "worst_capacitance_excess_ff": 11.1,
+    "cell_area_um2_rounded": 36027,
+    "setup_wns_ns": 6.44,
+    "hold_wns_ns": 0.02
+  },
+  "after": {
+    "anchored_primary_inputs": 74,
+    "max_anchor_distance_um": 20.88,
+    "gds_drc_markers": 0,
+    "cell_area_um2_rounded": 36606.0,
+    "router_drvs": 0,
+    "maximum_capacitance_violations": 0,
+    "setup_wns_ns": 6.31,
+    "hold_wns_ns": 0.02,
+    "lvs": "PASS",
+    "gate_scoreboard": "PASS",
+    "power_connectivity": "VDD and VSS PASS"
+  },
+  "repairs": [
+    "Real CMOS input buffers anchored at legal edge sites; CTS root anchored near clk",
+    "Input isolation buffers protected against removal/resizing",
+    "Signal/clock routes limited to metal2-metal6/metal4-metal6",
+    "Placement and global-route electrical repair with capacitance margin 20 percent and slew margin 10 percent",
+    "Legalization, routing, extraction and all affected checks repeated"
+  ],
+  "sha256": {
+    "gds": "32556ecb66881c322d7e53f3ff99e6e60b24e449638015a4b9adc961f6f54559",
+    "reference": "a5848cc86612ffff676f6ccbb6c5c843a9eb02586efd9f68408bde06b74da5e9",
+    "library": "457f0e3836b369f56d2cb04aab2a16d0e40b56d32bf2c62f19475b0abca2f6b3"
+  },
+  "remaining_scope_limits": [
+    "Single typical PVT corner",
+    "Academic public-PDK checks, not foundry signoff",
+    "External memories, SRAM macros, pad ring and package excluded"
+  ]
+}

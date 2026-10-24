@@ -14,8 +14,10 @@ python3 asic/open/synth.py
 python3 asic/open/run_physical.py
 python3 asic/open/gate_check.py
 python3 asic/open/physical_checks.py
+python3 scripts/collect_asic_evidence.py
 make lvs
 python3 scripts/collect_asic_evidence.py
+python3 asic/open/closure.py
 python3 scripts/capture_evidence.py
 python3 scripts/compile_assignment_reports.py
 ```
@@ -37,3 +39,11 @@ Final PDFs must be reviewed visually after regeneration; the source report gener
 The Ubuntu archive KLayout 0.26.2 package crashed during script startup. The official KLayout 0.30.12 Ubuntu-22 binary replaced it; its download and SHA256 are also recorded in toolchain_installation.json.
 
 Report generation also requires the `pypdf` Python package for embedded source attachments (available in the bundled desktop Python runtime; install with pip for standalone Linux use).
+
+## Antenna and capacitance repair
+
+The original routed layout had 43 public-deck antenna markers and eight maximum-capacitance violations. The revised flow buffers non-clock input ports using CMOS cells, anchors those buffers at legal sites near their pins and protects them against resizing/removal, anchors the CTS root near clk, and limits signal routes to metal2-metal6 and clock routes to metal4-metal6, and applies electrical repair both at placement and using global-route parasitics with a 20% capacitance margin and 10% slew margin. It legalizes the added cells and reroutes before detailed routing and final extraction. The supplied ANTENNA_X1 has zero LEF diffusion area and an empty transistor CDL, so it is not used as a presumed diode fix. Public DRC rules and Liberty capacitance limits are unchanged.
+
+After generating fresh GDS, run `python3 scripts/collect_asic_evidence.py` before `make lvs`, then run it again and `python3 asic/open/closure.py` after LVS. The closure audit fails if DRC/electrical/timing/LVS/functional/power results are incomplete, nonzero, or refer to a different GDS/ODB/deck. Original marker/electrical screenshots remain alongside current evidence for the report's repair history.
+
+Input-buffer sizing protection is released before the final `global_connect`, because OpenDB skips protected cells during power-pin connection. The buffers remain fixed in place. `check_power_pins.py` audits every instance POWER/GROUND terminal against VDD/VSS and fingerprints the final ODB; it runs automatically after `run_physical.py`. This is separate from checking continuous PDN shapes.

@@ -51,11 +51,16 @@ add_pdn_connect -grid core_grid -layers {metal4 metal7}
 add_pdn_connect -grid core_grid -layers {metal6 metal7}
 pdngen -failed_via_report $out/pdn_failed_vias.rpt
 checkpoint 3_power
-set_routing_layers -signal metal2-metal10 -clock metal4-metal10
+# Avoid thick upper metals for signal/clock antenna exposure in this small core.
+set_routing_layers -signal metal2-metal6 -clock metal4-metal6
 set_global_routing_layer_adjustment metal2-metal10 0.3
+# Isolate primary inputs with real, LVS-visible CMOS buffers.
+buffer_ports -inputs -buffer_cell BUF_X8
+source asic/open/pin_input_buffers.tcl
+pin_input_buffers
 global_placement -density 0.55 -routability_driven
 estimate_parasitics -placement
-repair_design
+repair_design -cap_margin 20 -slew_margin 10
 set_placement_padding -global -left 1 -right 1
 detailed_placement
 check_placement -verbose
@@ -64,6 +69,7 @@ checkpoint 4_placement
 repair_clock_inverters
 clock_tree_synthesis -root_buf CLKBUF_X3 -buf_list {CLKBUF_X1 CLKBUF_X2 CLKBUF_X3} -sink_clustering_enable
 repair_clock_nets
+pin_input_buffers
 detailed_placement
 set_propagated_clock [all_clocks]
 estimate_parasitics -placement
@@ -79,11 +85,24 @@ report_clock_skew
 checkpoint 5_cts
 global_route -guide_file $out/route.guide -congestion_iterations 100 -verbose
 estimate_parasitics -global_routing
+# Close electrical constraints using routed estimates before detailed routing.
+global_route -start_incremental
+repair_design -cap_margin 20 -slew_margin 10
+detailed_placement
+global_route -end_incremental -congestion_iterations 100
+estimate_parasitics -global_routing
+repair_timing -hold -max_buffer_percent 50
+global_route -start_incremental
+detailed_placement
+global_route -end_incremental -congestion_iterations 100
+estimate_parasitics -global_routing
 checkpoint 6_global_route
 detailed_route -output_drc $out/route_drc.rpt -output_maze $out/maze.log -verbose 0
 puts "FINAL_ROUTER_DRVS [detailed_route_num_drvs]"
 filler_placement {FILLCELL_X1 FILLCELL_X2 FILLCELL_X4 FILLCELL_X8 FILLCELL_X16 FILLCELL_X32}
 check_placement -verbose
+# End sizing protection before connecting the final power pins.
+unset_dont_touch [get_cells {input* clkbuf_0_clk}]
 global_connect
 write_verilog -remove_cells {FILLCELL*} $out/7_final.v
 # Extract routed RC, then analyze the propagated clock at the typical corner.

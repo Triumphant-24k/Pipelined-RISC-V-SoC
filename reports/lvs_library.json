@@ -1,6 +1,6 @@
 {
   "scope": "all functional masters instantiated by final routed CDL; fillers have no transistors",
-  "count": 82,
+  "count": 83,
   "results": [
     {
       "cell": "AND2_X1",
@@ -103,12 +103,12 @@
       "exit_code": 0
     },
     {
-      "cell": "BUF_X16",
+      "cell": "BUF_X1",
       "comparison": "PASS",
       "exit_code": 0
     },
     {
-      "cell": "BUF_X2",
+      "cell": "BUF_X16",
       "comparison": "PASS",
       "exit_code": 0
     },
@@ -129,6 +129,11 @@
     },
     {
       "cell": "CLKBUF_X1",
+      "comparison": "PASS",
+      "exit_code": 0
+    },
+    {
+      "cell": "CLKBUF_X2",
       "comparison": "PASS",
       "exit_code": 0
     },
@@ -413,5 +418,5 @@
       "exit_code": 0
     }
   ],
-  "passed": 82
+  "passed": 83
 }

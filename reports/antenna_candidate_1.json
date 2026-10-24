@@ -1,0 +1,4014 @@
+{
+  "markers": [
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        24.105,
+        0.035,
+        167.325,
+        0.105
+      ],
+      "values": [
+        "polygon: (24.105,0.035;24.105,0.105;167.325,0.105;167.325,0.035)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 407.226666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 10.6897",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "timer_irq"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        167.185,
+        93.835,
+        176.675,
+        93.905
+      ],
+      "values": [
+        "polygon: (167.185,93.835;167.185,93.905;176.675,93.905;176.675,93.835)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 407.226666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 10.6897",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "timer_irq"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        171.385,
+        0.315,
+        270.085,
+        0.385
+      ],
+      "values": [
+        "polygon: (171.385,0.315;171.385,0.385;270.085,0.385;270.085,0.315)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 452.853333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.8874",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[24]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        170.075,
+        95.935,
+        171.525,
+        96.005
+      ],
+      "values": [
+        "polygon: (170.075,95.935;170.075,96.005;171.525,96.005;171.525,95.935)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 452.853333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.8874",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[24]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        101.665,
+        100.275,
+        170.595,
+        100.765
+      ],
+      "values": [
+        "polygon: (101.665,100.275;101.665,100.345;121.765,100.345;121.765,100.485;136.465,100.485;136.465,100.625;166.66,100.625;166.66,100.765;170.595,100.765;170.595,100.695;166.73,100.695;166.73,100.555;136.535,100.555;136.535,100.415;121.835,100.415;121.835,100.275)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 452.853333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.8874",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "_00048_[4]",
+        "_00057_[11]",
+        "_00427_",
+        "_01003_",
+        "_01531_",
+        "_02810_",
+        "_03547_",
+        "_03786_",
+        "_07608_",
+        "_08955_",
+        "_13175_",
+        "_13971_",
+        "_13972_",
+        "_14002_",
+        "mem_cause[3]",
+        "rd[24]",
+        "regs\\[20\\][16]",
+        "regs\\[9\\][16]",
+        "wb_csrvalue[3]",
+        "net146",
+        "net201",
+        "net320",
+        "net323",
+        "net336",
+        "net362",
+        "clknet_leaf_326_clk",
+        "clknet_leaf_341_clk",
+        "clknet_leaf_345_clk",
+        "clknet_leaf_348_clk",
+        "clknet_5_6__leaf_clk",
+        "clknet_5_7__leaf_clk"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        101.485,
+        150.535,
+        101.805,
+        150.605
+      ],
+      "values": [
+        "polygon: (101.485,150.535;101.485,150.605;101.805,150.605;101.805,150.535)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 452.853333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.8874",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[24]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        108.945,
+        127.155,
+        176.565,
+        127.225
+      ],
+      "values": [
+        "polygon: (108.945,127.155;108.945,127.225;176.565,127.225;176.565,127.155)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 427.6",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.2245",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[12]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        201.345,
+        127.435,
+        292.385,
+        127.645
+      ],
+      "values": [
+        "polygon: (201.345,127.435;201.345,127.505;227.87,127.505;227.87,127.645;283.535,127.645;283.535,127.505;292.385,127.505;292.385,127.435;283.465,127.435;283.465,127.575;227.94,127.575;227.94,127.435)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 427.6",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.2245",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "_04185_",
+        "_04652_",
+        "_09851_",
+        "_14257_",
+        "rd[12]",
+        "net126"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        94.835,
+        158.935,
+        95.925,
+        159.005
+      ],
+      "values": [
+        "polygon: (94.835,158.935;94.835,159.005;95.925,159.005;95.925,158.935)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 427.6",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.2245",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[12]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        292.065,
+        187.075,
+        292.385,
+        187.145
+      ],
+      "values": [
+        "polygon: (292.065,187.075;292.065,187.145;292.385,187.145;292.385,187.075)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 427.6",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.2245",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[12]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        90.465,
+        167.755,
+        90.605,
+        167.825
+      ],
+      "values": [
+        "polygon: (90.465,167.755;90.465,167.825;90.605,167.825;90.605,167.755)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 478.24",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 12.5538",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        90.745,
+        250.775,
+        268.965,
+        251.825
+      ],
+      "values": [
+        "polygon: (90.745,250.775;90.745,250.845;99.74,250.845;99.74,251.125;107.065,251.125;107.065,251.825;268.965,251.825;268.965,251.755;107.135,251.755;107.135,251.055;99.81,251.055;99.81,250.775)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 478.24",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 12.5538",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "_01209_",
+        "_02059_",
+        "_02078_",
+        "_03246_",
+        "_10413_",
+        "_10414_",
+        "_10417_",
+        "_10543_",
+        "_10698_",
+        "_10705_",
+        "_10708_",
+        "_10717_",
+        "_10803_",
+        "_10806_",
+        "_11210_",
+        "_11213_",
+        "_11214_",
+        "_11221_",
+        "_11238_",
+        "_11269_",
+        "_11365_",
+        "_11625_",
+        "_11647_",
+        "_11649_",
+        "_11650_",
+        "_11651_",
+        "_11656_",
+        "_11657_",
+        "_11658_",
+        "_11659_",
+        "_11669_",
+        "_11676_",
+        "_11696_",
+        "_11718_",
+        "_11894_",
+        "_11895_",
+        "_11990_",
+        "_12081_",
+        "_12089_",
+        "_12173_",
+        "_12399_",
+        "_12540_",
+        "_12544_",
+        "_13796_",
+        "_13813_",
+        "_13828_",
+        "_14677_",
+        "md.acc[10]",
+        "md.acc[62]",
+        "md.divisor[21]",
+        "md.multiplicand[62]",
+        "md.negative_remainder",
+        "md.operation[1]",
+        "md.quotient[14]",
+        "md.quotient[28]",
+        "md.remainder[15]",
+        "md.remainder[20]",
+        "md.remainder[30]",
+        "rd[31]",
+        "net113",
+        "net139",
+        "net181",
+        "net243",
+        "net260",
+        "clknet_leaf_175_clk",
+        "clknet_5_15__leaf_clk",
+        "net369"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        72.605,
+        192.535,
+        73.525,
+        192.605
+      ],
+      "values": [
+        "polygon: (72.605,192.535;72.605,192.605;73.525,192.605;73.525,192.535)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 332.853333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 8.7374",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        197.145,
+        225.155,
+        268.125,
+        225.365
+      ],
+      "values": [
+        "polygon: (197.145,225.155;197.145,225.225;198.02,225.225;198.02,225.365;231.035,225.365;231.035,225.225;245.665,225.225;245.665,225.365;268.125,225.365;268.125,225.295;245.735,225.295;245.735,225.155;230.965,225.155;230.965,225.295;198.09,225.295;198.09,225.155)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 332.853333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 8.7374",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "_03033_",
+        "_14474_",
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        108.945,
+        225.855,
+        128.125,
+        225.925
+      ],
+      "values": [
+        "polygon: (108.945,225.855;108.945,225.925;128.125,225.925;128.125,225.855)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 332.853333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 8.7374",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        141.985,
+        226.415,
+        175.165,
+        226.625
+      ],
+      "values": [
+        "polygon: (141.985,226.415;141.985,226.485;165.865,226.485;165.865,226.625;175.165,226.625;175.165,226.555;165.935,226.555;165.935,226.415)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 332.853333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 8.7374",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "_02104_",
+        "_11712_",
+        "_11906_",
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        78.875,
+        199.115,
+        80.805,
+        199.185
+      ],
+      "values": [
+        "polygon: (78.875,199.115;78.875,199.185;80.805,199.185;80.805,199.115)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 556.56",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 14.6097",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[28]"
+      ]
+    },
+    {
+      "category": "METAL3_ANTENNA",
+      "box": [
+        80.665,
+        284.515,
+        287.445,
+        284.585
+      ],
+      "values": [
+        "polygon: (80.665,284.515;80.665,284.585;287.445,284.585;287.445,284.515)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 556.56",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 14.6097",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[28]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        24.105,
+        0.0,
+        24.245,
+        0.42
+      ],
+      "values": [
+        "polygon: (24.105,0;24.105,0.42;24.245,0.42;24.245,0)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 503.253333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.2104",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "timer_irq"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        167.185,
+        0.0,
+        167.325,
+        93.94
+      ],
+      "values": [
+        "polygon: (167.185,0;167.185,93.94;167.325,93.94;167.325,0)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 503.253333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.2104",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "timer_irq"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        59.945,
+        90.44,
+        60.085,
+        153.58
+      ],
+      "values": [
+        "polygon: (59.945,90.44;59.945,153.58;60.085,153.58;60.085,90.44)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 337.493333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 8.8592",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[26]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        88.225,
+        153.44,
+        88.365,
+        153.58
+      ],
+      "values": [
+        "polygon: (88.225,153.44;88.225,153.58;88.365,153.58;88.365,153.44)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 337.493333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 8.8592",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        84.305,
+        1.96,
+        84.725,
+        139.44
+      ],
+      "values": [
+        "polygon: (84.585,1.96;84.585,137.48;84.305,137.48;84.305,139.44;84.445,139.44;84.445,137.62;84.725,137.62;84.725,1.96)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 734.72",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 19.2864",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "_08999_",
+        "rd[22]",
+        "clknet_5_6__leaf_clk"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        152.905,
+        1.96,
+        153.045,
+        76.86
+      ],
+      "values": [
+        "polygon: (152.905,1.96;152.905,76.86;153.045,76.86;153.045,1.96)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 781.76",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 20.5212",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[8]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        100.265,
+        76.72,
+        100.685,
+        147.84
+      ],
+      "values": [
+        "polygon: (100.545,76.72;100.545,110.88;100.265,110.88;100.265,121.87;100.545,121.87;100.545,147.84;100.685,147.84;100.685,121.73;100.405,121.73;100.405,111.02;100.685,111.02;100.685,76.72)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 781.76",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 20.5212",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "_07984_",
+        "_08394_",
+        "ex_insn[13]",
+        "rd[8]",
+        "wb_value[3]",
+        "clknet_5_6__leaf_clk"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        168.865,
+        36.12,
+        169.005,
+        105.98
+      ],
+      "values": [
+        "polygon: (168.865,36.12;168.865,105.98;169.005,105.98;169.005,36.12)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 372.586666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.7804",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "ir"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        86.825,
+        49.28,
+        87.245,
+        142.24
+      ],
+      "values": [
+        "polygon: (87.105,49.28;87.105,136.43;86.825,136.43;86.825,142.24;86.965,142.24;86.965,136.57;87.245,136.57;87.245,49.28)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 497.28",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.0536",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "_07341_",
+        "rd[14]",
+        "clknet_5_4__leaf_clk",
+        "clknet_5_12__leaf_clk"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        269.945,
+        0.28,
+        270.085,
+        0.42
+      ],
+      "values": [
+        "polygon: (269.945,0.28;269.945,0.42;270.085,0.42;270.085,0.28)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 564.48",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 14.8176",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        171.385,
+        0.28,
+        171.525,
+        96.04
+      ],
+      "values": [
+        "polygon: (171.385,0.28;171.385,96.04;171.525,96.04;171.525,0.28)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 564.48",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 14.8176",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[24]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        101.665,
+        100.24,
+        101.805,
+        109.06
+      ],
+      "values": [
+        "polygon: (101.665,100.24;101.665,109.06;101.805,109.06;101.805,100.24)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 564.48",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 14.8176",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[24]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        101.665,
+        149.52,
+        101.805,
+        150.64
+      ],
+      "values": [
+        "polygon: (101.665,149.52;101.665,150.64;101.805,150.64;101.805,149.52)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 564.48",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 14.8176",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[24]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        97.465,
+        20.72,
+        97.605,
+        85.82
+      ],
+      "values": [
+        "polygon: (97.465,20.72;97.465,85.82;97.605,85.82;97.605,20.72)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 351.68",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.2316",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[9]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        92.145,
+        158.2,
+        92.285,
+        159.04
+      ],
+      "values": [
+        "polygon: (92.145,158.2;92.145,159.04;92.285,159.04;92.285,158.2)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 351.68",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.2316",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[9]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        0.305,
+        68.88,
+        0.445,
+        159.18
+      ],
+      "values": [
+        "polygon: (0.305,68.88;0.305,159.18;0.445,159.18;0.445,68.88)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 481.6",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 12.642",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[17]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        9.545,
+        71.68,
+        9.685,
+        151.76
+      ],
+      "values": [
+        "polygon: (9.545,71.68;9.545,151.76;9.685,151.76;9.685,71.68)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 427.093333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.2112",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[11]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        267.985,
+        194.88,
+        268.125,
+        225.4
+      ],
+      "values": [
+        "polygon: (267.985,194.88;267.985,225.4;268.125,225.4;268.125,194.88)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 356.906666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.3688",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        73.385,
+        192.5,
+        73.525,
+        225.54
+      ],
+      "values": [
+        "polygon: (73.385,192.5;73.385,225.54;73.525,225.54;73.525,192.5)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 356.906666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.3688",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        108.945,
+        225.4,
+        109.085,
+        225.96
+      ],
+      "values": [
+        "polygon: (108.945,225.4;108.945,225.96;109.085,225.96;109.085,225.4)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 356.906666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.3688",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        127.985,
+        225.4,
+        128.125,
+        225.96
+      ],
+      "values": [
+        "polygon: (127.985,225.4;127.985,225.96;128.125,225.96;128.125,225.4)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 356.906666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.3688",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        197.145,
+        225.12,
+        197.285,
+        226.1
+      ],
+      "values": [
+        "polygon: (197.145,225.12;197.145,226.1;197.285,226.1;197.285,225.12)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 356.906666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.3688",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        175.025,
+        225.96,
+        175.165,
+        226.66
+      ],
+      "values": [
+        "polygon: (175.025,225.96;175.025,226.66;175.165,226.66;175.165,225.96)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 356.906666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.3688",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        141.985,
+        226.38,
+        142.125,
+        226.94
+      ],
+      "values": [
+        "polygon: (141.985,226.38;141.985,226.94;142.125,226.94;142.125,226.38)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 356.906666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 9.3688",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        80.665,
+        199.08,
+        80.805,
+        284.62
+      ],
+      "values": [
+        "polygon: (80.665,199.08;80.665,284.62;80.805,284.62;80.805,199.08)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 491.306666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 12.8968",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[28]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        287.305,
+        284.48,
+        287.445,
+        291.06
+      ],
+      "values": [
+        "polygon: (287.305,284.48;287.305,291.06;287.445,291.06;287.445,284.48)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 491.306666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 12.8968",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[28]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        42.585,
+        16.52,
+        121.965,
+        16.66
+      ],
+      "values": [
+        "polygon: (42.585,16.52;42.585,16.66;121.965,16.66;121.965,16.52)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 423.36",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 11.1132",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[14]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        87.105,
+        49.28,
+        267.285,
+        49.42
+      ],
+      "values": [
+        "polygon: (87.105,49.28;87.105,49.42;267.285,49.42;267.285,49.28)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 960.96",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 25.2252",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[14]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        231.025,
+        15.68,
+        292.425,
+        16.66
+      ],
+      "values": [
+        "polygon: (292.065,15.68;292.065,16.1;292.285,16.1;292.285,16.52;231.025,16.52;231.025,16.66;292.425,16.66;292.425,15.96;292.205,15.96;292.205,15.82;292.425,15.82;292.425,15.68)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 334.293333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 8.7752",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[21]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        97.465,
+        20.72,
+        292.425,
+        20.86
+      ],
+      "values": [
+        "polygon: (97.465,20.72;97.465,20.86;292.425,20.86;292.425,20.72)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 1069.65333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 28.0784",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[9]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        92.145,
+        85.68,
+        97.605,
+        85.82
+      ],
+      "values": [
+        "polygon: (92.145,85.68;92.145,85.82;97.605,85.82;97.605,85.68)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 1069.65333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 28.0784",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[9]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        92.145,
+        158.2,
+        92.285,
+        158.34
+      ],
+      "values": [
+        "polygon: (92.145,158.2;92.145,158.34;92.285,158.34;92.285,158.2)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 1069.65333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 28.0784",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        0.0,
+        61.04,
+        0.445,
+        61.18
+      ],
+      "values": [
+        "polygon: (0,61.04;0,61.18;0.445,61.18;0.445,61.04)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 506.121212121",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 20.8775",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "clk"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        0.025,
+        106.12,
+        127.005,
+        106.54
+      ],
+      "values": [
+        "polygon: (18.83,106.12;18.83,106.4;0.025,106.4;0.025,106.54;18.97,106.54;18.97,106.26;33.53,106.26;33.53,106.54;54.67,106.54;54.67,106.26;62.93,106.26;62.93,106.54;98.77,106.54;98.77,106.26;127.005,106.26;127.005,106.12;98.63,106.12;98.63,106.4;63.07,106.4;63.07,106.12;54.53,106.12;54.53,106.4;33.67,106.4;33.67,106.12)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 506.121212121",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 20.8775",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "clk",
+        "trap_cause[2]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        126.865,
+        151.76,
+        147.165,
+        151.9
+      ],
+      "values": [
+        "polygon: (126.865,151.76;126.865,151.9;147.165,151.9;147.165,151.76)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 506.121212121",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 20.8775",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "clk"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        79.265,
+        176.96,
+        79.405,
+        177.1
+      ],
+      "values": [
+        "polygon: (79.265,176.96;79.265,177.1;79.405,177.1;79.405,176.96)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 1012.48",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 26.5776",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        79.265,
+        280.56,
+        268.965,
+        280.7
+      ],
+      "values": [
+        "polygon: (79.265,280.56;79.265,280.7;268.965,280.7;268.965,280.56)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 1012.48",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 26.5776",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[29]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        267.985,
+        194.88,
+        292.425,
+        195.02
+      ],
+      "values": [
+        "polygon: (267.985,194.88;267.985,195.02;292.425,195.02;292.425,194.88)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 524.586666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.7704",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        127.985,
+        225.4,
+        133.165,
+        225.54
+      ],
+      "values": [
+        "polygon: (127.985,225.4;127.985,225.54;133.165,225.54;133.165,225.4)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 524.586666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.7704",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        175.025,
+        225.96,
+        197.285,
+        226.1
+      ],
+      "values": [
+        "polygon: (175.025,225.96;175.025,226.1;197.285,226.1;197.285,225.96)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 524.586666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.7704",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        73.385,
+        225.4,
+        109.085,
+        226.38
+      ],
+      "values": [
+        "polygon: (73.385,225.4;73.385,225.54;93.265,225.54;93.265,226.38;95.925,226.38;95.925,225.54;109.085,225.54;109.085,225.4;95.785,225.4;95.785,226.24;93.405,226.24;93.405,225.4)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 524.586666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.7704",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "instret[22]",
+        "mem_pc[17]",
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        133.025,
+        226.8,
+        142.125,
+        226.94
+      ],
+      "values": [
+        "polygon: (133.025,226.8;133.025,226.94;142.125,226.94;142.125,226.8)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 524.586666667",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.7704",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        0.0,
+        224.56,
+        1.845,
+        224.7
+      ],
+      "values": [
+        "polygon: (0,224.56;0,224.7;1.845,224.7;1.845,224.56)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 568.841212121",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 23.4647",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "external_irq"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        1.705,
+        226.8,
+        128.125,
+        227.22
+      ],
+      "values": [
+        "polygon: (1.705,226.8;1.705,226.94;92.33,226.94;92.33,227.22;128.125,227.22;128.125,227.08;92.47,227.08;92.47,226.8)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 568.841212121",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 23.4647",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "_12395_",
+        "external_irq"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        158.505,
+        227.36,
+        197.565,
+        227.5
+      ],
+      "values": [
+        "polygon: (158.505,227.36;158.505,227.5;197.565,227.5;197.565,227.36)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 568.841212121",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 23.4647",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "external_irq"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        56.025,
+        0.0,
+        56.165,
+        90.58
+      ],
+      "values": [
+        "polygon: (56.025,0;56.025,90.58;56.165,90.58;56.165,0)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 483.093333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 12.6812",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[26]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        68.905,
+        0.0,
+        69.045,
+        99.82
+      ],
+      "values": [
+        "polygon: (68.905,0;68.905,99.82;69.045,99.82;69.045,0)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 532.373333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.9748",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[16]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        92.145,
+        85.68,
+        92.285,
+        158.34
+      ],
+      "values": [
+        "polygon: (92.145,85.68;92.145,158.34;92.285,158.34;92.285,85.68)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 387.52",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 10.1724",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[9]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        194.625,
+        120.4,
+        194.765,
+        121.66
+      ],
+      "values": [
+        "polygon: (194.625,120.4;194.625,121.66;194.765,121.66;194.765,120.4)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 462.428708134",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 24.1619",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "ip"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        248.665,
+        121.24,
+        248.805,
+        161.42
+      ],
+      "values": [
+        "polygon: (248.665,121.24;248.665,161.42;248.805,161.42;248.805,121.24)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 462.428708134",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 24.1619",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "ip"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        258.745,
+        161.28,
+        258.885,
+        292.425
+      ],
+      "values": [
+        "polygon: (258.745,161.28;258.745,292.425;258.885,292.425;258.885,161.28)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 462.428708134",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 24.1619",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "ip"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        49.865,
+        161.56,
+        50.005,
+        292.425
+      ],
+      "values": [
+        "polygon: (49.865,161.56;49.865,292.425;50.005,292.425;50.005,161.56)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 350.643062201",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 18.3211",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[7]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        85.985,
+        166.88,
+        86.125,
+        290.78
+      ],
+      "values": [
+        "polygon: (85.985,166.88;85.985,290.78;86.125,290.78;86.125,166.88)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 670.32",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 17.5959",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[30]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        102.505,
+        290.64,
+        102.645,
+        292.425
+      ],
+      "values": [
+        "polygon: (102.505,290.64;102.505,292.425;102.645,292.425;102.645,290.64)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 670.32",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 17.5959",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[30]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        15.705,
+        166.32,
+        15.845,
+        292.425
+      ],
+      "values": [
+        "polygon: (15.705,166.32;15.705,292.425;15.845,292.425;15.845,166.32)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 337.888995215",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 17.6547",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "dp"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        79.265,
+        176.96,
+        79.405,
+        280.7
+      ],
+      "values": [
+        "polygon: (79.265,176.96;79.265,280.7;79.405,280.7;79.405,176.96)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 616.56",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 16.1847",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[29]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        268.825,
+        280.56,
+        268.965,
+        292.425
+      ],
+      "values": [
+        "polygon: (268.825,280.56;268.825,292.425;268.965,292.425;268.965,280.56)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 616.56",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 16.1847",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[29]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        105.585,
+        185.36,
+        105.725,
+        199.22
+      ],
+      "values": [
+        "polygon: (105.585,185.36;105.585,199.22;105.725,199.22;105.725,185.36)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 332.962424242",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.7347",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "rd[18]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        105.025,
+        208.04,
+        105.165,
+        291.9
+      ],
+      "values": [
+        "polygon: (105.025,208.04;105.025,291.9;105.165,291.9;105.165,208.04)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 332.962424242",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.7347",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "rd[18]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        28.585,
+        292.04,
+        28.725,
+        292.425
+      ],
+      "values": [
+        "polygon: (28.585,292.04;28.585,292.425;28.725,292.425;28.725,292.04)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 332.962424242",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 13.7347",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "rd[18]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        42.025,
+        218.96,
+        42.165,
+        292.425
+      ],
+      "values": [
+        "polygon: (42.025,218.96;42.025,292.425;42.165,292.425;42.165,218.96)",
+        "[#diode_factors] text: '(0)'",
+        "[#ratio] float: 391.813333333",
+        "[#max_ratio] float: 300",
+        "[#adiodes] text: '(0)'",
+        "[#ametal] float: 10.2851",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[23]"
+      ]
+    }
+  ],
+  "nets": {
+    "timer_irq": {
+      "ports": [
+        "timer_irq"
+      ],
+      "iterms": [
+        "input105/A"
+      ]
+    },
+    "rd[24]": {
+      "ports": [
+        "rd[24]"
+      ],
+      "iterms": [
+        "input88/A"
+      ]
+    },
+    "_00048_[4]": {
+      "ports": [],
+      "iterms": [
+        "_33704_/D",
+        "_19700_/ZN"
+      ]
+    },
+    "_00057_[11]": {
+      "ports": [],
+      "iterms": [
+        "_33576_/D",
+        "_20622_/Z"
+      ]
+    },
+    "_00427_": {
+      "ports": [],
+      "iterms": [
+        "_32046_/D",
+        "_27437_/ZN"
+      ]
+    },
+    "_01003_": {
+      "ports": [],
+      "iterms": [
+        "_31982_/D",
+        "_17197_/ZN"
+      ]
+    },
+    "_01531_": {
+      "ports": [],
+      "iterms": [
+        "_34004_/QN",
+        "_25690_/B",
+        "_16950_/A"
+      ]
+    },
+    "_02810_": {
+      "ports": [],
+      "iterms": [
+        "_33704_/QN",
+        "_26621_/A1",
+        "_26611_/A",
+        "_26610_/A1",
+        "_19699_/A1"
+      ]
+    },
+    "_03547_": {
+      "ports": [],
+      "iterms": [
+        "_19754_/C1",
+        "_19752_/C1",
+        "_19750_/C1",
+        "_19748_/B1",
+        "_19747_/B2",
+        "_19746_/C1",
+        "_19744_/C1",
+        "_19742_/C1",
+        "_19740_/C1",
+        "_19738_/C1",
+        "_19736_/C1",
+        "_19734_/C1",
+        "_19732_/C1",
+        "_19730_/C1",
+        "_19728_/C1",
+        "_19726_/B1",
+        "_19725_/B2",
+        "_19724_/C1",
+        "_19722_/C1",
+        "_19720_/C1",
+        "_19718_/C1",
+        "_19716_/C1",
+        "_19714_/C1",
+        "_19712_/B1",
+        "_19711_/B2",
+        "_19710_/C1",
+        "_19708_/C1",
+        "_19706_/C1",
+        "_19704_/C1",
+        "_19702_/C1",
+        "_19700_/C1",
+        "_19698_/C1",
+        "_19696_/C1",
+        "_19694_/A",
+        "_19692_/C1",
+        "_19689_/ZN"
+      ]
+    },
+    "_03786_": {
+      "ports": [],
+      "iterms": [
+        "_20025_/A",
+        "_20024_/ZN"
+      ]
+    },
+    "_07608_": {
+      "ports": [],
+      "iterms": [
+        "_24336_/C1",
+        "_24335_/Z"
+      ]
+    },
+    "_08955_": {
+      "ports": [],
+      "iterms": [
+        "_25715_/B",
+        "_25714_/Z"
+      ]
+    },
+    "_13175_": {
+      "ports": [],
+      "iterms": [
+        "max_cap205/A",
+        "_31446_/B1",
+        "_31445_/A",
+        "_31418_/B1",
+        "_31417_/A",
+        "_31400_/B1",
+        "_31399_/A",
+        "_31394_/B1",
+        "_31393_/A",
+        "_31390_/B1",
+        "_31389_/A",
+        "_31384_/ZN"
+      ]
+    },
+    "_13971_": {
+      "ports": [],
+      "iterms": [
+        "_17285_/B2",
+        "_17284_/ZN"
+      ]
+    },
+    "_13972_": {
+      "ports": [],
+      "iterms": [
+        "_26494_/A2",
+        "_17289_/A1",
+        "_17288_/A1",
+        "_17285_/ZN"
+      ]
+    },
+    "_14002_": {
+      "ports": [],
+      "iterms": [
+        "_17399_/B1",
+        "_17398_/A3",
+        "_17323_/A",
+        "_17321_/ZN"
+      ]
+    },
+    "mem_cause[3]": {
+      "ports": [],
+      "iterms": [
+        "_33362_/Q",
+        "_27209_/C2",
+        "_26629_/A1",
+        "_19403_/C2",
+        "_16774_/A"
+      ]
+    },
+    "regs\\[20\\][16]": {
+      "ports": [],
+      "iterms": [
+        "_31886_/Q",
+        "_30961_/A2"
+      ]
+    },
+    "regs\\[9\\][16]": {
+      "ports": [],
+      "iterms": [
+        "_32494_/Q",
+        "_30242_/A2"
+      ]
+    },
+    "wb_csrvalue[3]": {
+      "ports": [],
+      "iterms": [
+        "_33532_/Q",
+        "_20630_/A",
+        "_17400_/A1"
+      ]
+    },
+    "net146": {
+      "ports": [],
+      "iterms": [
+        "max_cap146/Z",
+        "_20536_/S",
+        "_20537_/S",
+        "_23452_/S",
+        "_23458_/S",
+        "_20025_/B1",
+        "_20542_/S",
+        "_20540_/S",
+        "_20539_/S",
+        "_23466_/S",
+        "_20541_/S",
+        "_23469_/S",
+        "_20531_/S",
+        "_20532_/S",
+        "_20538_/S",
+        "_20535_/S"
+      ]
+    },
+    "net201": {
+      "ports": [],
+      "iterms": [
+        "max_cap201/Z",
+        "_19542_/S",
+        "_19539_/S",
+        "_19285_/A",
+        "_19548_/S",
+        "_19551_/S",
+        "_26656_/A",
+        "max_cap200/A",
+        "_27273_/B1",
+        "_27270_/B1",
+        "_27258_/B1",
+        "_27255_/B1",
+        "_27246_/B1",
+        "_19442_/B2",
+        "_19444_/B2",
+        "_19305_/A",
+        "_19432_/B2",
+        "_19430_/B2",
+        "_19297_/A",
+        "_19436_/B2",
+        "_19426_/B2",
+        "_19514_/A",
+        "_19554_/S",
+        "_26696_/B2",
+        "_26698_/B2",
+        "_26650_/C2",
+        "_26627_/A",
+        "_26614_/C2",
+        "_19545_/S",
+        "_19412_/B2",
+        "_19289_/A",
+        "_27249_/B1",
+        "_19301_/A",
+        "_19293_/A",
+        "_19428_/B2",
+        "_19418_/B2",
+        "_19410_/B2",
+        "_19420_/B2",
+        "_19414_/B2",
+        "_19281_/A",
+        "_19406_/B2",
+        "_19416_/B2",
+        "_19277_/A",
+        "_19273_/A",
+        "_19269_/A",
+        "_19408_/B2",
+        "_19389_/B1",
+        "_27209_/B1",
+        "_26592_/A",
+        "_26598_/C2",
+        "_19536_/S",
+        "_26585_/C2",
+        "_27252_/B1",
+        "_27231_/B1",
+        "_27219_/B1",
+        "_27282_/B1",
+        "_27213_/B1",
+        "_19261_/A",
+        "_19257_/A",
+        "_27205_/A2"
+      ]
+    },
+    "net320": {
+      "ports": [],
+      "iterms": [
+        "max_cap320/Z",
+        "_25689_/A",
+        "max_cap319/A",
+        "_25802_/C2",
+        "_25530_/B2",
+        "_25593_/B2",
+        "_25925_/B2",
+        "_25991_/B2",
+        "_26007_/C2",
+        "_25371_/B2",
+        "_25387_/C1",
+        "_25774_/A",
+        "_25452_/B2",
+        "_23583_/A2",
+        "_23585_/B1",
+        "_25000_/B1",
+        "_26047_/B2",
+        "_26031_/B2",
+        "_26337_/A",
+        "_25712_/C2",
+        "_25702_/C2"
+      ]
+    },
+    "net323": {
+      "ports": [],
+      "iterms": [
+        "max_cap323/Z",
+        "_26077_/B1",
+        "_26373_/A",
+        "_24994_/A2",
+        "_23582_/B",
+        "_25001_/B",
+        "_25119_/A1",
+        "_25112_/A1",
+        "_25117_/A1",
+        "_25114_/A1",
+        "_26334_/B1",
+        "_26335_/B2",
+        "_26332_/A1",
+        "_26329_/A1",
+        "_26327_/A1",
+        "_26312_/B1",
+        "_26313_/B2",
+        "_26311_/S",
+        "_26314_/A1",
+        "_26316_/S",
+        "_26079_/S",
+        "_25790_/S",
+        "_25789_/B2",
+        "_25788_/B1",
+        "_25784_/B2",
+        "_25783_/B1",
+        "_25769_/B1",
+        "_25770_/A1",
+        "_25766_/A1",
+        "_25765_/B1",
+        "_26078_/B2"
+      ]
+    },
+    "net336": {
+      "ports": [],
+      "iterms": [
+        "max_cap336/Z",
+        "_25323_/B2",
+        "_25322_/A",
+        "_26290_/S",
+        "_25700_/S",
+        "_25709_/S",
+        "_25710_/S",
+        "_26341_/A",
+        "_26339_/A",
+        "_26337_/C2",
+        "_26336_/A",
+        "_25699_/S",
+        "_25122_/C2",
+        "_25121_/A",
+        "_26299_/S",
+        "_26300_/S",
+        "_26289_/S",
+        "_25214_/A",
+        "_25215_/B2",
+        "_25219_/B2",
+        "max_cap334/A",
+        "_25218_/A",
+        "_25327_/B2",
+        "_25319_/C2",
+        "_25210_/A",
+        "_25318_/A",
+        "_25339_/C2"
+      ]
+    },
+    "net362": {
+      "ports": [],
+      "iterms": [
+        "max_length362/Z",
+        "_31548_/B2",
+        "_31091_/A1",
+        "_30895_/A1",
+        "_31156_/A1",
+        "_31613_/B2",
+        "_31238_/B2",
+        "_31433_/B2",
+        "_31368_/B2",
+        "_31629_/B2",
+        "_31499_/B2",
+        "max_length361/A",
+        "max_length358/A",
+        "_30977_/A1",
+        "_30991_/A1",
+        "_30818_/A1",
+        "_30846_/A1",
+        "_30688_/A1",
+        "_31079_/A1",
+        "_30949_/A1",
+        "_31014_/A1",
+        "_17770_/A1",
+        "_31340_/B2",
+        "_30769_/A1",
+        "_31536_/B2",
+        "_31275_/B2",
+        "_31405_/B2",
+        "_31617_/B2",
+        "_31160_/A1",
+        "_30834_/A1",
+        "_27637_/A1",
+        "_30507_/A1",
+        "_27515_/A1",
+        "_31166_/A1",
+        "_31036_/A1",
+        "_31431_/B2",
+        "_31688_/B2",
+        "_31362_/B2",
+        "_31232_/B2",
+        "_31623_/B2",
+        "_31366_/B2",
+        "_31297_/B2",
+        "_31427_/B2",
+        "_31101_/A1",
+        "_31170_/A1",
+        "_30714_/A1",
+        "_30710_/A1",
+        "_30775_/A1",
+        "_27580_/A1",
+        "_30779_/A1",
+        "_27647_/A1",
+        "_30321_/A1",
+        "_27450_/A1",
+        "_30637_/A1",
+        "_30246_/A1",
+        "_27505_/A1",
+        "_27570_/A1",
+        "_30704_/A1",
+        "_30376_/A1",
+        "_31291_/B2",
+        "_31552_/B2",
+        "_30899_/A1",
+        "_31601_/B2",
+        "_31471_/B2",
+        "_31210_/B2",
+        "_31682_/B2",
+        "_31226_/B2",
+        "_30311_/A1",
+        "_30572_/A1",
+        "_30386_/A1",
+        "_30422_/A1",
+        "_27617_/A1",
+        "_30291_/A1",
+        "_31487_/B2",
+        "_31356_/B2",
+        "_31421_/B2",
+        "_17390_/A1",
+        "_17226_/A1",
+        "_23547_/A1",
+        "_30730_/A1",
+        "_30795_/A1",
+        "_30911_/A1",
+        "_30716_/A1",
+        "_31107_/A1",
+        "_31172_/A1",
+        "_17740_/A1",
+        "_17360_/A1",
+        "_17196_/A1",
+        "_31026_/A1",
+        "_27436_/A1",
+        "_27566_/A1",
+        "_27605_/A1",
+        "_30438_/A1",
+        "_30568_/A1",
+        "_30605_/A1",
+        "_30475_/A1",
+        "_31447_/B2",
+        "_31643_/B2",
+        "_31382_/B2",
+        "_27473_/A1",
+        "_30663_/A1",
+        "_27663_/A1",
+        "_30402_/A1",
+        "_27651_/A1",
+        "_30260_/A1",
+        "_30945_/A1",
+        "_31597_/B2",
+        "_31336_/B2",
+        "_30446_/A1",
+        "_31206_/B2",
+        "_27540_/A1",
+        "_31676_/B2",
+        "_31220_/B2",
+        "_31350_/B2",
+        "_31546_/B2",
+        "_30893_/A1",
+        "_30763_/A1",
+        "_31024_/A1",
+        "_30959_/A1",
+        "_31087_/A1",
+        "_31152_/A1",
+        "_30576_/A1",
+        "_27641_/A1",
+        "_30315_/A1",
+        "_17368_/A1",
+        "_17204_/A1",
+        "_23525_/A1",
+        "_17748_/A1",
+        "_30521_/A1",
+        "_30456_/A1",
+        "_27454_/A1",
+        "_27519_/A1",
+        "_27584_/A1",
+        "_30598_/A1",
+        "_23535_/A1",
+        "_30337_/A1",
+        "_31317_/B2",
+        "_27538_/A1",
+        "_27408_/A1",
+        "_30214_/A1",
+        "_30344_/A1",
+        "_27633_/A1",
+        "_30307_/A1",
+        "_30700_/A1",
+        "_23545_/A1",
+        "_30279_/A1",
+        "_27501_/A1",
+        "_30830_/A1",
+        "_30765_/A1",
+        "_30961_/A1",
+        "_31483_/B2",
+        "_31222_/B2",
+        "_31352_/B2"
+      ]
+    },
+    "clknet_leaf_326_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload119/A",
+        "_33702_/CK",
+        "_33703_/CK",
+        "_33639_/CK",
+        "_33797_/CK",
+        "_33798_/CK",
+        "_33532_/CK",
+        "_33354_/CK",
+        "clkbuf_leaf_326_clk/Z"
+      ]
+    },
+    "clknet_leaf_341_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload129/A",
+        "_33607_/CK",
+        "_33576_/CK",
+        "_33603_/CK",
+        "_32558_/CK",
+        "_32366_/CK",
+        "_33600_/CK",
+        "_33573_/CK",
+        "clkbuf_leaf_341_clk/Z"
+      ]
+    },
+    "clknet_leaf_345_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload133/A",
+        "_32214_/CK",
+        "_31982_/CK",
+        "_33342_/CK",
+        "_34004_/CK",
+        "_31886_/CK",
+        "_32046_/CK",
+        "_32462_/CK",
+        "clkbuf_leaf_345_clk/Z"
+      ]
+    },
+    "clknet_leaf_348_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload111/A",
+        "_31758_/CK",
+        "_32494_/CK",
+        "_34068_/CK",
+        "_31933_/CK",
+        "_34019_/CK",
+        "_31869_/CK",
+        "clkbuf_leaf_348_clk/Z"
+      ]
+    },
+    "clknet_5_6__leaf_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload6/A",
+        "clkbuf_leaf_357_clk/A",
+        "clkbuf_leaf_353_clk/A",
+        "clkbuf_leaf_352_clk/A",
+        "clkbuf_leaf_351_clk/A",
+        "clkbuf_leaf_350_clk/A",
+        "clkbuf_leaf_349_clk/A",
+        "clkbuf_leaf_348_clk/A",
+        "clkbuf_leaf_347_clk/A",
+        "clkbuf_leaf_346_clk/A",
+        "clkbuf_leaf_66_clk/A",
+        "clkbuf_leaf_65_clk/A",
+        "clkbuf_leaf_60_clk/A",
+        "clkbuf_leaf_59_clk/A",
+        "clkbuf_leaf_58_clk/A",
+        "clkbuf_leaf_57_clk/A",
+        "clkbuf_leaf_56_clk/A",
+        "clkbuf_leaf_55_clk/A",
+        "clkbuf_5_6__f_clk/Z"
+      ]
+    },
+    "clknet_5_7__leaf_clk": {
+      "ports": [],
+      "iterms": [
+        "clkbuf_leaf_359_clk/A",
+        "clkbuf_leaf_358_clk/A",
+        "clkbuf_leaf_345_clk/A",
+        "clkbuf_leaf_344_clk/A",
+        "clkbuf_leaf_343_clk/A",
+        "clkbuf_leaf_342_clk/A",
+        "clkbuf_leaf_341_clk/A",
+        "clkbuf_leaf_340_clk/A",
+        "clkbuf_leaf_339_clk/A",
+        "clkbuf_leaf_338_clk/A",
+        "clkbuf_leaf_337_clk/A",
+        "clkbuf_leaf_336_clk/A",
+        "clkbuf_leaf_335_clk/A",
+        "clkbuf_leaf_332_clk/A",
+        "clkbuf_leaf_331_clk/A",
+        "clkbuf_leaf_330_clk/A",
+        "clkbuf_leaf_327_clk/A",
+        "clkbuf_leaf_326_clk/A",
+        "clkbuf_leaf_325_clk/A",
+        "clkbuf_leaf_308_clk/A",
+        "clkbuf_leaf_307_clk/A",
+        "clkbuf_5_7__f_clk/Z"
+      ]
+    },
+    "rd[12]": {
+      "ports": [
+        "rd[12]"
+      ],
+      "iterms": [
+        "input75/A"
+      ]
+    },
+    "_04185_": {
+      "ports": [],
+      "iterms": [
+        "_20460_/A",
+        "_20450_/ZN"
+      ]
+    },
+    "_04652_": {
+      "ports": [],
+      "iterms": [
+        "_21115_/A2",
+        "_21114_/ZN"
+      ]
+    },
+    "_09851_": {
+      "ports": [],
+      "iterms": [
+        "_26813_/A2",
+        "_26812_/B1",
+        "_26808_/ZN"
+      ]
+    },
+    "_14257_": {
+      "ports": [],
+      "iterms": [
+        "_17680_/A3",
+        "_17674_/B",
+        "_17673_/A2",
+        "_17672_/ZN"
+      ]
+    },
+    "net126": {
+      "ports": [],
+      "iterms": [
+        "max_length126/Z",
+        "_20530_/B1",
+        "_22317_/A2",
+        "_21244_/A2",
+        "_20529_/A",
+        "_21873_/A2",
+        "_22351_/A2",
+        "_20480_/A",
+        "_21451_/A2",
+        "_21736_/A2",
+        "_20498_/B1",
+        "_20481_/B1",
+        "_20325_/B1",
+        "_20293_/B1",
+        "_20292_/A",
+        "_20309_/B1",
+        "_20308_/A",
+        "_22007_/A2",
+        "_21803_/A2",
+        "_20324_/A",
+        "_20244_/B1",
+        "_20243_/A",
+        "_20227_/A",
+        "_22319_/A2",
+        "_21289_/A2",
+        "_20784_/A2",
+        "_20276_/B1",
+        "_20228_/B1",
+        "_21162_/A2",
+        "_20193_/B1",
+        "_20576_/A2",
+        "_21091_/A2",
+        "_20578_/A2",
+        "_22309_/A2",
+        "_21131_/A2",
+        "_22311_/A2",
+        "_22303_/A2",
+        "_22301_/A2",
+        "_20211_/B1",
+        "_22313_/A2",
+        "_20160_/B1",
+        "_22307_/A2",
+        "_21058_/A2",
+        "_20210_/A",
+        "_20177_/A",
+        "_21021_/A2",
+        "_20915_/A2",
+        "_20840_/A2",
+        "_20877_/A2",
+        "_20144_/A",
+        "_20950_/A2",
+        "_20988_/A2",
+        "_22305_/A2",
+        "_20159_/A",
+        "_20192_/A",
+        "_20275_/A",
+        "_20497_/A",
+        "_20515_/B1",
+        "_20514_/A",
+        "_21833_/A2"
+      ]
+    },
+    "_01209_": {
+      "ports": [],
+      "iterms": [
+        "_34436_/QN",
+        "_28624_/C2",
+        "_23114_/A1"
+      ]
+    },
+    "_02059_": {
+      "ports": [],
+      "iterms": [
+        "_34375_/QN",
+        "_29141_/A1",
+        "_27680_/A"
+      ]
+    },
+    "_02078_": {
+      "ports": [],
+      "iterms": [
+        "_34356_/QN",
+        "_29072_/B2",
+        "_27735_/A",
+        "_27734_/A1"
+      ]
+    },
+    "_03246_": {
+      "ports": [],
+      "iterms": [
+        "_34436_/D",
+        "_28624_/ZN"
+      ]
+    },
+    "_10413_": {
+      "ports": [],
+      "iterms": [
+        "_27823_/A",
+        "_27806_/B1",
+        "_27805_/A",
+        "_27680_/ZN"
+      ]
+    },
+    "_10414_": {
+      "ports": [],
+      "iterms": [
+        "_27684_/B",
+        "_27683_/A2",
+        "_27682_/A2",
+        "_27681_/ZN"
+      ]
+    },
+    "_10417_": {
+      "ports": [],
+      "iterms": [
+        "_27824_/A1",
+        "_27805_/B",
+        "_27804_/A",
+        "_27684_/ZN"
+      ]
+    },
+    "_10543_": {
+      "ports": [],
+      "iterms": [
+        "_27823_/B",
+        "_27810_/ZN"
+      ]
+    },
+    "_10698_": {
+      "ports": [],
+      "iterms": [
+        "_28734_/B1",
+        "_28705_/C2",
+        "_28704_/A1",
+        "_28703_/A2",
+        "_28052_/A1",
+        "_27966_/A4",
+        "_27965_/Z"
+      ]
+    },
+    "_10705_": {
+      "ports": [],
+      "iterms": [
+        "_28496_/A",
+        "_28495_/A1",
+        "_27976_/A1",
+        "_27972_/Z"
+      ]
+    },
+    "_10708_": {
+      "ports": [],
+      "iterms": [
+        "_28522_/A",
+        "_27976_/A2",
+        "_27975_/ZN"
+      ]
+    },
+    "_10717_": {
+      "ports": [],
+      "iterms": [
+        "_28046_/A3",
+        "_28014_/A1",
+        "_27987_/A",
+        "_27984_/ZN"
+      ]
+    },
+    "_10803_": {
+      "ports": [],
+      "iterms": [
+        "_28975_/C2",
+        "_28948_/C2",
+        "_28920_/C2",
+        "_28891_/C2",
+        "_28798_/A1",
+        "_28709_/A",
+        "_28621_/C2",
+        "_28528_/C2",
+        "_28162_/B2",
+        "_28073_/A2",
+        "_28070_/ZN"
+      ]
+    },
+    "_10806_": {
+      "ports": [],
+      "iterms": [
+        "_28999_/C1",
+        "_28975_/B2",
+        "_28948_/B2",
+        "_28920_/B2",
+        "_28891_/B2",
+        "_28863_/C1",
+        "_28832_/C1",
+        "_28799_/A2",
+        "_28769_/C1",
+        "_28742_/C1",
+        "_28710_/B2",
+        "_28680_/B1",
+        "_28651_/C1",
+        "_28621_/B2",
+        "_28593_/C1",
+        "_28562_/C1",
+        "_28528_/B2",
+        "_28501_/C1",
+        "_28468_/C1",
+        "_28437_/C1",
+        "_28402_/C1",
+        "_28373_/C1",
+        "_28340_/B1",
+        "_28309_/B1",
+        "_28283_/C1",
+        "_28253_/C1",
+        "_28221_/C1",
+        "_28192_/C1",
+        "_28162_/A2",
+        "_28135_/C1",
+        "_28103_/C1",
+        "_28074_/C1",
+        "_28073_/ZN"
+      ]
+    },
+    "_11210_": {
+      "ports": [],
+      "iterms": [
+        "_28548_/A1",
+        "_28520_/A1",
+        "_28492_/A2",
+        "_28491_/ZN"
+      ]
+    },
+    "_11213_": {
+      "ports": [],
+      "iterms": [
+        "_28496_/B",
+        "_28495_/A2",
+        "_28494_/ZN"
+      ]
+    },
+    "_11214_": {
+      "ports": [],
+      "iterms": [
+        "_28521_/A2",
+        "_28495_/ZN"
+      ]
+    },
+    "_11221_": {
+      "ports": [],
+      "iterms": [
+        "_28503_/B2",
+        "_28502_/ZN"
+      ]
+    },
+    "_11238_": {
+      "ports": [],
+      "iterms": [
+        "_28525_/B1",
+        "_28524_/A2",
+        "_28520_/ZN"
+      ]
+    },
+    "_11269_": {
+      "ports": [],
+      "iterms": [
+        "_28553_/B",
+        "_28552_/ZN"
+      ]
+    },
+    "_11365_": {
+      "ports": [],
+      "iterms": [
+        "_28652_/B",
+        "_28651_/ZN"
+      ]
+    },
+    "_11625_": {
+      "ports": [],
+      "iterms": [
+        "_28921_/B",
+        "_28920_/ZN"
+      ]
+    },
+    "_11647_": {
+      "ports": [],
+      "iterms": [
+        "_28971_/B",
+        "_28970_/A2",
+        "_28946_/B2",
+        "_28943_/ZN"
+      ]
+    },
+    "_11649_": {
+      "ports": [],
+      "iterms": [
+        "_28946_/A",
+        "_28945_/ZN"
+      ]
+    },
+    "_11650_": {
+      "ports": [],
+      "iterms": [
+        "_28947_/A",
+        "_28946_/ZN"
+      ]
+    },
+    "_11651_": {
+      "ports": [],
+      "iterms": [
+        "_28948_/C1",
+        "_28947_/ZN"
+      ]
+    },
+    "_11656_": {
+      "ports": [],
+      "iterms": [
+        "_28979_/A2",
+        "_28954_/B",
+        "_28953_/ZN"
+      ]
+    },
+    "_11657_": {
+      "ports": [],
+      "iterms": [
+        "_28956_/B",
+        "_28955_/A",
+        "_28954_/Z"
+      ]
+    },
+    "_11658_": {
+      "ports": [],
+      "iterms": [
+        "_28979_/B1",
+        "_28955_/ZN"
+      ]
+    },
+    "_11659_": {
+      "ports": [],
+      "iterms": [
+        "_29261_/B2",
+        "_28978_/B2",
+        "_28958_/A",
+        "_28956_/ZN"
+      ]
+    },
+    "_11669_": {
+      "ports": [],
+      "iterms": [
+        "_28967_/B",
+        "_28966_/ZN"
+      ]
+    },
+    "_11676_": {
+      "ports": [],
+      "iterms": [
+        "_28974_/A",
+        "_28973_/ZN"
+      ]
+    },
+    "_11696_": {
+      "ports": [],
+      "iterms": [
+        "_30107_/B2",
+        "_28997_/B2",
+        "_28996_/B1",
+        "_28994_/ZN"
+      ]
+    },
+    "_11718_": {
+      "ports": [],
+      "iterms": [
+        "_30106_/A",
+        "_30103_/A",
+        "_30099_/A",
+        "_30096_/A",
+        "_30092_/A",
+        "_30088_/A",
+        "_30085_/A",
+        "_30082_/A",
+        "_30078_/A",
+        "_30074_/A",
+        "_30070_/A",
+        "_30067_/A",
+        "_30064_/A",
+        "_30061_/A",
+        "_30057_/A",
+        "_30053_/A",
+        "_30050_/A",
+        "_30046_/A",
+        "_30042_/A",
+        "_30038_/A",
+        "_30035_/A",
+        "_30032_/A",
+        "_30029_/A",
+        "_30026_/A",
+        "_30022_/A",
+        "_30019_/A",
+        "_30015_/A",
+        "_30012_/A",
+        "_30009_/A",
+        "_30005_/A",
+        "_30001_/A",
+        "_29998_/A",
+        "_29912_/B2",
+        "_29907_/B2",
+        "_29899_/A",
+        "_29265_/A",
+        "_29258_/A",
+        "_29247_/A",
+        "_29244_/A",
+        "_29240_/A",
+        "_29229_/A",
+        "_29226_/A",
+        "_29223_/A",
+        "_29216_/A",
+        "_29208_/A",
+        "_29205_/A",
+        "_29202_/A",
+        "_29198_/A",
+        "_29195_/A",
+        "_29167_/A",
+        "_29164_/A",
+        "_29160_/A",
+        "_29153_/A",
+        "_29142_/A",
+        "_29138_/A",
+        "_29135_/A",
+        "_29131_/A",
+        "_29124_/A",
+        "_29113_/A",
+        "_29110_/A",
+        "_29091_/A",
+        "_29079_/A",
+        "_29076_/A",
+        "_29068_/A",
+        "_29060_/A",
+        "_29056_/A",
+        "_29047_/B2",
+        "_29040_/B2",
+        "_29037_/B2",
+        "_29031_/A",
+        "_29027_/A2",
+        "_29025_/A2",
+        "_29023_/A2",
+        "_29021_/A1",
+        "_29019_/ZN"
+      ]
+    },
+    "_11894_": {
+      "ports": [],
+      "iterms": [
+        "_29264_/A",
+        "_29263_/ZN"
+      ]
+    },
+    "_11895_": {
+      "ports": [],
+      "iterms": [
+        "_29266_/A",
+        "_29265_/ZN"
+      ]
+    },
+    "_11990_": {
+      "ports": [],
+      "iterms": [
+        "_29944_/A1",
+        "_29378_/A1",
+        "_29375_/ZN"
+      ]
+    },
+    "_12081_": {
+      "ports": [],
+      "iterms": [
+        "_29984_/A1",
+        "_29482_/A1",
+        "_29479_/ZN"
+      ]
+    },
+    "_12089_": {
+      "ports": [],
+      "iterms": [
+        "_29987_/A1",
+        "_29491_/A1",
+        "_29488_/ZN"
+      ]
+    },
+    "_12173_": {
+      "ports": [],
+      "iterms": [
+        "_29608_/B2",
+        "_29607_/Z"
+      ]
+    },
+    "_12399_": {
+      "ports": [],
+      "iterms": [
+        "_30107_/B1",
+        "_30106_/B1",
+        "_30103_/B1",
+        "_30100_/B1",
+        "_30099_/B1",
+        "_30096_/B1",
+        "_30092_/B1",
+        "_30089_/B1",
+        "_30088_/B1",
+        "_30086_/B1",
+        "_30085_/B1",
+        "_30082_/B1",
+        "_30078_/B1",
+        "_30074_/B1",
+        "_30071_/B1",
+        "_30070_/B1",
+        "_30068_/B1",
+        "_30067_/B1",
+        "_30065_/B1",
+        "_30064_/B1",
+        "_30061_/B1",
+        "_30057_/B1",
+        "_30054_/B1",
+        "_30053_/B1",
+        "_30050_/B1",
+        "_30046_/B1",
+        "_30042_/B1",
+        "_30039_/B1",
+        "_30038_/B1",
+        "_30036_/B1",
+        "_30035_/B1",
+        "_30033_/B1",
+        "_30032_/B1",
+        "_30030_/B1",
+        "_30029_/B1",
+        "_30026_/B1",
+        "_30023_/B1",
+        "_30022_/B1",
+        "_30019_/B1",
+        "_30016_/B1",
+        "_30015_/B1",
+        "_30013_/B1",
+        "_30012_/B1",
+        "_30009_/B1",
+        "_30005_/B1",
+        "_30002_/B1",
+        "_30001_/B1",
+        "_29999_/B1",
+        "_29998_/B1",
+        "_29996_/C1",
+        "_29995_/A2",
+        "_29992_/A2",
+        "_29988_/S",
+        "_29985_/S",
+        "_29982_/S",
+        "_29979_/S",
+        "_29976_/S",
+        "_29973_/S",
+        "_29970_/A2",
+        "_29966_/S",
+        "_29963_/S",
+        "_29960_/S",
+        "_29957_/S",
+        "_29954_/S",
+        "_29951_/S",
+        "_29948_/S",
+        "_29945_/S",
+        "_29942_/S",
+        "_29939_/S",
+        "_29936_/S",
+        "_29933_/S",
+        "_29930_/S",
+        "_29927_/S",
+        "_29924_/S",
+        "_29918_/C1",
+        "_29917_/A2",
+        "_29915_/C1",
+        "_29911_/S",
+        "_29906_/S",
+        "_29904_/C1",
+        "_29903_/A2",
+        "_29900_/B1",
+        "_29899_/B1",
+        "_29898_/ZN"
+      ]
+    },
+    "_12540_": {
+      "ports": [],
+      "iterms": [
+        "_30101_/A",
+        "_30100_/ZN"
+      ]
+    },
+    "_12544_": {
+      "ports": [],
+      "iterms": [
+        "_30107_/A",
+        "_30106_/ZN"
+      ]
+    },
+    "_13796_": {
+      "ports": [],
+      "iterms": [
+        "_28989_/A",
+        "_28972_/A",
+        "_28945_/A",
+        "_28917_/A",
+        "_28851_/A",
+        "_28820_/A",
+        "_28796_/A1",
+        "_28785_/A",
+        "_28759_/A",
+        "_28730_/A",
+        "_28707_/A",
+        "_28700_/A",
+        "_28667_/A",
+        "_28640_/A",
+        "_28619_/A1",
+        "_28579_/A",
+        "_28546_/A",
+        "_28526_/A1",
+        "_28518_/A",
+        "_28489_/A",
+        "_28455_/A",
+        "_28425_/A",
+        "_28390_/A",
+        "_28361_/A",
+        "_28329_/A",
+        "_28299_/A",
+        "_28272_/A",
+        "_28240_/A",
+        "_28210_/A",
+        "_28181_/A",
+        "_28160_/A1",
+        "_28152_/A",
+        "_28123_/A",
+        "_28094_/A",
+        "_28071_/A",
+        "_17052_/ZN"
+      ]
+    },
+    "_13813_": {
+      "ports": [],
+      "iterms": [
+        "_30101_/B2",
+        "_27922_/A1",
+        "_17069_/ZN"
+      ]
+    },
+    "_13828_": {
+      "ports": [],
+      "iterms": [
+        "_29888_/B2",
+        "_17084_/ZN"
+      ]
+    },
+    "_14677_": {
+      "ports": [],
+      "iterms": [
+        "_30160_/B",
+        "_23312_/B2",
+        "_22512_/A",
+        "_22511_/A1",
+        "_22234_/B2",
+        "_21767_/B1",
+        "_18134_/A2",
+        "_18133_/A",
+        "_18132_/ZN"
+      ]
+    },
+    "md.acc[10]": {
+      "ports": [],
+      "iterms": [
+        "_34356_/Q",
+        "_29073_/B2"
+      ]
+    },
+    "md.acc[62]": {
+      "ports": [],
+      "iterms": [
+        "_34408_/Q",
+        "_29263_/B2",
+        "_17146_/A"
+      ]
+    },
+    "md.divisor[21]": {
+      "ports": [],
+      "iterms": [
+        "_34239_/Q",
+        "_28026_/A2",
+        "_27965_/B",
+        "_17088_/A"
+      ]
+    },
+    "md.multiplicand[62]": {
+      "ports": [],
+      "iterms": [
+        "_34344_/Q",
+        "_29607_/A",
+        "_29605_/A1",
+        "_29604_/B",
+        "_28953_/A2"
+      ]
+    },
+    "md.negative_remainder": {
+      "ports": [],
+      "iterms": [
+        "_34180_/Q",
+        "_30116_/B2",
+        "_28995_/B2",
+        "_28963_/B2",
+        "_28909_/A",
+        "_28880_/A1",
+        "_28854_/A1",
+        "_28823_/A1",
+        "_28795_/B2",
+        "_28794_/A1",
+        "_28702_/A1",
+        "_28670_/A1",
+        "_28643_/A1",
+        "_28618_/B2",
+        "_28617_/A1",
+        "_28549_/A1",
+        "_28525_/B2",
+        "_28524_/A1",
+        "_28428_/A1",
+        "_28393_/A1",
+        "_28364_/A1",
+        "_28332_/A1",
+        "_28275_/A1",
+        "_28213_/A1",
+        "_28184_/A1",
+        "_28159_/B2",
+        "_28158_/A1",
+        "_28096_/A1",
+        "_28058_/C2",
+        "_17126_/A"
+      ]
+    },
+    "md.operation[1]": {
+      "ports": [],
+      "iterms": [
+        "_34183_/Q",
+        "_30113_/B",
+        "_28996_/A",
+        "_28974_/B2",
+        "_28947_/B2",
+        "_28919_/B2",
+        "_28890_/A1",
+        "_28889_/A",
+        "_28860_/A",
+        "_28829_/A",
+        "_28766_/A",
+        "_28739_/A",
+        "_28677_/A",
+        "_28648_/A",
+        "_28610_/A",
+        "_28590_/A",
+        "_28559_/A",
+        "_28498_/A",
+        "_28465_/A",
+        "_28434_/A",
+        "_28399_/A",
+        "_28370_/A",
+        "_28337_/A",
+        "_28306_/A",
+        "_28280_/A",
+        "_28250_/A",
+        "_28218_/A",
+        "_28189_/A",
+        "_28132_/A",
+        "_28100_/A",
+        "_28073_/A1",
+        "_28058_/A",
+        "_27670_/A1",
+        "_17052_/A"
+      ]
+    },
+    "md.quotient[14]": {
+      "ports": [],
+      "iterms": [
+        "_34200_/Q",
+        "_29945_/A",
+        "_29943_/A1",
+        "_29942_/B",
+        "_28517_/B1",
+        "_28516_/A1"
+      ]
+    },
+    "md.quotient[28]": {
+      "ports": [],
+      "iterms": [
+        "_34214_/Q",
+        "_29988_/A",
+        "_29986_/A1",
+        "_29985_/B",
+        "_28944_/B1",
+        "_28943_/A1"
+      ]
+    },
+    "md.remainder[15]": {
+      "ports": [],
+      "iterms": [
+        "_34099_/Q",
+        "_30051_/A1",
+        "_28022_/B1",
+        "_27943_/A",
+        "_27942_/A1"
+      ]
+    },
+    "md.remainder[20]": {
+      "ports": [],
+      "iterms": [
+        "_34104_/Q",
+        "_28027_/C1",
+        "_27965_/A",
+        "_27964_/A1",
+        "_17087_/A"
+      ]
+    },
+    "md.remainder[30]": {
+      "ports": [],
+      "iterms": [
+        "_34114_/Q",
+        "_30104_/A1",
+        "_28036_/C1",
+        "_27921_/A",
+        "_27920_/A1"
+      ]
+    },
+    "rd[31]": {
+      "ports": [
+        "rd[31]"
+      ],
+      "iterms": [
+        "input96/A"
+      ]
+    },
+    "net113": {
+      "ports": [],
+      "iterms": [
+        "max_cap113/Z",
+        "max_cap112/A",
+        "_28099_/B1",
+        "_28098_/A1",
+        "_28121_/A3",
+        "_28120_/B1",
+        "_28093_/B",
+        "_29900_/B2",
+        "_28071_/B",
+        "_28057_/B1",
+        "_28056_/A",
+        "_28131_/S",
+        "_28157_/S",
+        "_28883_/S",
+        "_28913_/S",
+        "_28940_/A1",
+        "_28941_/B1",
+        "_28967_/S",
+        "_28993_/A1",
+        "_28994_/B1"
+      ]
+    },
+    "net139": {
+      "ports": [],
+      "iterms": [
+        "max_cap139/Z",
+        "_29043_/A",
+        "max_cap138/A",
+        "_29250_/A",
+        "_29584_/B1",
+        "_29581_/B1",
+        "_29232_/A",
+        "_29236_/A",
+        "_29557_/B1",
+        "_29554_/B1",
+        "_29551_/B1",
+        "_29254_/A",
+        "_29145_/A",
+        "_29186_/A",
+        "_29515_/B1",
+        "_29149_/A",
+        "_29511_/A",
+        "_29505_/A",
+        "_29490_/B1",
+        "_29498_/B1",
+        "_29063_/A",
+        "_29052_/A",
+        "_29048_/A",
+        "_29286_/B1"
+      ]
+    },
+    "net181": {
+      "ports": [],
+      "iterms": [
+        "max_cap181/Z",
+        "_29136_/A2",
+        "_29490_/A2",
+        "_29498_/A2",
+        "_29503_/A2",
+        "_29065_/B1",
+        "_29481_/A2",
+        "_29575_/A2",
+        "_29572_/A2",
+        "_29213_/B1",
+        "_29563_/A2",
+        "_29566_/A2",
+        "_29569_/A2",
+        "_29221_/B1",
+        "_29217_/A2",
+        "_29122_/B1",
+        "_29077_/A2",
+        "_29129_/B1",
+        "_29473_/A2",
+        "_29118_/B1",
+        "_29457_/A2",
+        "_29465_/A2",
+        "_29445_/A2",
+        "_29440_/A2",
+        "_29969_/A2",
+        "_29974_/A2",
+        "_29977_/A2",
+        "_29980_/A2",
+        "_29983_/A2",
+        "_28713_/A",
+        "_28771_/A",
+        "_28865_/A",
+        "_29073_/B1",
+        "_28977_/A",
+        "_29069_/A2",
+        "_29061_/A2",
+        "_29334_/A2",
+        "_29325_/A2",
+        "_29319_/A2",
+        "_29054_/B1",
+        "_29050_/B1",
+        "_29045_/A2",
+        "_29001_/A",
+        "_29341_/A2",
+        "_29348_/A2",
+        "_29931_/A2",
+        "_29991_/A2",
+        "_29986_/A2",
+        "_29989_/A2",
+        "_29928_/A2",
+        "_29925_/A2",
+        "_28375_/A",
+        "_28255_/A",
+        "_29920_/A2",
+        "_29919_/A2",
+        "_29913_/A2",
+        "_28223_/A",
+        "_28285_/A",
+        "_29307_/A2",
+        "_28137_/A",
+        "_29301_/A2",
+        "_29297_/A2",
+        "_29286_/A2",
+        "_29041_/A2"
+      ]
+    },
+    "net243": {
+      "ports": [],
+      "iterms": [
+        "max_cap243/Z",
+        "_29153_/B1",
+        "_29154_/B1",
+        "_29526_/S",
+        "_29523_/S",
+        "_29163_/A2",
+        "_29171_/B1",
+        "_29538_/S",
+        "_29541_/S",
+        "_29535_/S",
+        "_29532_/S",
+        "_29170_/B1",
+        "_29529_/S",
+        "_29167_/B1",
+        "_29168_/B1",
+        "_29520_/S",
+        "_29161_/B1",
+        "_29160_/B1",
+        "_29517_/S",
+        "_29157_/B1",
+        "_29156_/B1",
+        "_29056_/B1",
+        "_29057_/B1",
+        "_29052_/B1",
+        "_29049_/B1",
+        "_29048_/B1",
+        "_29053_/B1",
+        "_29178_/B1",
+        "_29175_/B1",
+        "_29174_/B1",
+        "_29179_/B1",
+        "_29182_/B1",
+        "_29183_/B1",
+        "_29544_/S",
+        "_29190_/B1",
+        "_29191_/B1",
+        "_29186_/B1",
+        "_29187_/B1",
+        "_29149_/B1",
+        "_29150_/B1",
+        "_29510_/A2",
+        "_29607_/S",
+        "_29604_/S",
+        "_29262_/B1",
+        "_29261_/B1",
+        "_29589_/S",
+        "_29592_/S",
+        "_29595_/S",
+        "_29247_/B1",
+        "_29248_/B1",
+        "_29244_/B1",
+        "_29250_/B1",
+        "_29251_/B1",
+        "_29598_/S",
+        "_29547_/S",
+        "_29601_/S",
+        "_29255_/B1",
+        "_29254_/B1",
+        "_29258_/B1",
+        "_29259_/B1",
+        "_29265_/B1",
+        "_29266_/B1",
+        "_29146_/B1",
+        "_29145_/B1",
+        "_29504_/A2",
+        "_29063_/B1",
+        "_29064_/B1",
+        "max_cap242/A",
+        "_29059_/A2",
+        "_29313_/A2",
+        "_29314_/C1"
+      ]
+    },
+    "net260": {
+      "ports": [],
+      "iterms": [
+        "max_cap260/Z",
+        "_27732_/A1",
+        "_27727_/A1",
+        "_27725_/A1",
+        "_27726_/A1",
+        "_27709_/A1",
+        "_27708_/A1",
+        "_28980_/A1",
+        "_28953_/A1",
+        "_28925_/A1",
+        "_28899_/A1",
+        "_28866_/A1",
+        "_28837_/A1",
+        "_28805_/A1",
+        "_28773_/A1",
+        "_28745_/A1",
+        "_28714_/A1",
+        "_28688_/A1",
+        "_28381_/A1",
+        "_28406_/A1",
+        "_28442_/A1",
+        "_28471_/A1",
+        "_28655_/A1",
+        "_28628_/A1",
+        "_28598_/A1",
+        "_28568_/A1",
+        "_28532_/A1",
+        "_28509_/A1",
+        "max_cap259/A",
+        "_27702_/A1",
+        "_27704_/A1",
+        "_27710_/A1",
+        "_27714_/A1",
+        "_27713_/A1",
+        "_27720_/A1",
+        "_27719_/A1",
+        "_27715_/A1",
+        "_27721_/A1"
+      ]
+    },
+    "clknet_leaf_175_clk": {
+      "ports": [],
+      "iterms": [
+        "_34436_/CK",
+        "_34177_/CK",
+        "_34175_/CK",
+        "_34435_/CK",
+        "_34212_/CK",
+        "_34213_/CK",
+        "_34215_/CK",
+        "_34214_/CK",
+        "clkbuf_leaf_175_clk/Z"
+      ]
+    },
+    "clknet_5_15__leaf_clk": {
+      "ports": [],
+      "iterms": [
+        "clkbuf_leaf_156_clk/A",
+        "clkbuf_leaf_153_clk/A",
+        "clkbuf_leaf_148_clk/A",
+        "clkbuf_leaf_147_clk/A",
+        "clkbuf_leaf_146_clk/A",
+        "clkbuf_leaf_145_clk/A",
+        "clkbuf_leaf_144_clk/A",
+        "clkbuf_leaf_143_clk/A",
+        "clkbuf_leaf_142_clk/A",
+        "clkbuf_leaf_141_clk/A",
+        "clkbuf_leaf_140_clk/A",
+        "clkbuf_leaf_139_clk/A",
+        "clkbuf_leaf_138_clk/A",
+        "clkbuf_leaf_137_clk/A",
+        "clkbuf_leaf_136_clk/A",
+        "clkbuf_leaf_135_clk/A",
+        "clkbuf_leaf_134_clk/A",
+        "clkbuf_leaf_133_clk/A",
+        "clkbuf_leaf_130_clk/A",
+        "clkbuf_leaf_129_clk/A",
+        "clkbuf_5_15__f_clk/Z"
+      ]
+    },
+    "net369": {
+      "ports": [],
+      "iterms": [
+        "max_cap369/Z",
+        "_27908_/A",
+        "_28114_/A1",
+        "_28089_/B2",
+        "_28116_/A1",
+        "_28173_/A1",
+        "_28231_/A1",
+        "_28751_/A",
+        "_28722_/A1",
+        "_28686_/A",
+        "_28781_/A1",
+        "_28441_/A1",
+        "_28662_/A1",
+        "_28846_/A1",
+        "_28379_/A1",
+        "_28895_/A1",
+        "_28813_/A",
+        "_28779_/A1",
+        "_17050_/A",
+        "_28844_/A1",
+        "_28873_/A1",
+        "_28929_/A1",
+        "_28957_/A1",
+        "_28978_/A",
+        "_28353_/A1",
+        "_28316_/A1",
+        "_28294_/A1",
+        "_28234_/A1",
+        "_28984_/A1",
+        "_28293_/A1",
+        "_27669_/A1",
+        "_28176_/A1"
+      ]
+    },
+    "rd[23]": {
+      "ports": [
+        "rd[23]"
+      ],
+      "iterms": [
+        "input87/A"
+      ]
+    },
+    "_03033_": {
+      "ports": [],
+      "iterms": [
+        "_34315_/D",
+        "_29519_/ZN"
+      ]
+    },
+    "_14474_": {
+      "ports": [],
+      "iterms": [
+        "_23303_/A1",
+        "_22603_/B",
+        "_22519_/A",
+        "_21668_/B",
+        "_20419_/A2",
+        "_17950_/A",
+        "_17931_/B",
+        "_17930_/A",
+        "_17929_/ZN"
+      ]
+    },
+    "_02104_": {
+      "ports": [],
+      "iterms": [
+        "_34422_/QN",
+        "_28194_/C2"
+      ]
+    },
+    "_11712_": {
+      "ports": [],
+      "iterms": [
+        "_30208_/B1",
+        "_30190_/B1",
+        "_30185_/B1",
+        "_30183_/B1",
+        "_30181_/B1",
+        "_30178_/B1",
+        "_30175_/B1",
+        "_30156_/B1",
+        "_30114_/S",
+        "_30113_/S",
+        "_30112_/S",
+        "_29870_/B2",
+        "_29854_/A2",
+        "_29845_/B1",
+        "_29821_/B1",
+        "_29813_/A2",
+        "_29805_/B1",
+        "_29755_/A2",
+        "_29728_/A2",
+        "_29711_/A",
+        "_29660_/C2",
+        "_29506_/A",
+        "_29448_/A",
+        "_29011_/ZN"
+      ]
+    },
+    "_11906_": {
+      "ports": [],
+      "iterms": [
+        "_30109_/A",
+        "_29507_/B2",
+        "_29506_/B1",
+        "_29493_/A",
+        "_29485_/A",
+        "_29476_/A",
+        "_29468_/A",
+        "_29460_/A",
+        "_29452_/A",
+        "_29448_/B1",
+        "_29435_/A",
+        "_29427_/A",
+        "_29419_/A",
+        "_29411_/A",
+        "_29406_/A1",
+        "_29396_/A",
+        "_29388_/A",
+        "_29382_/A1",
+        "_29372_/A",
+        "_29367_/A1",
+        "_29360_/A1",
+        "_29353_/A1",
+        "_29346_/A1",
+        "_29339_/A1",
+        "_29332_/A1",
+        "_29321_/A1",
+        "_29306_/A1",
+        "_29287_/A",
+        "_29279_/A2",
+        "_29278_/ZN"
+      ]
+    },
+    "rd[28]": {
+      "ports": [
+        "rd[28]"
+      ],
+      "iterms": [
+        "input92/A"
+      ]
+    },
+    "rd[26]": {
+      "ports": [
+        "rd[26]"
+      ],
+      "iterms": [
+        "input90/A"
+      ]
+    },
+    "_08999_": {
+      "ports": [],
+      "iterms": [
+        "_25760_/B",
+        "_25759_/ZN"
+      ]
+    },
+    "rd[22]": {
+      "ports": [
+        "rd[22]"
+      ],
+      "iterms": [
+        "input86/A"
+      ]
+    },
+    "rd[8]": {
+      "ports": [
+        "rd[8]"
+      ],
+      "iterms": [
+        "input102/A"
+      ]
+    },
+    "_07984_": {
+      "ports": [],
+      "iterms": [
+        "_24722_/B1",
+        "_24720_/ZN"
+      ]
+    },
+    "_08394_": {
+      "ports": [],
+      "iterms": [
+        "_25184_/A",
+        "_25140_/ZN"
+      ]
+    },
+    "ex_insn[13]": {
+      "ports": [],
+      "iterms": [
+        "max_cap274/A",
+        "_33114_/Q",
+        "_30113_/A",
+        "_26369_/B",
+        "_23465_/B",
+        "_20597_/B",
+        "_20512_/B2",
+        "_20103_/B2",
+        "_20071_/B2",
+        "_20055_/B2",
+        "_20018_/B2",
+        "_18708_/A1",
+        "_18579_/A2",
+        "_18573_/A2",
+        "_18572_/A2",
+        "_18570_/A2",
+        "_18562_/A2",
+        "_16688_/A"
+      ]
+    },
+    "wb_value[3]": {
+      "ports": [],
+      "iterms": [
+        "_33436_/Q",
+        "_27309_/A",
+        "_23791_/C2",
+        "_20728_/A1",
+        "_18342_/A",
+        "_18330_/A",
+        "_16608_/A"
+      ]
+    },
+    "ir": {
+      "ports": [
+        "ir"
+      ],
+      "iterms": [
+        "input71/A"
+      ]
+    },
+    "_07341_": {
+      "ports": [],
+      "iterms": [
+        "_24083_/B1",
+        "_24062_/ZN"
+      ]
+    },
+    "rd[14]": {
+      "ports": [
+        "rd[14]"
+      ],
+      "iterms": [
+        "input77/A"
+      ]
+    },
+    "clknet_5_4__leaf_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload4/A",
+        "clkbuf_leaf_384_clk/A",
+        "clkbuf_leaf_382_clk/A",
+        "clkbuf_leaf_381_clk/A",
+        "clkbuf_leaf_380_clk/A",
+        "clkbuf_leaf_379_clk/A",
+        "clkbuf_leaf_378_clk/A",
+        "clkbuf_leaf_376_clk/A",
+        "clkbuf_leaf_375_clk/A",
+        "clkbuf_leaf_374_clk/A",
+        "clkbuf_leaf_373_clk/A",
+        "clkbuf_leaf_372_clk/A",
+        "clkbuf_leaf_355_clk/A",
+        "clkbuf_leaf_354_clk/A",
+        "clkbuf_5_4__f_clk/Z"
+      ]
+    },
+    "clknet_5_12__leaf_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload11/A",
+        "clkbuf_leaf_83_clk/A",
+        "clkbuf_leaf_80_clk/A",
+        "clkbuf_leaf_79_clk/A",
+        "clkbuf_leaf_77_clk/A",
+        "clkbuf_leaf_75_clk/A",
+        "clkbuf_leaf_74_clk/A",
+        "clkbuf_leaf_73_clk/A",
+        "clkbuf_leaf_63_clk/A",
+        "clkbuf_leaf_62_clk/A",
+        "clkbuf_leaf_61_clk/A",
+        "clkbuf_5_12__f_clk/Z"
+      ]
+    },
+    "rd[9]": {
+      "ports": [
+        "rd[9]"
+      ],
+      "iterms": [
+        "input103/A"
+      ]
+    },
+    "rd[17]": {
+      "ports": [
+        "rd[17]"
+      ],
+      "iterms": [
+        "input80/A"
+      ]
+    },
+    "rd[11]": {
+      "ports": [
+        "rd[11]"
+      ],
+      "iterms": [
+        "input74/A"
+      ]
+    },
+    "insn[14]": {
+      "ports": [
+        "insn[14]"
+      ],
+      "iterms": [
+        "input43/A"
+      ]
+    },
+    "insn[21]": {
+      "ports": [
+        "insn[21]"
+      ],
+      "iterms": [
+        "input51/A"
+      ]
+    },
+    "clk": {
+      "ports": [
+        "clk"
+      ],
+      "iterms": [
+        "clkbuf_0_clk/A"
+      ]
+    },
+    "trap_cause[2]": {
+      "ports": [
+        "trap_cause[2]"
+      ],
+      "iterms": [
+        "_32775_/Q",
+        "_27207_/B1",
+        "_27205_/A1"
+      ]
+    },
+    "rd[29]": {
+      "ports": [
+        "rd[29]"
+      ],
+      "iterms": [
+        "input93/A"
+      ]
+    },
+    "instret[22]": {
+      "ports": [
+        "instret[22]"
+      ],
+      "iterms": [
+        "_32892_/Q",
+        "_16656_/A"
+      ]
+    },
+    "mem_pc[17]": {
+      "ports": [],
+      "iterms": [
+        "_33216_/Q",
+        "_23566_/A",
+        "_20708_/B"
+      ]
+    },
+    "external_irq": {
+      "ports": [
+        "external_irq"
+      ],
+      "iterms": [
+        "input36/A"
+      ]
+    },
+    "_12395_": {
+      "ports": [],
+      "iterms": [
+        "_29896_/A",
+        "_29862_/A3",
+        "_29861_/ZN"
+      ]
+    },
+    "rd[16]": {
+      "ports": [
+        "rd[16]"
+      ],
+      "iterms": [
+        "input79/A"
+      ]
+    },
+    "ip": {
+      "ports": [
+        "ip"
+      ],
+      "iterms": [
+        "input70/A"
+      ]
+    },
+    "rd[7]": {
+      "ports": [
+        "rd[7]"
+      ],
+      "iterms": [
+        "input101/A"
+      ]
+    },
+    "rd[30]": {
+      "ports": [
+        "rd[30]"
+      ],
+      "iterms": [
+        "input95/A"
+      ]
+    },
+    "dp": {
+      "ports": [
+        "dp"
+      ],
+      "iterms": [
+        "input34/A"
+      ]
+    },
+    "rd[18]": {
+      "ports": [
+        "rd[18]"
+      ],
+      "iterms": [
+        "input81/A"
+      ]
+    },
+    "insn[23]": {
+      "ports": [
+        "insn[23]"
+      ],
+      "iterms": [
+        "input53/A"
+      ]
+    }
+  },
+  "gds_sha256": "0da62cea2fbabc3cd8b69942e879b3ccbbe4494e9709a20a965149503f1e127f",
+  "scope": "Coordinate candidates for diagnostic review, not a connectivity proof"
+}

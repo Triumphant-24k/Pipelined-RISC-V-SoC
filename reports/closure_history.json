@@ -1,0 +1,59 @@
+[
+  {
+    "candidate": "original",
+    "gds_drc_markers": 43,
+    "categories": {
+      "METAL4_ANTENNA": 7,
+      "METAL5_ANTENNA": 11,
+      "METAL6_ANTENNA": 15,
+      "METAL7_ANTENNA": 5,
+      "METAL9_ANTENNA": 5
+    },
+    "maximum_capacitance_violations": 8,
+    "timing": {
+      "cell_area_um2_rounded": 36027.0,
+      "utilization_percent_rounded": 49,
+      "setup_wns_ns": 6.44,
+      "hold_wns_ns": 0.02
+    }
+  },
+  {
+    "candidate": "rejected first repair",
+    "gds_drc_markers": 79,
+    "categories": {
+      "METAL3_ANTENNA": 18,
+      "METAL4_ANTENNA": 26,
+      "METAL5_ANTENNA": 19,
+      "METAL6_ANTENNA": 16
+    },
+    "maximum_capacitance_violations": 0,
+    "timing": {
+      "cell_area_um2_rounded": 36455.0,
+      "utilization_percent_rounded": 50,
+      "setup_wns_ns": 6.4,
+      "hold_wns_ns": 0.02
+    }
+  },
+  {
+    "candidate": "accepted final repair",
+    "status": "PASS",
+    "results": {
+      "anchored_primary_inputs": 74,
+      "max_anchor_distance_um": 20.88,
+      "gds_drc_markers": 0,
+      "cell_area_um2_rounded": 36606.0,
+      "router_drvs": 0,
+      "maximum_capacitance_violations": 0,
+      "setup_wns_ns": 6.31,
+      "hold_wns_ns": 0.02,
+      "lvs": "PASS",
+      "gate_scoreboard": "PASS",
+      "power_connectivity": "VDD and VSS PASS"
+    },
+    "sha256": {
+      "gds": "32556ecb66881c322d7e53f3ff99e6e60b24e449638015a4b9adc961f6f54559",
+      "reference": "a5848cc86612ffff676f6ccbb6c5c843a9eb02586efd9f68408bde06b74da5e9",
+      "library": "457f0e3836b369f56d2cb04aab2a16d0e40b56d32bf2c62f19475b0abca2f6b3"
+    }
+  }
+]

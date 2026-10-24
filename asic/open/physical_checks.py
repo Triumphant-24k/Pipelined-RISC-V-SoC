@@ -9,7 +9,7 @@ with (root/'build/asic/stream.log').open('w') as log:
 with (root/'build/asic/klayout_drc.log').open('w') as log:
  result=subprocess.run(['klayout','-b','-r',str(platform/'drc/FreePDK45.lydrc'),'-rd','in_gds='+str(root/'build/asic/rv32_pipeline.gds'),'-rd','report_file='+str(root/'build/asic/klayout_drc.lyrdb')],env=env,stdout=log,stderr=subprocess.STDOUT)
 rpt=root/'build/asic/klayout_drc.lyrdb'
-status={'drc_exit':result.returncode,'drc_report':str(rpt.relative_to(root)) if rpt.exists() else None,'lvs':'not run: selected public platform has no LVS deck','lvs_deck_exists':(platform/'lvs/FreePDK45.lylvs').exists()}
+status={'gds_sha256':hashlib.sha256((root/'build/asic/rv32_pipeline.gds').read_bytes()).hexdigest(),'drc_deck_sha256':hashlib.sha256((platform/'drc/FreePDK45.lydrc').read_bytes()).hexdigest(),'drc_exit':result.returncode,'drc_report':str(rpt.relative_to(root)) if rpt.exists() else None,'lvs':'not run: selected public platform has no LVS deck','lvs_deck_exists':(platform/'lvs/FreePDK45.lylvs').exists()}
 if result.returncode==0 and rpt.exists():
  tree=ET.parse(rpt);items=tree.findall('.//items/item');counts={}
  for item in items:

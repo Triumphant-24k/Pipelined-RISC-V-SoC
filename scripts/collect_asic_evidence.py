@@ -20,10 +20,13 @@ rows=re.findall(r'ROW \S+ \S+ (\d+) (\d+) \S+ DO (\d+) BY 1 STEP (\d+) 0',deftex
 x0=min(int(r[0])for r in rows)/dbu;y0=min(int(r[1])for r in rows)/dbu
 x1=max(int(r[0])+int(r[2])*int(r[3])for r in rows)/dbu;y1=max(int(r[1])for r in rows)/dbu+1.4
 summary={'top':'rv32_pipeline','corner':'Nangate45 typical, nominal 1.1 V / 25 C','clock_period_ns':10,'setup_uncertainty_ns':0.2,'hold_uncertainty_ns':0.05,'die_um':[x/dbu for x in bounds],'core_um':[x0,y0,x1,y1],'core_area_um2':(x1-x0)*(y1-y0),'stages':stages,'versions':versions,'router_drvs':re.findall(r'FINAL_ROUTER_DRVS (\d+)',log),'completed':'FLOW_COMPLETE'in log}
-last=log.rsplit('max capacitance',1)[-1]
+last=log.split('=== CHECKPOINT 7_final ===',1)[-1]
 caps=re.findall(r'^(\S+/\S+)\s+([\d.]+)\s+([\d.]+)\s+([-\d.]+) \(VIOLATED\)',last,re.M)
 summary['max_capacitance_violations']=[{'pin':x[0],'limit_ff':float(x[1]),'actual_ff':float(x[2]),'slack_ff':float(x[3])}for x in caps]
 summary['global_wirelength_um']=re.findall(r'Total wirelength: (\d+) um',log)
+summary['cts_clock_buffers']=re.findall(r'Created (\d+) clock buffers',log)
+summary['cts_leaf_buffers']=re.findall(r'Leaf buffers\s+(\d+)',log)
+summary['input_anchor_count']=len(re.findall(r'^INPUT_ANCHOR ',log,re.M))
 summary['reported_setup_skew_ns']=re.findall(r'([\d.]+) setup skew',log)[-1:]
 (root/'reports/asic_metrics.json').write_text(json.dumps(summary,indent=2))
 review=root/'build/evidence'
@@ -46,6 +49,8 @@ if (root/'reports/physical_checks.json').exists():
  checks=json.loads((root/'reports/physical_checks.json').read_text())
  put('physical_checks',['PHYSICAL VERIFICATION - independent GDS checks','Command: python3 asic/open/physical_checks.py','Source: reports/physical_checks.json and build/asic/klayout_drc.lyrdb','',*(root/'build/asic/stream.log').read_text().splitlines()[-4:],'',*json.dumps(checks,indent=2).splitlines()[:23]])
 put('cts_constraint_revision',['CTS CONSTRAINT REVISION - preserved failed attempts','Original uncertainty: setup=0.2 ns and hold=0.2 ns','Final uncertainty: setup=0.2 ns and hold=0.05 ns','', 'Source: build/evidence/cts_first_attempt.log',*(review/'cts_first_attempt.log').read_text().splitlines()[-8:],'','Source: build/evidence/cts_second_attempt.log',*(review/'cts_second_attempt.log').read_text().splitlines()[-8:],'','Final run: no hold violations before repair under the revised budget.'])
-put('electrical',['POST-ROUTE ELECTRICAL CONSTRAINT VIOLATIONS','Source: build/asic/flow.log (last max capacitance report)','Units: capacitance in fF; slack is limit minus actual','',*log.rsplit('max capacitance',1)[-1].splitlines()[:20]])
+put('electrical',['POST-ROUTE ELECTRICAL CONSTRAINT CHECK','Source: build/asic/flow.log (final extracted-RC checkpoint)','Units: capacitance in fF; slack is limit minus actual','',f'Maximum-capacitance violations: {len(caps)}',*last.splitlines()[:21]])
 put('tools',['OPEN-SOURCE TOOLCHAIN - actual installed versions','',*[f'{k}: {v}'for k,v in versions.items()],'','Platform: public Nangate45 / FreePDK45','Physical scope: core only; no SoC SRAM or pad ring','Analysis: typical corner; not foundry signoff'])
 print(json.dumps(summary,indent=2))
+
+put('repair',['ANTENNA / ELECTRICAL REPAIR - actual flow log excerpts','Command: python3 asic/open/run_physical.py','Source: asic/open/flow.tcl and build/asic/flow.log','','buffer_ports -inputs -buffer_cell BUF_X8','set_routing_layers -signal metal2-metal6 -clock metal4-metal6','repair_design -cap_margin 20 -slew_margin 10','pin_input_buffers (legal edge sites; protected against resizing)','(placement and global-route estimates; legalized before route)','',*re.findall(r'^.*RSZ-.*(?:Inserted|Resized|capacitance violations).*$',log,re.M),'',f'Final capacitance violations: {len(caps)}',f'Final setup/hold: {stages["7_final"]["setup_wns_ns"]} / {stages["7_final"]["hold_wns_ns"]} ns','Final independent GDS DRC and LVS are separately audited.'])

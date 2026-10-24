@@ -38,3 +38,13 @@ lvs:
 	python3 asic/open/lvs/run.py --processor
 	QT_QPA_PLATFORM=offscreen klayout -b -r asic/open/lvs/audit.py
 	python3 asic/open/lvs/summarize.py
+
+.PHONY: closure
+closure:
+	python3 asic/open/run_physical.py
+	python3 asic/open/gate_check.py
+	python3 asic/open/physical_checks.py
+	python3 scripts/collect_asic_evidence.py
+	$(MAKE) lvs
+	python3 scripts/collect_asic_evidence.py
+	python3 asic/open/closure.py

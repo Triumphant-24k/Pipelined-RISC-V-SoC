@@ -27,6 +27,6 @@ python3 asic/open/lvs/summarize.py
 
 The first two fixtures are an inverter and DFF. Width and port-label negative controls must fail. The library sweep checks every functional master instantiated by the routed CDL. Inputs/results are staged in $HOME/riscv-lvs-run for native Linux IO; logs and cross-reference databases are copied back to build/lvs. The authoritative circuit verdict and named-port check are machine-readable; do not infer pass from exit code alone.
 
-This is an academic public-PDK LVS check, not a foundry-qualified signoff flow. It does not clear the separate 43 antenna markers or eight maximum-capacitance violations.
+This is an academic public-PDK LVS check, not a foundry-qualified signoff flow. DRC and electrical limits are checked separately. The repaired core has zero enabled GDS DRC markers and zero maximum-capacitance violations; see reports/closure_summary.json.
 
 `make lvs` runs the whole sequence. `reports/lvs_summary.json` is the consolidated verdict; `lvs_audit.json` records every circuit pair and all top-level relation counts. The checked .lvsdb can be opened in the KLayout Netlist Database Browser. Symmetric internal net-assignment warnings are counted separately from mismatches/errors. Input fingerprints prevent stale results being reported as current.

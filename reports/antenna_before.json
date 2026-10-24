@@ -1,0 +1,1146 @@
+{
+  "markers": [
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        2.825,
+        3.36,
+        2.965,
+        141.82
+      ],
+      "values": [
+        "polygon: (2.825,3.36;2.825,141.82;2.965,141.82;2.965,3.36)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 19.6196",
+        "[#ratio] float: 375.494736842",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[6]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        70.305,
+        141.68,
+        70.445,
+        143.22
+      ],
+      "values": [
+        "polygon: (70.305,141.68;70.305,143.22;70.445,143.22;70.445,141.68)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 19.6196",
+        "[#ratio] float: 375.494736842",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[6]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        100.825,
+        143.08,
+        100.965,
+        143.22
+      ],
+      "values": [
+        "polygon: (100.825,143.08;100.825,143.22;100.965,143.22;100.965,143.08)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 19.6196",
+        "[#ratio] float: 375.494736842",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        103.625,
+        164.5,
+        103.765,
+        165.34
+      ],
+      "values": [
+        "polygon: (103.625,164.5;103.625,165.34;103.765,165.34;103.765,164.5)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 10.878",
+        "[#ratio] float: 414.4",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[1]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        105.865,
+        213.64,
+        106.005,
+        290.5
+      ],
+      "values": [
+        "polygon: (105.865,213.64;105.865,290.5;106.005,290.5;106.005,213.64)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 10.878",
+        "[#ratio] float: 414.4",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[1]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        246.705,
+        215.18,
+        246.845,
+        292.18
+      ],
+      "values": [
+        "polygon: (246.705,215.18;246.705,292.18;246.845,292.18;246.845,215.18)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 10.78",
+        "[#ratio] float: 410.666666667",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[20]"
+      ]
+    },
+    {
+      "category": "METAL4_ANTENNA",
+      "box": [
+        42.025,
+        226.8,
+        42.165,
+        291.06
+      ],
+      "values": [
+        "polygon: (42.025,226.8;42.025,291.06;42.165,291.06;42.165,226.8)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 8.9964",
+        "[#ratio] float: 342.72",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[23]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        42.585,
+        18.2,
+        103.205,
+        18.34
+      ],
+      "values": [
+        "polygon: (42.585,18.2;42.585,18.34;103.205,18.34;103.205,18.2)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 8.4868",
+        "[#ratio] float: 323.306666667",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[14]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        0.0,
+        61.04,
+        141.845,
+        61.46
+      ],
+      "values": [
+        "polygon: (0,61.04;0,61.18;4.13,61.18;4.13,61.46;39.97,61.46;39.97,61.18;70.305,61.18;70.305,61.46;77.77,61.46;77.77,61.18;92.33,61.18;92.33,61.46;141.845,61.46;141.845,61.32;92.47,61.32;92.47,61.04;77.63,61.04;77.63,61.32;70.445,61.32;70.445,61.04;39.83,61.04;39.83,61.32;4.27,61.32;4.27,61.04)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 20.5639",
+        "[#ratio] float: 498.518787879",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "clk",
+        "clknet_5_1__leaf_clk",
+        "clknet_5_5__leaf_clk"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        141.705,
+        129.08,
+        145.205,
+        129.22
+      ],
+      "values": [
+        "polygon: (141.705,129.08;141.705,129.22;145.205,129.22;145.205,129.08)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 20.5639",
+        "[#ratio] float: 498.518787879",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": [
+        "clk"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        145.065,
+        150.64,
+        145.205,
+        150.78
+      ],
+      "values": [
+        "polygon: (145.065,150.64;145.065,150.78;145.205,150.78;145.205,150.64)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 20.5639",
+        "[#ratio] float: 498.518787879",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.04125"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        221.785,
+        68.32,
+        292.425,
+        68.46
+      ],
+      "values": [
+        "polygon: (221.785,68.32;221.785,68.46;292.425,68.46;292.425,68.32)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 9.8896",
+        "[#ratio] float: 376.746666667",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[11]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        132.185,
+        153.16,
+        141.005,
+        153.3
+      ],
+      "values": [
+        "polygon: (132.185,153.16;132.185,153.3;141.005,153.3;141.005,153.16)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 15.7304",
+        "[#ratio] float: 301.060287081",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[2]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        189.025,
+        197.12,
+        291.925,
+        197.26
+      ],
+      "values": [
+        "polygon: (189.025,197.12;189.025,197.26;291.925,197.26;291.925,197.12)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 15.7304",
+        "[#ratio] float: 301.060287081",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[2]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        291.785,
+        268.8,
+        292.425,
+        268.94
+      ],
+      "values": [
+        "polygon: (291.785,268.8;291.785,268.94;292.425,268.94;292.425,268.8)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 15.7304",
+        "[#ratio] float: 301.060287081",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[2]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        103.625,
+        165.2,
+        103.765,
+        165.34
+      ],
+      "values": [
+        "polygon: (103.625,165.2;103.625,165.34;103.765,165.34;103.765,165.2)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 19.894",
+        "[#ratio] float: 757.866666667",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        103.625,
+        213.64,
+        106.005,
+        213.78
+      ],
+      "values": [
+        "polygon: (103.625,213.64;103.625,213.78;106.005,213.78;106.005,213.64)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 19.894",
+        "[#ratio] float: 757.866666667",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[1]"
+      ]
+    },
+    {
+      "category": "METAL5_ANTENNA",
+      "box": [
+        105.865,
+        290.36,
+        245.445,
+        290.5
+      ],
+      "values": [
+        "polygon: (105.865,290.36;105.865,290.5;245.445,290.5;245.445,290.36)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 19.894",
+        "[#ratio] float: 757.866666667",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "rd[1]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        138.345,
+        157.36,
+        138.485,
+        158.54
+      ],
+      "values": [
+        "polygon: (138.345,157.36;138.345,158.54;138.485,158.54;138.485,157.36)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.9287",
+        "[#ratio] float: 362.271770335",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "derr"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        54.905,
+        158.4,
+        55.045,
+        292.425
+      ],
+      "values": [
+        "polygon: (54.905,158.4;54.905,292.425;55.045,292.425;55.045,158.4)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.9287",
+        "[#ratio] float: 362.271770335",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "derr"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        193.225,
+        191.2,
+        193.365,
+        191.38
+      ],
+      "values": [
+        "polygon: (193.225,191.2;193.225,191.38;193.365,191.38;193.365,191.2)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.5703",
+        "[#ratio] float: 355.412440191",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[4]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        129.665,
+        160.16,
+        129.805,
+        191.94
+      ],
+      "values": [
+        "polygon: (129.665,160.16;129.665,191.94;129.805,191.94;129.805,160.16)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.5703",
+        "[#ratio] float: 355.412440191",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[4]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        147.025,
+        191.8,
+        147.165,
+        192.14
+      ],
+      "values": [
+        "polygon: (147.025,191.8;147.025,192.14;147.165,192.14;147.165,191.8)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.5703",
+        "[#ratio] float: 355.412440191",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[4]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        207.785,
+        192.36,
+        207.925,
+        290.22
+      ],
+      "values": [
+        "polygon: (207.785,192.36;207.785,290.22;207.925,290.22;207.925,192.36)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.5703",
+        "[#ratio] float: 355.412440191",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[4]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        208.905,
+        290.08,
+        209.045,
+        290.78
+      ],
+      "values": [
+        "polygon: (208.905,290.08;208.905,290.78;209.045,290.78;209.045,290.08)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.5703",
+        "[#ratio] float: 355.412440191",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[4]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        240.265,
+        290.64,
+        240.405,
+        292.425
+      ],
+      "values": [
+        "polygon: (240.265,290.64;240.265,292.425;240.405,292.425;240.405,290.64)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.5703",
+        "[#ratio] float: 355.412440191",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[4]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        105.865,
+        159.32,
+        106.005,
+        249.9
+      ],
+      "values": [
+        "polygon: (105.865,159.32;105.865,249.9;106.005,249.9;106.005,159.32)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.6543",
+        "[#ratio] float: 357.020095694",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "dr"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        108.105,
+        249.76,
+        108.245,
+        292.425
+      ],
+      "values": [
+        "polygon: (108.105,249.76;108.105,292.425;108.245,292.425;108.245,249.76)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.6543",
+        "[#ratio] float: 357.020095694",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "dr"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        47.065,
+        168.84,
+        47.205,
+        292.425
+      ],
+      "values": [
+        "polygon: (47.065,168.84;47.065,292.425;47.205,292.425;47.205,168.84)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 17.3019",
+        "[#ratio] float: 331.136842105",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[5]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        10.105,
+        213.92,
+        10.245,
+        292.425
+      ],
+      "values": [
+        "polygon: (10.105,213.92;10.105,292.425;10.245,292.425;10.245,213.92)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 10.9907",
+        "[#ratio] float: 418.693333333",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[8]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        25.785,
+        218.96,
+        25.925,
+        292.425
+      ],
+      "values": [
+        "polygon: (25.785,218.96;25.785,292.425;25.925,292.425;25.925,218.96)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 10.2851",
+        "[#ratio] float: 391.813333333",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[25]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        34.185,
+        218.12,
+        34.885,
+        292.425
+      ],
+      "values": [
+        "polygon: (34.745,218.12;34.745,289.73;34.185,289.73;34.185,292.425;34.325,292.425;34.325,289.87;34.885,289.87;34.885,218.12)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 10.4811",
+        "[#ratio] float: 399.28",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[31]"
+      ]
+    },
+    {
+      "category": "METAL6_ANTENNA",
+      "box": [
+        202.185,
+        218.96,
+        202.885,
+        292.425
+      ],
+      "values": [
+        "polygon: (202.185,218.96;202.185,275.17;202.745,275.17;202.745,292.425;202.885,292.425;202.885,275.03;202.325,275.03;202.325,218.96)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 10.3635",
+        "[#ratio] float: 394.8",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.02625"
+      ],
+      "nets": [
+        "insn[0]"
+      ]
+    },
+    {
+      "category": "METAL7_ANTENNA",
+      "box": [
+        130.095,
+        187.07,
+        130.695,
+        187.47
+      ],
+      "values": [
+        "polygon: (130.095,187.07;130.095,187.47;130.695,187.47;130.695,187.07)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 32.656",
+        "[#ratio] float: 312.497607656",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.1045"
+      ],
+      "nets": [
+        "rd[12]"
+      ]
+    },
+    {
+      "category": "METAL7_ANTENNA",
+      "box": [
+        171.095,
+        187.07,
+        171.655,
+        187.47
+      ],
+      "values": [
+        "polygon: (171.095,187.07;171.095,187.47;171.655,187.47;171.655,187.07)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 32.656",
+        "[#ratio] float: 312.497607656",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.1045"
+      ],
+      "nets": [
+        "rd[12]"
+      ]
+    },
+    {
+      "category": "METAL7_ANTENNA",
+      "box": [
+        210.735,
+        187.07,
+        291.215,
+        187.47
+      ],
+      "values": [
+        "polygon: (210.735,187.07;210.735,187.47;291.215,187.47;291.215,187.07)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 32.656",
+        "[#ratio] float: 312.497607656",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.1045"
+      ],
+      "nets": [
+        "rd[12]"
+      ]
+    },
+    {
+      "category": "METAL7_ANTENNA",
+      "box": [
+        54.775,
+        158.27,
+        138.615,
+        158.67
+      ],
+      "values": [
+        "polygon: (54.775,158.27;54.775,158.67;138.615,158.67;138.615,158.27)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 33.536",
+        "[#ratio] float: 641.837320574",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "derr"
+      ]
+    },
+    {
+      "category": "METAL7_ANTENNA",
+      "box": [
+        146.895,
+        191.07,
+        193.495,
+        192.27
+      ],
+      "values": [
+        "polygon: (151,191.07;151,191.87;146.895,191.87;146.895,192.27;151.4,192.27;151.4,191.47;193.495,191.47;193.495,191.07)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 18.96",
+        "[#ratio] float: 362.870813397",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "_04136_",
+        "_06639_",
+        "dv",
+        "rd[4]"
+      ]
+    },
+    {
+      "category": "METAL9_ANTENNA",
+      "box": [
+        142.095,
+        194.87,
+        167.695,
+        197.27
+      ],
+      "values": [
+        "polygon: (142.095,194.87;142.095,195.67;146.895,195.67;146.895,197.27;167.695,197.27;167.695,196.47;147.695,196.47;147.695,194.87)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 21.76",
+        "[#ratio] float: 416.459330144",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.05225"
+      ],
+      "nets": [
+        "rd[2]"
+      ]
+    },
+    {
+      "category": "METAL9_ANTENNA",
+      "box": [
+        130.095,
+        186.87,
+        171.695,
+        189.27
+      ],
+      "values": [
+        "polygon: (150.8,186.87;150.8,188.47;130.095,188.47;130.095,189.27;151.6,189.27;151.6,187.67;171.695,187.67;171.695,186.87)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 34.56",
+        "[#ratio] float: 330.717703349",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.1045"
+      ],
+      "nets": [
+        "_14920_",
+        "rd[12]"
+      ]
+    },
+    {
+      "category": "METAL9_ANTENNA",
+      "box": [
+        108.495,
+        174.07,
+        109.295,
+        174.87
+      ],
+      "values": [
+        "polygon: (108.495,174.07;108.495,174.87;109.295,174.87;109.295,174.07)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 101.76",
+        "[#ratio] float: 324.593301435",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.3135"
+      ],
+      "nets": []
+    },
+    {
+      "category": "METAL9_ANTENNA",
+      "box": [
+        108.495,
+        284.47,
+        234.895,
+        285.27
+      ],
+      "values": [
+        "polygon: (108.495,284.47;108.495,285.27;234.895,285.27;234.895,284.47)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 101.76",
+        "[#ratio] float: 324.593301435",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.3135"
+      ],
+      "nets": [
+        "rd[20]"
+      ]
+    },
+    {
+      "category": "METAL9_ANTENNA",
+      "box": [
+        195.695,
+        193.27,
+        291.695,
+        194.07
+      ],
+      "values": [
+        "polygon: (195.695,193.27;195.695,194.07;291.695,194.07;291.695,193.27)",
+        "[#adiodes] text: '(0)'",
+        "[#diode_factors] text: '(0)'",
+        "[#ametal] float: 76.8",
+        "[#ratio] float: 489.95215311",
+        "[#max_ratio] float: 300",
+        "[#agate] float: 0.15675"
+      ],
+      "nets": [
+        "rd[23]"
+      ]
+    }
+  ],
+  "nets": {
+    "rd[6]": {
+      "ports": [
+        "rd[6]"
+      ],
+      "iterms": [
+        "_18426_/B2"
+      ]
+    },
+    "rd[1]": {
+      "ports": [
+        "rd[1]"
+      ],
+      "iterms": [
+        "_18355_/A"
+      ]
+    },
+    "insn[20]": {
+      "ports": [
+        "insn[20]"
+      ],
+      "iterms": [
+        "_26440_/A"
+      ]
+    },
+    "insn[23]": {
+      "ports": [
+        "insn[23]"
+      ],
+      "iterms": [
+        "_26443_/A"
+      ]
+    },
+    "insn[14]": {
+      "ports": [
+        "insn[14]"
+      ],
+      "iterms": [
+        "_26434_/A"
+      ]
+    },
+    "clk": {
+      "ports": [
+        "clk"
+      ],
+      "iterms": [
+        "clkbuf_0_clk/A"
+      ]
+    },
+    "clknet_5_1__leaf_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload1/A",
+        "clkbuf_leaf_400_clk/A",
+        "clkbuf_leaf_398_clk/A",
+        "clkbuf_leaf_397_clk/A",
+        "clkbuf_leaf_396_clk/A",
+        "clkbuf_leaf_395_clk/A",
+        "clkbuf_leaf_394_clk/A",
+        "clkbuf_leaf_393_clk/A",
+        "clkbuf_leaf_392_clk/A",
+        "clkbuf_leaf_391_clk/A",
+        "clkbuf_leaf_390_clk/A",
+        "clkbuf_leaf_389_clk/A",
+        "clkbuf_leaf_386_clk/A",
+        "clkbuf_leaf_381_clk/A",
+        "clkbuf_leaf_379_clk/A",
+        "clkbuf_leaf_13_clk/A",
+        "clkbuf_5_1__f_clk/Z"
+      ]
+    },
+    "clknet_5_5__leaf_clk": {
+      "ports": [],
+      "iterms": [
+        "clkload5/A",
+        "clkbuf_leaf_374_clk/A",
+        "clkbuf_leaf_372_clk/A",
+        "clkbuf_leaf_371_clk/A",
+        "clkbuf_leaf_370_clk/A",
+        "clkbuf_leaf_369_clk/A",
+        "clkbuf_leaf_368_clk/A",
+        "clkbuf_leaf_367_clk/A",
+        "clkbuf_leaf_366_clk/A",
+        "clkbuf_leaf_365_clk/A",
+        "clkbuf_leaf_364_clk/A",
+        "clkbuf_leaf_360_clk/A",
+        "clkbuf_leaf_311_clk/A",
+        "clkbuf_leaf_310_clk/A",
+        "clkbuf_leaf_309_clk/A",
+        "clkbuf_leaf_307_clk/A",
+        "clkbuf_5_5__f_clk/Z"
+      ]
+    },
+    "insn[11]": {
+      "ports": [
+        "insn[11]"
+      ],
+      "iterms": [
+        "_26431_/A"
+      ]
+    },
+    "rd[2]": {
+      "ports": [
+        "rd[2]"
+      ],
+      "iterms": [
+        "_18319_/B2"
+      ]
+    },
+    "derr": {
+      "ports": [
+        "derr"
+      ],
+      "iterms": [
+        "_17290_/B"
+      ]
+    },
+    "rd[4]": {
+      "ports": [
+        "rd[4]"
+      ],
+      "iterms": [
+        "_18387_/B2"
+      ]
+    },
+    "dr": {
+      "ports": [
+        "dr"
+      ],
+      "iterms": [
+        "_17293_/B2"
+      ]
+    },
+    "rd[5]": {
+      "ports": [
+        "rd[5]"
+      ],
+      "iterms": [
+        "_18407_/B2"
+      ]
+    },
+    "insn[8]": {
+      "ports": [
+        "insn[8]"
+      ],
+      "iterms": [
+        "_26428_/A"
+      ]
+    },
+    "insn[25]": {
+      "ports": [
+        "insn[25]"
+      ],
+      "iterms": [
+        "_26445_/A"
+      ]
+    },
+    "insn[31]": {
+      "ports": [
+        "insn[31]"
+      ],
+      "iterms": [
+        "_26451_/A"
+      ]
+    },
+    "insn[0]": {
+      "ports": [
+        "insn[0]"
+      ],
+      "iterms": [
+        "_26420_/A"
+      ]
+    },
+    "rd[12]": {
+      "ports": [
+        "rd[12]"
+      ],
+      "iterms": [
+        "_18383_/A1",
+        "_18203_/C2"
+      ]
+    },
+    "_04136_": {
+      "ports": [],
+      "iterms": [
+        "_23240_/A2",
+        "_20400_/C1",
+        "_20398_/B1",
+        "_20397_/ZN"
+      ]
+    },
+    "_06639_": {
+      "ports": [],
+      "iterms": [
+        "_26011_/C2",
+        "_24591_/A1",
+        "_23243_/B1",
+        "_23242_/ZN"
+      ]
+    },
+    "dv": {
+      "ports": [
+        "dv"
+      ],
+      "iterms": [
+        "_17293_/B1",
+        "_17149_/ZN"
+      ]
+    },
+    "_14920_": {
+      "ports": [],
+      "iterms": [
+        "_30118_/B",
+        "_29901_/B1",
+        "_22533_/A1",
+        "_21961_/A1",
+        "_18375_/ZN"
+      ]
+    },
+    "rd[20]": {
+      "ports": [
+        "rd[20]"
+      ],
+      "iterms": [
+        "_18385_/C1",
+        "_18201_/B1",
+        "_17990_/B2"
+      ]
+    },
+    "rd[23]": {
+      "ports": [
+        "rd[23]"
+      ],
+      "iterms": [
+        "_17977_/B2",
+        "_16707_/A"
+      ]
+    }
+  },
+  "gds_sha256": "5958c0aebea0863e18a881c7e3e668aad1fb99c5b900d8e536c837d9deed3671",
+  "scope": "Original 43-marker layout, before closure; coordinate candidates require net review"
+}

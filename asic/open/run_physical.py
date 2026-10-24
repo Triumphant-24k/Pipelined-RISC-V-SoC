@@ -11,5 +11,7 @@ shutil.copy2(root/'build/asic/1_synth.v',stage/'build/asic/1_synth.v')
 with (stage/'build/asic/flow.log').open('w') as log:
  result=subprocess.run(['openroad','-exit','asic/open/flow.tcl'],cwd=stage,stdout=log,stderr=subprocess.STDOUT)
 shutil.copytree(stage/'build/asic',root/'build/asic',dirs_exist_ok=True)
+if result.returncode==0:
+ subprocess.run(['openroad','-python','-exit','asic/open/check_power_pins.py'],cwd=root,check=True)
 print((stage/'build/asic/flow.log').read_text()[-5000:])
 raise SystemExit(result.returncode)

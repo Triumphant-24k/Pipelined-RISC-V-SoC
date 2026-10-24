@@ -37,33 +37,33 @@
       "hold_wns_ns": 0.03
     },
     "4_placement": {
-      "cell_area_um2_rounded": 35139.0,
-      "utilization_percent_rounded": 48,
-      "setup_wns_ns": 6.32,
+      "cell_area_um2_rounded": 35694.0,
+      "utilization_percent_rounded": 49,
+      "setup_wns_ns": 6.26,
       "hold_wns_ns": 0.03
     },
     "5_cts_raw": {
-      "cell_area_um2_rounded": 36027.0,
-      "utilization_percent_rounded": 49,
-      "setup_wns_ns": 6.51,
+      "cell_area_um2_rounded": 36574.0,
+      "utilization_percent_rounded": 50,
+      "setup_wns_ns": 6.47,
       "hold_wns_ns": 0.02
     },
     "5_cts": {
-      "cell_area_um2_rounded": 36027.0,
-      "utilization_percent_rounded": 49,
-      "setup_wns_ns": 6.51,
+      "cell_area_um2_rounded": 36574.0,
+      "utilization_percent_rounded": 50,
+      "setup_wns_ns": 6.47,
       "hold_wns_ns": 0.02
     },
     "6_global_route": {
-      "cell_area_um2_rounded": 36027.0,
-      "utilization_percent_rounded": 49,
-      "setup_wns_ns": 6.49,
+      "cell_area_um2_rounded": 36606.0,
+      "utilization_percent_rounded": 50,
+      "setup_wns_ns": 6.41,
       "hold_wns_ns": 0.02
     },
     "7_final": {
-      "cell_area_um2_rounded": 36027.0,
-      "utilization_percent_rounded": 49,
-      "setup_wns_ns": 6.44,
+      "cell_area_um2_rounded": 36606.0,
+      "utilization_percent_rounded": 50,
+      "setup_wns_ns": 6.31,
       "hold_wns_ns": 0.02
     }
   },
@@ -80,59 +80,17 @@
     "0"
   ],
   "completed": true,
-  "max_capacitance_violations": [
-    {
-      "pin": "_21957_/Z",
-      "limit_ff": 120.85,
-      "actual_ff": 131.95,
-      "slack_ff": -11.1
-    },
-    {
-      "pin": "_18746_/ZN",
-      "limit_ff": 41.5,
-      "actual_ff": 47.14,
-      "slack_ff": -5.64
-    },
-    {
-      "pin": "_25003_/ZN",
-      "limit_ff": 233.15,
-      "actual_ff": 237.43,
-      "slack_ff": -4.28
-    },
-    {
-      "pin": "_17840_/ZN",
-      "limit_ff": 241.7,
-      "actual_ff": 245.66,
-      "slack_ff": -3.96
-    },
-    {
-      "pin": "_17298_/ZN",
-      "limit_ff": 106.81,
-      "actual_ff": 108.07,
-      "slack_ff": -1.26
-    },
-    {
-      "pin": "_33060_/Q",
-      "limit_ff": 121.15,
-      "actual_ff": 121.79,
-      "slack_ff": -0.64
-    },
-    {
-      "pin": "_33056_/Q",
-      "limit_ff": 121.15,
-      "actual_ff": 121.27,
-      "slack_ff": -0.11
-    },
-    {
-      "pin": "_20569_/ZN",
-      "limit_ff": 106.81,
-      "actual_ff": 106.83,
-      "slack_ff": -0.02
-    }
-  ],
+  "max_capacitance_violations": [],
   "global_wirelength_um": [
-    "562947"
+    "590396"
   ],
+  "cts_clock_buffers": [
+    "442"
+  ],
+  "cts_leaf_buffers": [
+    "405"
+  ],
+  "input_anchor_count": 74,
   "reported_setup_skew_ns": [
     "0.23"
   ]

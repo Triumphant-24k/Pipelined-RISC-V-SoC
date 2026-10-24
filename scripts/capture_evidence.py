@@ -58,10 +58,11 @@ def capture(name,args,wait=4):
 try:
  if len(sys.argv)==1 or 'wave' in sys.argv:
   capture('verification_gui',['gtkwave','build/evidence/pipeline.vcd','-S','asic/open/waves.tcl'])
- if len(sys.argv)==1 or 'layout' in sys.argv or 'synthonly' in sys.argv:
+ if len(sys.argv)==1 or 'layout' in sys.argv or 'synthonly' in sys.argv or 'final' in sys.argv:
   platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
   for stage in ['1_synth','2_floorplan','3_power','4_placement','5_cts','6_global_route','7_final']:
    if 'synthonly' in sys.argv and stage!='1_synth':continue
+   if 'final' in sys.argv and stage!='7_final':continue
    if not (root/f'build/asic/{stage}.odb').exists():continue
    script=root/'build/evidence/view.tcl'
    s=f'read_liberty {platform}/lib/NangateOpenCellLibrary_typical.lib\nread_db {{{root}/build/asic/{stage}.odb}}\nread_sdc {{{root}/build/asic/{stage}.sdc}}\n'
@@ -80,14 +81,14 @@ try:
  if len(sys.argv)==1 or 'clock' in sys.argv:
   platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
   script=root/'build/evidence/clock_view.tcl'
-  script.write_text(f'read_liberty {platform}/lib/NangateOpenCellLibrary_typical.lib\nread_db {{{root}/build/asic/5_cts.odb}}\nread_sdc {{{root}/build/asic/5_cts.sdc}}\ngui::show_widget "Clock Tree Viewer"\ngui::select_clockviewer_clock core_clk\ngui::fit\nputs "CTS: core_clk; 442 buffers, 405 leaves"\n')
+  script.write_text(f'read_liberty {platform}/lib/NangateOpenCellLibrary_typical.lib\nread_db {{{root}/build/asic/5_cts.odb}}\nread_sdc {{{root}/build/asic/5_cts.sdc}}\ngui::show_widget "Clock Tree Viewer"\ngui::select_clockviewer_clock core_clk\ngui::fit\nputs "CTS: core_clk; hierarchy from the current 5_cts database"\n')
   capture('clock_tree_gui',['openroad','-gui',str(script)],7)
  if len(sys.argv)==1 or 'physical' in sys.argv:
   script=root/'build/evidence/klayout_view.py'
   platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
   script.write_text('import pya\napp=pya.Application.instance()\nwin=app.main_window()\napp.set_config("full-hierarchy-new-cell","true")\ncv=win.load_layout('+repr(str(root/'build/asic/rv32_pipeline.gds'))+',0)\nview=win.current_view()\nview.load_layer_props('+repr(str(platform/'FreePDK45.lyp'))+')\nview.add_missing_layers()\nview.max_hier()\nview.zoom_fit()\nidx=view.create_rdb("FreePDK45 DRC")\nview.rdb(idx).load('+repr(str(root/'build/asic/klayout_drc.lyrdb'))+')\nview.show_rdb(idx,0)\n')
   capture('physical_checks_gui',['klayout','-e','-rr',str(script)],8)
- if 'lvs' in sys.argv:
+ if len(sys.argv)==1 or 'lvs' in sys.argv:
   platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
   for name,layout,dbfile in [('lvs_gui',root/'build/asic/rv32_pipeline.gds',root/'build/lvs/processor.lvsdb'),('lvs_negative_gui',Path.home()/'riscv-lvs-run/INV_X1.gds',root/'build/lvs/INV_X1_negative.lvsdb')]:
    script=root/'build/evidence/lvs_view.py'

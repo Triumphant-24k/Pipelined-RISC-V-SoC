@@ -447,5 +447,7 @@
     "reference": "21071c5200519e889f88091e4686ccf495b3b25ab113edfd3ad0fce2c590c3af",
     "library": "457f0e3836b369f56d2cb04aab2a16d0e40b56d32bf2c62f19475b0abca2f6b3"
   },
-  "pass": true
+  "pass": true,
+  "comparison_warning_count": 108,
+  "comparison_error_count": 0
 }

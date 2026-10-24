@@ -8,6 +8,8 @@ for circuit in db.netlist().each_circuit():
   aliases=set(net.name.split(','))
   if 'VDD' in aliases and aliases<=set(['NWELL','VDD']):net.name='VDD'
   if 'VSS' in aliases and aliases<=set(['BULK','PWELL','VSS']):net.name='VSS'
+for circuit in db.netlist().each_circuit():
+ for net in circuit.each_net():net.name=net.name.upper()
 top=db.reference.top_circuit()
 ok=db.flag_missing_ports(top)
 print('PORT_LABEL_RESULT',str(ok),'TOP',top.name)

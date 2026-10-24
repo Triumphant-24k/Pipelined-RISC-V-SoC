@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "Hierarchical transistor extraction and connectivity comparison of the routed processor core; named top ports checked",
+  "top": "rv32_pipeline",
+  "port_labels_match": true,
+  "matched_circuits": 83,
+  "top_relations": {
+    "nets": {
+      "Match": 21418
+    },
+    "pins": {
+      "Match": 443
+    },
+    "subcircuits": {
+      "Match": 18862
+    }
+  },
+  "layout": {
+    "name": "rv32_pipeline",
+    "pins": 443,
+    "nets": 21418,
+    "devices": 0,
+    "subcircuits": 18862
+  },
+  "reference": {
+    "name": "RV32_PIPELINE",
+    "pins": 443,
+    "nets": 21646,
+    "devices": 0,
+    "subcircuits": 18862
+  },
+  "validated_cell_masters": 82,
+  "negative_controls_rejected": 2,
+  "comparison_warning_count": 108,
+  "comparison_error_count": 0,
+  "comparison_seconds": 291.13,
+  "sha256": {
+    "gds": "5958c0aebea0863e18a881c7e3e668aad1fb99c5b900d8e536c837d9deed3671",
+    "reference": "21071c5200519e889f88091e4686ccf495b3b25ab113edfd3ad0fce2c590c3af",
+    "library": "457f0e3836b369f56d2cb04aab2a16d0e40b56d32bf2c62f19475b0abca2f6b3"
+  },
+  "odb_sha256": "8fdae096d8289b11fdaec0c48edd133ceebf01e1e05f85ed517235dd4126f5dd",
+  "deck_sha256": "20494df9b6023e4013fc54018b96ae639a2e1c317ac9ac627277ebd79bbc8cbf",
+  "database": "build/lvs/processor.lvsdb",
+  "remaining_limits": "43 independent antenna markers and 8 maximum-capacitance violations; academic PDK flow, not foundry signoff"
+}

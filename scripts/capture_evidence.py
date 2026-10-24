@@ -93,8 +93,9 @@ try:
    script=root/'build/evidence/lvs_view.py'
    script.write_text('import pya\napp=pya.Application.instance()\napp.set_config("full-hierarchy-new-cell","true")\nwin=app.main_window()\nwin.load_layout('+repr(str(layout))+',0)\nview=win.current_view()\nview.load_layer_props('+repr(str(platform/'FreePDK45.lyp'))+')\nview.add_missing_layers()\nview.max_hier()\nview.zoom_fit()\nidx=view.create_lvsdb("Processor LVS")\nview.lvsdb(idx).read('+repr(str(dbfile))+')\nview.show_lvsdb(idx,0)\n')
    capture(name,['klayout','-e','-rr',str(script)],20 if name=='lvs_gui'else 5)
- if len(sys.argv)==1 or 'terminal' in sys.argv:
+ if len(sys.argv)==1 or 'terminal' in sys.argv or 'lvs-terminal'in sys.argv:
   for review in sorted((root/'build/evidence').glob('*_review.txt')):
+   if 'lvs-terminal'in sys.argv and review.stem not in ('lvs_cells_review','lvs_processor_review','physical_checks_review'):continue
    if len(sys.argv)>2 and sys.argv[1]=='terminal' and review.stem!=sys.argv[2]+'_review':continue
    shell=root/'build/evidence/review.sh'
    shell.write_text('set -x\ncat "'+str(review.relative_to(root))+'"\nset +x\necho "\nRecorded log review complete. Original logs retained in build/."\nsleep 120\n')

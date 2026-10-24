@@ -3,7 +3,7 @@
 An RV32IM pipeline, instruction/data caches, shared memory fabric, and autonomous
 tiled INT8 GEMM accelerator. Bare-metal firmware demonstrates software/DMA
 GEMM, interrupts, and a complete small convolution/dense inference workload.
-The processor core has a routed Nangate45 academic GDS. Post-route typical-corner setup/hold slack is +6.44/+0.02 ns at a 10 ns clock. There are 43 independent antenna markers and eight maximum-capacitance violations; LVS remains unexecuted. No SRAM macro or foundry signoff implementation is claimed.
+The processor core has a routed Nangate45 academic GDS. Post-route typical-corner setup/hold slack is +6.44/+0.02 ns at a 10 ns clock. There are 43 independent antenna markers and eight maximum-capacitance violations; Validated public-PDK LVS passes, including all 443 named top ports. No SRAM macro or foundry signoff implementation is claimed.
 
 ## Processor and memory block diagram
 
@@ -103,6 +103,7 @@ See `asic/open/README.md` for scope, pinned tools, constraints and reproduction.
 make pipeline
 make asic
 make physical-checks
+make lvs
 make evidence
 make submissions
 ```
@@ -115,8 +116,9 @@ is 0.05 ns, revised from an initial blanket 0.2 ns assumption that exhausted
 hold-repair buffer limits. This is not multi-corner closure.
 
 The detailed router reports zero violations; independent KLayout GDS DRC reports
-43 antenna markers. Eight maximum-capacitance violations remain, and the selected
-platform has no validated LVS runset. Both power grids pass connectivity checks.
+43 antenna markers. Eight maximum-capacitance violations remain. The adapted
+FreePDK45 KLayout LVS flow passes: 83 circuit pairs, 443 top pins, 21,418 nets and
+18,862 cell instances match; all 82 instantiated cell masters are validated. Both power grids pass connectivity checks.
 Do not treat zero-delay gate simulation or stream-out completeness as LVS.
 
 Separate proposal, front-end and back-end PDFs are generated in
@@ -124,6 +126,8 @@ Separate proposal, front-end and back-end PDFs are generated in
 review screenshots, measured results and contribution/provenance disclosure.
 Source RTL and selected constraints/results are embedded as PDF attachments.
 Full logs are retained under build/; curated screenshots are in reports/evidence.
+LVS setup and its well-bias/case-normalization assumptions are documented in
+asic/open/lvs/README.md; the consolidated result is reports/lvs_summary.json.
 Suggested commit groupings are in docs/COMMIT_GUIDE.md. No assistant commits or
 pushes were performed. The older Genus/Innovus scripts remain unexecuted.
 

@@ -14,6 +14,7 @@ python3 asic/open/synth.py
 python3 asic/open/run_physical.py
 python3 asic/open/gate_check.py
 python3 asic/open/physical_checks.py
+make lvs
 python3 scripts/collect_asic_evidence.py
 python3 scripts/capture_evidence.py
 python3 scripts/compile_assignment_reports.py
@@ -25,7 +26,7 @@ GUI captures use actual GTKWave, OpenROAD, KLayout and xterm windows on an isola
 
 Constraints target 10 ns. Setup uncertainty is 0.2 ns, hold uncertainty 0.05 ns; input and output budgets are 1 ns. The earlier blanket 0.2 ns hold assumption exhausted buffer limits; failed-run logs are retained and this revision must be disclosed with results. No slow/fast PVT corner or signoff closure is asserted.
 
-KLayout runs the public FreePDK45 DRC deck on merged standard-cell GDS geometry. Report every remaining marker. The selected checkout does not provide a Nangate45 LVS deck: do not label gate-level simulation, stream-out checks, or power connectivity as LVS. Zero-delay mapped/post-route functional simulation is a supplemental logical check and has no SDF timing annotation.
+KLayout runs the public FreePDK45 DRC deck on merged standard-cell GDS geometry. Report every remaining marker. The selected platform checkout does not bundle an LVS deck; the externally pinned FreePDK45 deck is now adapted and validated in asic/open/lvs. `make lvs` performs independent transistor/connectivity comparison and named top-port checks. See its README and reports/lvs_summary.json for scope and assumptions. Gate-level simulation, stream-out checks and power connectivity remain separate checks. Zero-delay mapped/post-route functional simulation is a supplemental logical check and has no SDF timing annotation.
 
 ## Tool installation
 

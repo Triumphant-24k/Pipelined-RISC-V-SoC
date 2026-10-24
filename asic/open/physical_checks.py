@@ -19,6 +19,8 @@ if (root/'reports/lvs_summary.json').exists():
  lvs=json.loads((root/'reports/lvs_summary.json').read_text())
  same_gds=hashlib.sha256((root/'build/asic/rv32_pipeline.gds').read_bytes()).hexdigest()==lvs['sha256']['gds']
  same_odb=hashlib.sha256((root/'build/asic/7_final.odb').read_bytes()).hexdigest()==lvs['odb_sha256']
- status.update(lvs=('PASS: routed core and named ports match'if same_gds and same_odb and lvs['status']=='PASS'else'STALE: rerun LVS on the current generated inputs'),lvs_deck_exists=True,lvs_deck='asic/open/lvs/processor.lvs',lvs_summary='reports/lvs_summary.json')
+ deck=root/'asic/open/lvs/processor.lvs'
+ same_deck=deck.exists()and hashlib.sha256(deck.read_bytes()).hexdigest()==lvs['deck_sha256']
+ status.update(lvs=('PASS: routed core and named ports match'if same_gds and same_odb and same_deck and lvs['status']=='PASS'else'STALE: rerun LVS on the current generated inputs'),lvs_deck_exists=deck.exists(),lvs_deck='asic/open/lvs/processor.lvs',lvs_summary='reports/lvs_summary.json')
 (root/'reports/physical_checks.json').write_text(json.dumps(status,indent=2))
 print(json.dumps(status,indent=2));print((root/'build/asic/stream.log').read_text())

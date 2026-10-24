@@ -31,7 +31,11 @@ summary={'layout':stats(layout),'reference':stats(reference),'port_labels_match'
 if case=='processor':
  inputs={n:hashlib.sha256((stage/f).read_bytes()).hexdigest()for n,f in [('gds','processor.gds'),('reference','processor_reference.cdl'),('library','library.cdl')]}
  summary['sha256']=inputs
- summary['pass']=labels and bool(pairs) and all(p['status']=='Match'for p in pairs) and summary['layout']['subcircuits']>0
- (root/'reports/lvs_audit.json').write_text(json.dumps(summary,indent=2))
+ summary['pass']=labels and bool(pairs) and all(p['status']=='Match'for p in pairs) and summary['layout']['subcircuits']>0 and all(set(v)=={'Match'} for v in relations.values())
  db.write(str(root/'build/lvs/processor.lvsdb'))
+ text=(root/'build/lvs/processor.lvsdb').read_text()
+ summary['comparison_warning_count']=text.count('entry(warning')
+ summary['comparison_error_count']=text.count('entry(error')
+ summary['pass']=summary['pass']and summary['comparison_error_count']==0
+ (root/'reports/lvs_audit.json').write_text(json.dumps(summary,indent=2))
 print(json.dumps(summary,indent=2))

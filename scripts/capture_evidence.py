@@ -19,7 +19,20 @@ def capture(name,args,wait=4):
   if process.poll() is not None:raise RuntimeError(f'GUI {name} exited: see {log.name}')
   ids=subprocess.check_output(['xdotool','search','--onlyvisible','--pid',str(process.pid)],env=env,text=True).split()
   if not ids:raise RuntimeError('no GUI window')
+  if name=='physical_checks_gui':
+   run(['import','-window','root',str(root/'build/evidence/klayout_preview.png')])
+   for win in ids:
+    title=subprocess.check_output(['xdotool','getwindowname',win],env=env,text=True).strip()
+    print('PREVIEW WINDOW',win,repr(title),flush=True)
+    if 'tip' in title.lower():run(['xdotool','key','--window',win,'Return'])
+   time.sleep(3)
+   ids=subprocess.check_output(['xdotool','search','--onlyvisible','--pid',str(process.pid)],env=env,text=True).split()
   wid=ids[-1]
+  if name=='physical_checks_gui':
+   names={win:subprocess.check_output(['xdotool','getwindowname',win],env=env,text=True).strip()for win in ids}
+   print('KLAYOUT WINDOWS',names,flush=True)
+   main=[win for win,title in names.items()if 'rv32_pipeline' in title]
+   if main:wid=main[0]
   subprocess.run(['xdotool','windowmove',wid,'0','0','windowsize',wid,'1440','900'],env=env)
   if name in ('1_synth_gui','timing_gui'):
    run(['xdotool','mousemove','1200','73','click','--repeat','2','--delay','120','1'])
@@ -58,13 +71,19 @@ try:
   script=root/'build/evidence/timing_view.tcl'
   script.write_text(f'read_liberty {platform}/lib/NangateOpenCellLibrary_typical.lib\nread_db {{{root}/build/asic/7_final.odb}}\nread_sdc {{{root}/build/asic/7_final.sdc}}\nread_spef {{{root}/build/asic/7_final.spef}}\nforeach w {{"Help Browser" "Inspector" "Hierarchy Browser" "Charts"}} {{gui::hide_widget $w}}\ngui::show_widget "Timing Report"\ngui::update_timing_report\ngui::fit\nputs "Post-route extracted timing at 10 ns; setup U=0.2, hold U=0.05 ns"\nreport_worst_slack -max\nreport_worst_slack -min\n')
   capture('timing_gui',['openroad','-gui',str(script)],8)
+ if len(sys.argv)==1 or 'clock' in sys.argv:
+  platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
+  script=root/'build/evidence/clock_view.tcl'
+  script.write_text(f'read_liberty {platform}/lib/NangateOpenCellLibrary_typical.lib\nread_db {{{root}/build/asic/5_cts.odb}}\nread_sdc {{{root}/build/asic/5_cts.sdc}}\ngui::show_widget "Clock Tree Viewer"\ngui::select_clockviewer_clock core_clk\ngui::fit\nputs "CTS: core_clk; 442 buffers, 405 leaves"\n')
+  capture('clock_tree_gui',['openroad','-gui',str(script)],7)
  if len(sys.argv)==1 or 'physical' in sys.argv:
   script=root/'build/evidence/klayout_view.py'
   platform=Path(os.environ.get('NANGATE45',str(Path.home()/'OpenROAD-flow-scripts/flow/platforms/nangate45')))
-  script.write_text('import pya\napp=pya.Application.instance()\nwin=app.main_window()\ncv=win.load_layout('+repr(str(root/'build/asic/rv32_pipeline.gds'))+',0)\nview=win.current_view()\nview.load_layer_props('+repr(str(platform/'FreePDK45.lyp'))+')\nview.add_missing_layers()\nview.max_hier()\nview.zoom_fit()\nidx=view.load_rdb('+repr(str(root/'build/asic/klayout_drc.lyrdb'))+')\nview.show_rdb(idx,0)\n')
-  capture('physical_checks_gui',['klayout','-r',str(script)],8)
+  script.write_text('import pya\napp=pya.Application.instance()\nwin=app.main_window()\napp.set_config("full-hierarchy-new-cell","true")\ncv=win.load_layout('+repr(str(root/'build/asic/rv32_pipeline.gds'))+',0)\nview=win.current_view()\nview.load_layer_props('+repr(str(platform/'FreePDK45.lyp'))+')\nview.add_missing_layers()\nview.max_hier()\nview.zoom_fit()\nidx=view.create_rdb("FreePDK45 DRC")\nview.rdb(idx).load('+repr(str(root/'build/asic/klayout_drc.lyrdb'))+')\nview.show_rdb(idx,0)\n')
+  capture('physical_checks_gui',['klayout','-e','-rr',str(script)],8)
  if len(sys.argv)==1 or 'terminal' in sys.argv:
   for review in sorted((root/'build/evidence').glob('*_review.txt')):
+   if len(sys.argv)>2 and sys.argv[1]=='terminal' and review.stem!=sys.argv[2]+'_review':continue
    shell=root/'build/evidence/review.sh'
    shell.write_text('set -x\ncat "'+str(review.relative_to(root))+'"\nset +x\necho "\nRecorded log review complete. Original logs retained in build/."\nsleep 120\n')
    capture(review.stem.replace('_review','')+'_terminal',['xterm','-fa','DejaVu Sans Mono','-fs','15','-bg','#101820','-fg','#e8edf2','-geometry','118x34+0+0','-title','RISC-V lab evidence: '+review.stem,'-e','bash',str(shell)],2)

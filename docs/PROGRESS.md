@@ -20,13 +20,12 @@
 | Formal | 25-cycle bounded arbiter safety proof; no whole-CPU or unbounded proof |
 | Exploration | RTL tile/panel/cache/latency sweeps; separate dataflow models |
 | Synthesis | Fatal local lint and generic Yosys structural synthesis checks |
-| ASIC preparation | Genus/Innovus/SDC/MMMC scripts requiring actual PDK inputs; unexecuted |
-| Routed PPA/SRAM macros | Externally blocked: college SSH timeout; tools/libraries/macros unavailable locally |
+| Open-source ASIC implementation | Processor mapped and routed on Nangate45; DEF/ODB/SPEF/GDS and reports generated |
+| Physical checks | Router DRV=0; KLayout antenna markers=43; max-capacitance violations=8; LVS not run; no SRAM macro implementation |
 | Reproducibility/CI | make all, PowerShell WSL wrapper, CI workflow; remote CI not run |
 
 Read reports/VERIFICATION.md, BENCHMARKS.md, PHYSICAL_DESIGN.md and their JSON
-artifacts for evidence and limits. Flow scripts are not physical implementation.
+artifacts for evidence and limits. The commercial scripts are unexecuted; the public Nangate45 processor flow has measured physical output.
 No GitHub push is authorized or performed.
 
-Next external steps: restore SSH, audit installed tools and authorized PDK files,
-integrate actual SRAM wrappers, run Genus/Innovus, and record measured PPA.
+The public core flow now runs locally. Next signoff steps are antenna/electrical repair, a validated LVS runset and multi-corner timing. SRAM macros and the commercial lab flow remain outside the completed core run. See reports/asic_metrics.json, physical_checks.json and the separate assignment PDFs.

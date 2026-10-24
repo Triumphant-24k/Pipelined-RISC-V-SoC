@@ -3,7 +3,7 @@
 An RV32IM pipeline, instruction/data caches, shared memory fabric, and autonomous
 tiled INT8 GEMM accelerator. Bare-metal firmware demonstrates software/DMA
 GEMM, interrupts, and a complete small convolution/dense inference workload.
-No routed PPA or SRAM macro implementation is claimed.
+The processor core has a routed Nangate45 academic GDS. Post-route typical-corner setup/hold slack is +6.44/+0.02 ns at a 10 ns clock. There are 43 independent antenna markers and eight maximum-capacitance violations; LVS remains unexecuted. No SRAM macro or foundry signoff implementation is claimed.
 
 ## Processor and memory block diagram
 
@@ -93,23 +93,39 @@ Operand panels are synthesizable arrays/registers, not mapped SRAM banks.
 External 256 KiB test memory is not part of the synthesized SoC. Quantization
 and activations run in firmware. Weight-stationary dataflow is modeled, not RTL.
 
-## ASIC continuation
+## ASIC implementation and assignment reports
 
-College SSH timed out. Local commercial tools, technology files, and SRAM macros
-were unavailable. After supplying authorized libraries and actual PDK settings:
+The public Nangate45 flow physically implements `rv32_pipeline` and `rv32_muldiv`.
+The optional caches, accelerator, external memory and IO pads are outside this GDS.
+See `asic/open/README.md` for scope, pinned tools, constraints and reproduction.
 
 ```bash
-# LIBERTY_FILES: Tcl list of authorized Liberty files.
-genus -batch -files asic/genus.tcl
-# Also configure LEF_FILES, QRC_TECH_FILE, POWER_NET, GROUND_NET,
-# POWER_PIN, GROUND_PIN, RING_H_LAYER, RING_V_LAYER, CTS_BUFFER_CELLS.
-innovus -no_gui -files asic/innovus.tcl
+make pipeline
+make asic
+make physical-checks
+make evidence
+make submissions
 ```
 
-Scripts require installed-tool/PDK validation. The 10 ns clock is a target, not
-a measured frequency. Add actual fast/slow PVT corners before claiming closure.
-Integrate suitable SRAM wrappers/macros and representative power activity.
-`reports/PHYSICAL_DESIGN.md` records the blockers; no PPA numbers are invented.
+A successful physical run exports `build/asic/rv32_pipeline.gds`, final DEF/ODB,
+mapped Verilog and extracted SPEF. The die is 292.425 x 292.425 um; the core is
+272.270 x 270.200 um. Final cell area is 36,027 um2 (tool-rounded), 49% utilization.
+The typical corner is 1.1 V / 25 C. Setup uncertainty is 0.2 ns; hold uncertainty
+is 0.05 ns, revised from an initial blanket 0.2 ns assumption that exhausted
+hold-repair buffer limits. This is not multi-corner closure.
+
+The detailed router reports zero violations; independent KLayout GDS DRC reports
+43 antenna markers. Eight maximum-capacitance violations remain, and the selected
+platform has no validated LVS runset. Both power grids pass connectivity checks.
+Do not treat zero-delay gate simulation or stream-out completeness as LVS.
+
+Separate proposal, front-end and back-end PDFs are generated in
+`reports/submissions`. They include explanations, actual GUI and terminal-log
+review screenshots, measured results and contribution/provenance disclosure.
+Source RTL and selected constraints/results are embedded as PDF attachments.
+Full logs are retained under build/; curated screenshots are in reports/evidence.
+Suggested commit groupings are in docs/COMMIT_GUIDE.md. No assistant commits or
+pushes were performed. The older Genus/Innovus scripts remain unexecuted.
 
 ## License and provenance
 

@@ -45,5 +45,7 @@ if (review/'7_final_gate.log').exists():put('gate',['ZERO-DELAY MAPPED NETLIST C
 if (root/'reports/physical_checks.json').exists():
  checks=json.loads((root/'reports/physical_checks.json').read_text())
  put('physical_checks',['PHYSICAL VERIFICATION - independent GDS checks','Command: python3 asic/open/physical_checks.py','Source: reports/physical_checks.json and build/asic/klayout_drc.lyrdb','',*(root/'build/asic/stream.log').read_text().splitlines()[-4:],'',*json.dumps(checks,indent=2).splitlines()[:23]])
+put('cts_constraint_revision',['CTS CONSTRAINT REVISION - preserved failed attempts','Original uncertainty: setup=0.2 ns and hold=0.2 ns','Final uncertainty: setup=0.2 ns and hold=0.05 ns','', 'Source: build/evidence/cts_first_attempt.log',*(review/'cts_first_attempt.log').read_text().splitlines()[-8:],'','Source: build/evidence/cts_second_attempt.log',*(review/'cts_second_attempt.log').read_text().splitlines()[-8:],'','Final run: no hold violations before repair under the revised budget.'])
+put('electrical',['POST-ROUTE ELECTRICAL CONSTRAINT VIOLATIONS','Source: build/asic/flow.log (last max capacitance report)','Units: capacitance in fF; slack is limit minus actual','',*log.rsplit('max capacitance',1)[-1].splitlines()[:20]])
 put('tools',['OPEN-SOURCE TOOLCHAIN - actual installed versions','',*[f'{k}: {v}'for k,v in versions.items()],'','Platform: public Nangate45 / FreePDK45','Physical scope: core only; no SoC SRAM or pad ring','Analysis: typical corner; not foundry signoff'])
 print(json.dumps(summary,indent=2))

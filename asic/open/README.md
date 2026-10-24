@@ -34,3 +34,5 @@ The OpenROAD binary was obtained from the official Precision-Innovations/OpenROA
 Final PDFs must be reviewed visually after regeneration; the source report generator asserts missing evidence instead of substituting placeholders.
 
 The Ubuntu archive KLayout 0.26.2 package crashed during script startup. The official KLayout 0.30.12 Ubuntu-22 binary replaced it; its download and SHA256 are also recorded in toolchain_installation.json.
+
+Report generation also requires the `pypdf` Python package for embedded source attachments (available in the bundled desktop Python runtime; install with pip for standalone Linux use).

@@ -8,5 +8,5 @@
     "status": "pass",
     "scope": "bounded safety under stable stalled master requests; no liveness or CPU proof"
   },
-  "physical_implementation": "not run"
+  "physical_implementation": "see reports/asic_metrics.json and physical_checks.json; core only"
 }

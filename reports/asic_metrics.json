@@ -72,12 +72,68 @@
     "iverilog": "Icarus Verilog version 11.0 (stable) ()",
     "verilator": "Verilator 4.038 2020-07-11 rev v4.036-114-g0cd4a57ad",
     "openroad": "v2.0-17598-ga008522d8 ",
-    "klayout": "KLayout 0.26.2",
+    "klayout": "KLayout 0.30.12",
     "gcc": "riscv64-unknown-elf-gcc () 10.2.0",
     "platform_commit": "6101364b2d7909dd797e1e3e7f80695401cfa4e4"
   },
   "router_drvs": [
     "0"
   ],
-  "completed": true
+  "completed": true,
+  "max_capacitance_violations": [
+    {
+      "pin": "_21957_/Z",
+      "limit_ff": 120.85,
+      "actual_ff": 131.95,
+      "slack_ff": -11.1
+    },
+    {
+      "pin": "_18746_/ZN",
+      "limit_ff": 41.5,
+      "actual_ff": 47.14,
+      "slack_ff": -5.64
+    },
+    {
+      "pin": "_25003_/ZN",
+      "limit_ff": 233.15,
+      "actual_ff": 237.43,
+      "slack_ff": -4.28
+    },
+    {
+      "pin": "_17840_/ZN",
+      "limit_ff": 241.7,
+      "actual_ff": 245.66,
+      "slack_ff": -3.96
+    },
+    {
+      "pin": "_17298_/ZN",
+      "limit_ff": 106.81,
+      "actual_ff": 108.07,
+      "slack_ff": -1.26
+    },
+    {
+      "pin": "_33060_/Q",
+      "limit_ff": 121.15,
+      "actual_ff": 121.79,
+      "slack_ff": -0.64
+    },
+    {
+      "pin": "_33056_/Q",
+      "limit_ff": 121.15,
+      "actual_ff": 121.27,
+      "slack_ff": -0.11
+    },
+    {
+      "pin": "_20569_/ZN",
+      "limit_ff": 106.81,
+      "actual_ff": 106.83,
+      "slack_ff": -0.02
+    }
+  ],
+  "global_wirelength_um": [
+    "562947"
+  ],
+  "reported_setup_skew_ns": [
+    "0.23"
+  ]
 }
